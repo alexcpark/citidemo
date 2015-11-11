@@ -1,4 +1,11 @@
 {
-    "require": {
-    }
+    "name": "alexpark/citidemo",
+    "description": "demo",
+    "authors": [
+        {
+            "name": "Alex Park",
+            "email": "apark@badgeville.com"
+        }
+    ],
+    "require": {}
 }
