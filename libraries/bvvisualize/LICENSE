@@ -1,0 +1,79 @@
+BADGEVILLE FREE SOFTWARE LICENSE AGREEMENT
+(for Badgeville Community Software)
+(Rev. December 2013)
+
+DO NOT LOAD OR USE THIS SOFTWARE UNTIL YOU HAVE CAREFULLY READ THE FOLLOWING TERMS AND CONDITIONS. BY LOADING OR USING THIS SOFTWARE, YOU AGREE TO ALL TERMS AND CONDITIONS OF THIS BADGEVILLE FREE SOFTWARE LICENSE AGREEMENT (THE "LICENSE"). IF YOU ARE LOADING OR USING THIS SOFTWARE IN YOUR CAPACITY AS AN AGENT OR EMPLOYEE OF A LEGAL ENTITY, THEN BY LOADING OR USING THIS SOFTWARE YOU REPRESENT AND WARRANT THAT YOU HAVE THE AUTHORITY TO BIND, AND ARE BINDING, SUCH ENTITY TO THESE TERMS AND CONDITIONS. IF YOU OBJECT TO ANY ASPECT OF THIS LICENSE, YOU MUST NOT LOAD OR USE THIS SOFTWARE.
+
+
+Badgeville, Inc. ("Badgeville") and you (or the legal entity on whose behalf you are entering into this License; "You" or "Your") may be referred to in this License individually as a "Party" or collectively as the "Parties".
+
+
+In consideration of the mutual covenants in this License, and for other good and valuable consideration, the receipt and sufficiency of which the Parties hereby acknowledge, and intending to be legally bound, the Parties agree as follows:
+
+1.   Definitions.
+As used in this License, the following capitalized terms have the meanings indicated:
+"Contribution" means any work of authorship (including, without limitation, the original version of the Work, and any modifications or additions to that Work or Derivative Works thereof) that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on email, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as "Not a Contribution."
+"Contributor" means, collectively, Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor.
+"Derivative Works" means any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. "Derivative Works" does not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.
+"Legal Entity" means the acting entity and all other entities that control, are controlled by, or are under common control with that entity, collectively. For purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+"Licensor" means the copyright owner or entity authorized by the copyright owner that is granting the License (which may be Badgeville, You or a third party, depending on the context, as explained in this License).
+"Object" form means any form resulting from mechanical transformation or translation of a Source form, including, but not limited to, compiled object code, generated documentation, and conversions to other media types.
+"Service" means Badgeville's proprietary, hosted Software-as-a-Service "gamification" behavior platform.
+"Source" form means the preferred form for making modifications, including, but not limited to, software source code, documentation source, and configuration files.
+"Term" means the term during which this License applies - i.e., while a separate fee-based license agreement is in place between Badgeville and You (or between Badgeville and third party sublicensees in the sublicense context).
+"Work" means a work of authorship, whether in Source or Object form, provided under this License. A copyright notice accompanying the work generally will confirm the applicability of this License. An example of such a notice is provided in the Appendix below.
+
+2.   Background. 
+Use of the Badgeville Service requires a separate license from Badgeville. Badgeville is using this click-through License (a) to provide certain free software templates to licensed Badgeville customers solely for use with the Badgeville Service, and (b) to encourage licensed users of the Service to make their own Contributions to the Badgeville licensed user community under this License solely for use with the Service.
+
+Under this License, Badgeville and its licensees who make their own Contributions provide a free software license for certain Badgeville community software (for example, Badgeville's free visual component templates, which are HTML code and JavaScript code that operate with the Service to display players' points, levels, badges, rankings, reputation, status, activity feeds and other visual feedback relating to an implementation of the Service). You are permitted to use the templates as-is, and to modify them, in accordance with this License.
+
+This License is modeled on the Apache Software Foundation's Apache License, Version 2.0 for convenience and ease of use, but it differs from that separate license in several ways (for example, You are only permitted to use the Badgeville community software as long as You remain a Badgeville customer). Accordingly, You should carefully review this entire License before accepting or using it. The Apache Software Foundation is not responsible for or affiliated with, and does not sponsor or endorse, Badgeville, this License or the Badgeville community software.
+
+3.   Grant of Copyright License.  Subject to the terms and conditions of this License, each Contributor (including Badgeville as to the original Work) hereby grants to You a worldwide, non-exclusive, no-charge, royalty-free copyright license (including the right to sublicense under these same License terms to third parties who have a valid fee-based license agreement with Badgeville for the Service), solely during the Term, to reproduce, prepare Derivative Works of, publicly display, publicly perform, and distribute the Work and such Derivative Works (in Source or Object form) solely for use with the Service.
+
+4.   Grant of Patent License.  Subject to the terms and conditions of this License, each Contributor (including Badgeville as to the original Work) hereby grants to You a worldwide, non-exclusive, no-charge, royalty-free patent license (including the right to sublicense under these same License terms to third parties who have a valid fee-based license agreement with Badgeville for the Service), solely during the Term, to make, have made, use, offer to sell, sell, import and otherwise transfer the Work solely for use with the Service, where such license applies only to those patent claims licensable by such Contributor (without any payment to a third party) that are necessarily infringed by their Contribution(s), alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work will terminate as of the date such litigation is filed.
+
+5.   Redistribution.  Subject to the terms and conditions of this License, You may reproduce and distribute copies of the Work, Contributions and Derivative Works thereof (in any medium, with or without modifications, and in Source or Object form), solely (a) during the Term, (b) under these same License terms, and (c) for use with the Service, to third parties who have a valid fee-based license agreement with Badgeville for the Service, provided that You meet the following conditions:
+
+(i)   You must provide the Work or Derivative Works under this License and provide a copy of this License; and
+
+(ii)  You must cause any modified files to carry prominent notices stating that You changed the files; and
+
+(iii) You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
+
+(iv) If the Work includes a "NOTICE" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: (A) within a NOTICE text file distributed as part of the Derivative Works; (B) within the Source form or documentation, if provided along with the Derivative Works; or (C) within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work; provided, however, that such additional attribution notices must not be construed to modify the License.
+
+You may add Your own copyright statement to Your modifications, and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any Derivative Works as a whole; provided, however, that Your use, reproduction, and distribution of the Work and Derivative Works otherwise complies with this License.
+
+6.   Submission of Contributions.
+Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor will be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing in this License supersedes or modifies the terms of any separate license agreement You execute with Licensor regarding such Contributions.
+
+7.   Trademarks.
+This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file. Without limiting the preceding sentence, You must not copy the "look and feel" of the Work, Contributions or Derivative Works thereof to compete with Badgeville.
+
+8.   Disclaimer of Warranty.
+Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) and Derivative Works thereof on an "AS-IS" BASIS, WITHOUT WARRANTIES OR COMMITMENTS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work, Contributions or Derivative Works thereof, and You assume any risks associated with Your exercise of rights or permissions under this License.
+
+9.   Limitation of Liability.
+UNLESS OTHERWISE SPECIFICALLY AGREED IN WRITING BY THE RELEVANT CONTRIBUTOR OR required by applicable law (E.G., FOR deliberate and grossly negligent acts), In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, WILL any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character, arising as a result of this License or out of the use or inability to use the Work (including, but not limited to, damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+10. Accepting Warranty or Additional Liability.
+While redistributing the Work or Derivative Works thereof, You may choose to offer, and/or charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of Badgeville or any other Contributor, and only if You indemnify, defend and hold harmless Badgeville and each other Contributor for any liability incurred by, or claims asserted against, them by reason of You accepting any such obligations.
+
+11. Prevailing Party Attorneys' Fees.
+In the event any legal proceedings or lawsuits are commenced in connection with this License, the prevailing party in such proceedings will be entitled to recover from the losing party its reasonable attorneys' fees, costs, expert witness fees and other expenses.
+
+12. Governing Law and Jurisdiction.
+The procedural and substantive laws of the State of Delaware, U.S.A., without regard to its conflicts of laws principles, will govern this License. The state and federal courts located in the State of Delaware will have exclusive jurisdiction of all disputes and litigation arising out of or related to this License including, without limitation, matters connected with its performance. Each Party irrevocably submits to the personal jurisdiction of those courts and irrevocably waives all objections to such venue.
+
+13. Waiver and Severability.
+If either Party fails to enforce at any time any of the provisions of this License, that failure will not constitute a waiver of that provision, or affect the validity of this License or any part of this License, or the right of the waiving Party to enforce subsequently each and every provision. If any provision of this License is held invalid or unenforceable, the remainder of the License will continue in full force and effect.
+
+14. Entire Agreement; Modification.
+This License contains the complete and exclusive statement of the agreement between the Parties, and supersedes all proposals, oral or written, and all other communications between the Parties, relating to the subject matter of this License. This License may be modified only by mutual written consent of the Parties.
+
+APPENDIX (how to apply this License to your work):
+
+To apply this License to your work, attach the following boilerplate notice, with the fields enclosed by brackets "[]" replaced with your own identifying information. (Don't include the brackets!) The text should be enclosed in the appropriate comment syntax for the file format. We also recommend that a file or class name and description of purpose be included on the same "printed page" as the copyright notice for easier identification within third-party archives.
+
+Copyright [year] [name of copyright owner]. Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license. Unless required by applicable law or mutually agreed to in writing, software distributed under the License is distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or implied. See the License for the specific language governing rights, permissions, restrictions and limitations under the License.

@@ -1,0 +1,100 @@
+player_email,verb,created_at,asset_type,asset_title
+lucas@bvskillportdemo.com,added-manager,2013-09-23T07:40:11Z,videos,Scala Introduction
+jack@bvskillportdemo.com,logged-in,2013-10-13T10:47:24Z,resources,Managing IPv4 and IPv6 Addressing
+amy@bvskillportdemo.com,downloaded-book,2013-12-11T15:36:28Z,books,Compliance and Social Media
+jack@bvskillportdemo.com,restarted-test,2012-02-25T21:33:35Z,courses,Web Design Enhancements
+obi@bvskillportdemo.com,added-company,2012-09-23T05:32:46Z,courses,Compliance and Social Media
+obi@bvskillportdemo.com,logged-in,2014-11-02T03:19:03Z,videos,Managing IPv4 and IPv6 Addressing
+jack@bvskillportdemo.com,shared-course,2014-07-18T23:46:58Z,resources,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,added-note-course,2014-06-19T02:49:01Z,courses,Web Design Enhancements
+roselyn@bvskillportdemo.com,read-book,2014-06-17T15:43:18Z,resources,Web Design Enhancements
+obi@bvskillportdemo.com,added-location,2012-06-23T19:45:13Z,resources,Facilitating Collaborative Processes
+roselyn@bvskillportdemo.com,downloaded-book,2012-03-09T18:06:47Z,resources,Reviewing and Rewarding Performance
+jack@bvskillportdemo.com,downloaded-book,2012-09-17T04:01:02Z,videos,Planning for Performance
+amy@bvskillportdemo.com,restart-course,2012-02-01T20:23:34Z,courses,Reviewing and Rewarding Performance
+obi@bvskillportdemo.com,took-pretest,2013-12-26T06:17:04Z,videos,Scala Introduction
+amy@bvskillportdemo.com,added-manager,2012-02-07T06:52:15Z,resources,Global Safety Principles
+roselyn@bvskillportdemo.com,restarted-test,2012-12-08T21:39:57Z,resources,Compliance and Social Media
+lucas@bvskillportdemo.com,added-manager,2014-02-23T03:02:47Z,resources,Planning for Performance
+roselyn@bvskillportdemo.com,restarted-test,2014-12-10T13:16:30Z,courses,Web Design Enhancements
+jack@bvskillportdemo.com,accessed-book,2014-06-05T06:02:35Z,books,Reviewing and Rewarding Performance
+julianne@bvskillportdemo.com,took-pretest,2014-07-10T21:31:08Z,books,Facilitating Collaborative Processes
+julianne@bvskillportdemo.com,restart-course,2012-01-22T01:43:34Z,courses,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,logged-in,2013-04-06T17:38:19Z,videos,Managing IPv4 and IPv6 Addressing
+jessica@bvskillportdemo.com,added-manager,2012-06-16T02:15:43Z,books,Facilitating Collaborative Processes
+lucas@bvskillportdemo.com,completed-course,2014-10-12T07:07:11Z,books,Facilitating Collaborative Processes
+jessica@bvskillportdemo.com,completed-course,2014-08-13T19:46:24Z,courses,Web Design Enhancements
+jack@bvskillportdemo.com,restart-course,2013-10-09T20:18:24Z,courses,Web Design Enhancements
+julianne@bvskillportdemo.com,restart-course,2014-11-08T18:44:51Z,courses,Facilitating Collaborative Processes
+julianne@bvskillportdemo.com,accessed-course,2013-05-21T14:51:11Z,videos,Global Safety Principles
+roselyn@bvskillportdemo.com,added-note-course,2014-05-18T14:18:47Z,resources,Planning for Performance
+julianne@bvskillportdemo.com,added-manager,2014-08-12T03:33:47Z,courses,Web Design Enhancements
+obi@bvskillportdemo.com,beat-pretest,2012-06-07T10:04:22Z,resources,Planning for Performance
+julianne@bvskillportdemo.com,accessed-video,2013-07-01T23:41:29Z,resources,Facilitating Collaborative Processes
+jessica@bvskillportdemo.com,added-note-course,2014-07-22T21:45:24Z,resources,Facilitating Collaborative Processes
+obi@bvskillportdemo.com,shared-course,2013-09-19T11:55:40Z,courses,Planning for Performance
+amy@bvskillportdemo.com,completed-course,2013-04-22T17:49:12Z,courses,Compliance and Social Media
+julianne@bvskillportdemo.com,beat-pretest,2012-11-15T19:43:44Z,resources,Compliance and Social Media
+obi@bvskillportdemo.com,completed-course,2013-02-23T15:51:44Z,videos,Reviewing and Rewarding Performance
+roselyn@bvskillportdemo.com,added-manager,2013-02-10T18:59:48Z,resources,Managing IPv4 and IPv6 Addressing
+amy@bvskillportdemo.com,logged-in,2012-09-25T15:48:40Z,videos,Facilitating Collaborative Processes
+jack@bvskillportdemo.com,added-location,2014-05-11T13:38:17Z,books,Managing IPv4 and IPv6 Addressing
+jack@bvskillportdemo.com,logged-in,2013-11-02T17:08:13Z,videos,Scala Introduction
+jack@bvskillportdemo.com,added-note-course,2014-06-03T06:53:14Z,courses,Global Safety Principles
+lucas@bvskillportdemo.com,downloaded-book,2014-06-08T07:59:32Z,courses,Compliance and Social Media
+jack@bvskillportdemo.com,started-course,2012-01-07T12:47:09Z,videos,Facilitating Collaborative Processes
+obi@bvskillportdemo.com,started-course,2014-10-21T01:06:53Z,resources,Scala Introduction
+obi@bvskillportdemo.com,took-pretest,2012-03-04T12:47:32Z,courses,Global Safety Principles
+roselyn@bvskillportdemo.com,added-manager,2012-05-21T06:33:40Z,books,Managing IPv4 and IPv6 Addressing
+jack@bvskillportdemo.com,read-book,2012-10-09T17:51:20Z,resources,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,accessed-video,2012-11-01T23:52:52Z,books,Planning for Performance
+amy@bvskillportdemo.com,completed-course,2013-08-27T05:25:46Z,books,Scala Introduction
+julianne@bvskillportdemo.com,completed-course,2012-10-21T22:43:40Z,courses,Reviewing and Rewarding Performance
+lucas@bvskillportdemo.com,accessed-video,2012-06-10T14:15:52Z,resources,Facilitating Collaborative Processes
+julianne@bvskillportdemo.com,took-pretest,2013-01-18T04:36:20Z,courses,Scala Introduction
+julianne@bvskillportdemo.com,completed-course,2013-11-19T14:20:34Z,videos,Global Safety Principles
+jack@bvskillportdemo.com,took-pretest,2012-04-22T16:08:18Z,courses,Scala Introduction
+lucas@bvskillportdemo.com,shared-course,2014-03-12T23:02:02Z,books,Scala Introduction
+amy@bvskillportdemo.com,added-company,2012-05-26T03:12:48Z,resources,Managing IPv4 and IPv6 Addressing
+amy@bvskillportdemo.com,added-location,2012-10-20T05:46:38Z,books,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,registered,2014-05-01T13:07:29Z,courses,Web Design Enhancements
+lucas@bvskillportdemo.com,added-note-course,2012-05-13T15:05:36Z,videos,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,registered,2012-03-08T17:05:53Z,videos,Compliance and Social Media
+roselyn@bvskillportdemo.com,added-note-course,2012-11-19T19:05:22Z,books,Managing IPv4 and IPv6 Addressing
+lucas@bvskillportdemo.com,added-note-course,2014-01-20T15:51:26Z,courses,Global Safety Principles
+roselyn@bvskillportdemo.com,registered,2012-02-18T13:08:17Z,books,Compliance and Social Media
+amy@bvskillportdemo.com,took-pretest,2013-09-10T20:53:38Z,videos,Managing IPv4 and IPv6 Addressing
+jessica@bvskillportdemo.com,accessed-resource,2012-05-11T04:59:41Z,resources,Global Safety Principles
+julianne@bvskillportdemo.com,added-manager,2013-08-11T06:37:58Z,videos,Facilitating Collaborative Processes
+julianne@bvskillportdemo.com,read-book,2014-11-12T13:36:16Z,courses,Scala Introduction
+jessica@bvskillportdemo.com,logged-in,2012-02-01T20:38:28Z,books,Web Design Enhancements
+lucas@bvskillportdemo.com,started-course,2013-08-07T05:35:42Z,resources,Global Safety Principles
+julianne@bvskillportdemo.com,took-pretest,2012-11-03T11:17:11Z,resources,Compliance and Social Media
+obi@bvskillportdemo.com,restart-course,2012-01-19T21:22:49Z,books,Scala Introduction
+obi@bvskillportdemo.com,added-manager,2012-01-25T18:31:07Z,books,Web Design Enhancements
+amy@bvskillportdemo.com,started-course,2013-01-22T12:19:37Z,courses,Scala Introduction
+jessica@bvskillportdemo.com,added-company,2013-12-12T06:56:55Z,courses,Managing IPv4 and IPv6 Addressing
+roselyn@bvskillportdemo.com,logged-in,2013-01-08T13:02:34Z,videos,Web Design Enhancements
+lucas@bvskillportdemo.com,shared-course,2013-03-24T12:20:59Z,resources,Facilitating Collaborative Processes
+amy@bvskillportdemo.com,added-company,2014-11-27T05:35:56Z,books,Scala Introduction
+jack@bvskillportdemo.com,accessed-book,2013-08-18T02:27:54Z,videos,Planning for Performance
+amy@bvskillportdemo.com,started-course,2012-12-24T11:14:16Z,courses,Managing IPv4 and IPv6 Addressing
+jack@bvskillportdemo.com,logged-in,2013-08-05T14:28:09Z,books,Web Design Enhancements
+roselyn@bvskillportdemo.com,accessed-video,2012-11-03T13:52:11Z,books,Planning for Performance
+julianne@bvskillportdemo.com,started-course,2014-01-13T01:48:26Z,courses,Compliance and Social Media
+lucas@bvskillportdemo.com,restart-course,2014-09-01T03:08:46Z,books,Web Design Enhancements
+jack@bvskillportdemo.com,registered,2014-05-06T13:38:27Z,videos,Web Design Enhancements
+julianne@bvskillportdemo.com,logged-in,2013-01-14T06:17:17Z,courses,Reviewing and Rewarding Performance
+roselyn@bvskillportdemo.com,started-course,2013-04-09T19:13:34Z,books,Compliance and Social Media
+roselyn@bvskillportdemo.com,beat-pretest,2013-11-24T15:06:27Z,books,Reviewing and Rewarding Performance
+amy@bvskillportdemo.com,logged-in,2014-03-04T12:02:59Z,resources,Scala Introduction
+jack@bvskillportdemo.com,read-book,2014-02-01T16:59:46Z,videos,Facilitating Collaborative Processes
+roselyn@bvskillportdemo.com,accessed-book,2012-03-06T06:51:03Z,books,Planning for Performance
+lucas@bvskillportdemo.com,restart-course,2014-04-16T22:59:48Z,courses,Reviewing and Rewarding Performance
+jack@bvskillportdemo.com,accessed-video,2012-09-25T16:22:31Z,courses,Global Safety Principles
+jack@bvskillportdemo.com,downloaded-book,2012-01-19T06:54:57Z,books,Web Design Enhancements
+roselyn@bvskillportdemo.com,accessed-video,2013-08-25T06:58:37Z,courses,Planning for Performance
+obi@bvskillportdemo.com,downloaded-book,2014-03-24T08:01:38Z,books,Web Design Enhancements
+roselyn@bvskillportdemo.com,beat-pretest,2012-05-05T13:12:29Z,books,Facilitating Collaborative Processes
+roselyn@bvskillportdemo.com,logged-in,2013-09-19T20:48:07Z,resources,Managing IPv4 and IPv6 Addressing
+roselyn@bvskillportdemo.com,restarted-test,2012-09-19T22:31:47Z,resources,Scala Introduction

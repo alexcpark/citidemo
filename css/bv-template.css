@@ -1,0 +1,1067 @@
+/* reset default */
+body {
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+.bvviz.ui-widget {
+  font-size: 118%;
+}
+/* force level progress using absolute length units */
+.bvviz-levelProgress .bvviz-label {
+  width: 160px;
+}
+.bvviz-progress.bvviz-line {
+  width: 130px;
+}
+.bvviz-levelProgress .bvviz-progress-bar {
+  width: 130px;
+}
+.bvviz-levelProgress .bvviz-progress-label {
+  font-size: 12px;
+}
+/* activity stream reset */
+.bvviz-playerStream .bvviz-card .bvviz-message {
+  margin-left: 40px;
+}
+.bvviz-missionTutorial .bvviz-body-header.bvviz-summary-icon .bvviz-info {
+  margin-left: 4.5em;
+  font-size: 12px;
+}
+.bvviz .bvviz-body.bvviz-col {
+  padding: 0;
+}
+.bvviz .bvviz-body-header {
+  margin-bottom: 0;
+}
+.bvviz .bvviz-body.bvviz-noframe{
+  padding: 0;
+}
+.bvviz .bvviz-body.bvviz-noframe .bvviz-cards.bvviz-row .bvviz-card {
+  margin: 0 .4em .8em .4em;
+  border-width: 2px;
+  border-color: #e3e3e3;
+}
+.span4 .bvviz .bvviz-body, .span4 .bvviz .bvviz-body-header, .span4 .bvviz .bvviz-cards {
+  border-color: #e3e3e3;
+}
+#BVVIZ-customContainer-1 .bvviz .bvviz-cards .bvviz-card {
+  background-color: #f8f8f8;
+}
+#BVVIZ-customContainer-1 .bvviz .bvviz-cards .bvviz-card:hover {
+  background-color: #f3f3f3;
+}
+/* page brand */
+.page-brand, .page-header, .page-header .bvviz {
+  text-rendering: geometricPrecision;
+  color: #fff;
+}
+.page-brand {
+  margin: 0;
+  background-color: #17335C;
+  color: #fff;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+}
+.page-brand div[class^="span12"] * {
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+.page-brand a {
+  font-size: 1.6em;
+  color: #fff;
+}
+.page-brand a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.page-brand p {
+  font-weight: 200;
+}
+/* navbar */
+.navbar {
+  margin: 0;
+  background-color: #5E8F9F;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+.navbar-inner {
+  min-height: 30px;
+  background-color: #5E8F9F;
+  background-image: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+  border-width: 0;
+}
+.navbar .nav>li>a {
+  padding: 5px 15px 5px;
+  text-shadow: none;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+  border-bottom: 2px solid transparent;
+}
+.navbar .nav>li>a:hover, .navbar .nav>li>a:focus {
+  color: #fff;
+}
+.navbar .nav>li>a:hover {
+  /*border-bottom: 2px solid #999;*/
+}
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-bottom: 2px solid #fff;
+}
+/* page header */
+.page-header {
+  background-color: #435062;
+  min-height: 120px;
+  margin: 0;
+  padding: 15px 0 15px 0;
+}
+.page-header div[class^="span5"] {
+  height: 70px;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+.header-profile-image {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+.header-profile-name {
+  font-weight: 100;
+  font-size: 32px;
+  margin: 0;
+}
+.header-profile-info {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
+}
+.header-profile-title, .header-profile-team {
+  margin: 0;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+.header-profile-title {
+  margin-top: 2px;
+  font-size: 14px;
+}
+.header-profile-team {
+  font-size: 14px;
+}
+#BVVIZ-playerRow, #BVVIZ-levelProgress {
+  position: absolute;
+  bottom: 0;
+}
+/* page main */
+.main-section {
+  padding-bottom: 45px;
+  display: none;
+}
+.main-section-extended {
+  background-color: #ededed;
+}
+.main-section-title {
+  text-rendering: geometricPrecision;
+  font-weight: 200;
+  font-size: 32px;
+  color: #445164;
+  line-height: 50px;
+  margin: 30px 0 0 0;
+}
+.main-section-block-title {
+  text-rendering: geometricPrecision;
+  font-weight: 200;
+  font-size: 20px;
+  color: #445164;    
+  margin: 20px 0;    
+}
+
+/********************************
+*
+*   Badgeville
+*   New Template Adjustments
+*
+*********************************/
+
+/**************
+* Fonts
+***************/
+
+@font-face {
+    font-family: 'interstatebold';
+    src: url('../fonts/interstate_bold-webfont.eot');
+    src: url('../fonts/interstate_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_bold-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_bold-webfont.woff') format('woff'),
+         url('../fonts/interstate_bold-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_bold-webfont.svg#interstatebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstateextralight_italic';
+    src: url('../fonts/interstate_extralight_italic-webfont.eot');
+    src: url('../fonts/interstate_extralight_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_extralight_italic-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_extralight_italic-webfont.woff') format('woff'),
+         url('../fonts/interstate_extralight_italic-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_extralight_italic-webfont.svg#interstateextralight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstateextralight';
+    src: url('../fonts/interstate_extralight-webfont.eot');
+    src: url('../fonts/interstate_extralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_extralight-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_extralight-webfont.woff') format('woff'),
+         url('../fonts/interstate_extralight-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_extralight-webfont.svg#interstateextralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstatelight_italic';
+    src: url('../fonts/interstate_light_italic-webfont.eot');
+    src: url('../fonts/interstate_light_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_light_italic-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_light_italic-webfont.woff') format('woff'),
+         url('../fonts/interstate_light_italic-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_light_italic-webfont.svg#interstatelight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstatelight';
+    src: url('../fonts/interstate_light-webfont.eot');
+    src: url('../fonts/interstate_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_light-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_light-webfont.woff') format('woff'),
+         url('../fonts/interstate_light-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_light-webfont.svg#interstatelight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstateregular_italic';
+    src: url('../fonts/interstate_regular_italic-webfont.eot');
+    src: url('../fonts/interstate_regular_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_regular_italic-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_regular_italic-webfont.woff') format('woff'),
+         url('../fonts/interstate_regular_italic-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_regular_italic-webfont.svg#interstateregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'interstateregular';
+    src: url('../fonts/interstate_regular-webfont.eot');
+    src: url('../fonts/interstate_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/interstate_regular-webfont.woff2') format('woff2'),
+         url('../fonts/interstate_regular-webfont.woff') format('woff'),
+         url('../fonts/interstate_regular-webfont.ttf') format('truetype'),
+         url('../fonts/interstate_regular-webfont.svg#interstateregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/**************
+* Main Styles
+***************/
+
+/* Global outlines for design planning. */
+* {
+	outline: 0px dotted blue;
+}
+/* Viz outlines for planning. */
+#BVVIZ-playerRow,
+#BVVIZ-levelProgress,
+#BVVIZ-customContainer-1,
+#BVVIZ-missionTutorial,
+#BVVIZ-customContainer-2,
+#BVVIZ-customContainer-3,
+#BVVIZ-playerStream,
+* {
+	outline: 0px dotted blue;
+}
+
+.bvviz-container {
+	background-color: #eee;
+	outline: 1px solid #eee;
+}
+
+body {
+	font-family: 'interstateextralight' !important;
+	text-rendering: geometricPrecision;
+	font-weight: 200;
+	color: #002C72;
+}
+
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container,
+.span12 {
+	width: 960px;
+}
+
+.page-main,
+.subnav,
+.content {
+	margin-bottom: 65px;
+}
+
+.subnav {
+	float: left;
+	width: 220px;
+	padding: 65px 0 0;
+}
+
+.content {
+	float: left;
+	padding: 65px 0 0;
+	margin: 0 0 0 35px;
+}
+
+.content,
+.main-section .container,
+.span8 {
+	width: 705px;
+}
+
+/* branding */
+.page-brand,
+.page-brand .container,
+.page-brand .container .row,
+.page-brand .container .row .span12 {
+    height: 70px;
+}
+
+
+.page-brand {
+	position:relative;
+	background-color: transparent;
+	color: #6f6f6f;
+
+}
+
+.page-brand a.brand {
+    background-image: url('/images/named-artwork.png');
+    background-size: 223px 14px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    width: 223px;
+    height: 14px;
+	margin: 30px 0 0;
+}
+
+.page-brand a.brand2 {
+	background-image: url('/images/citi-logo.png');
+    background-size: 60px 38px;
+    background-position: 2px center;
+    background-repeat: no-repeat;
+    position:absolute;
+    width: 60px;
+    height: 38px;
+	margin: 12px 0 0;
+	right: 0;
+	top: 0;
+}
+
+/* navbar adjustments */
+.navbar,
+.navbar .navbar-inner,
+.navbar .navbar-inner .span12,
+.navbar .navbar-inner .span12 .nav,
+.navbar .navbar-inner .span12 .nav li {
+	height: 34px;
+}
+
+.navbar,
+.navbar-inner {
+	background-color: transparent;
+}
+
+.navbar-inner {
+	-webkit-box-shadow: 0 0 0;
+	-moz-box-shadow: 0 0 0;
+	box-shadow: 0 0 0;
+}
+
+.navbar .nav > li {
+	line-height: initial;
+}
+
+.navbar .nav > li > a {
+	height: 21px;
+	padding: 0 0 8px;
+	margin-left: 60px;
+	color: #002D72;
+	font-size: 18px;
+	text-transform: capitalize;
+}
+
+.navbar .nav > li:first-child > a {
+	margin-left: 0;
+}
+
+.header-profile-image { border-style: none; }
+
+#bv-page-onboarding .navbar .nav>.nav-onboarding>a { color: #1DBDF4; border-bottom: 5px solid #53D1F8; } /* Targeting ID for "current page" effect */
+.navbar .nav>.nav-onboarding>a:hover,
+.navbar .nav>.nav-onboarding>a:focus { color: #1DBDF4; }
+#bv-page-onboarding nav { border-bottom: 1px solid #53D1F8; }
+#bv-page-onboarding .header-profile-image { border: 1px solid #53D1F8; }
+#bv-page-onboarding .page-header::after { background-color: #53D1F8; }
+#bv-page-onboarding .span2 { background-color: #53D1F8; }
+
+#bv-page-goals .navbar .nav>.nav-goals>a { color: #86BB00; border-bottom: 5px solid #CEE495; } /* Targeting ID for "current page" effect */
+.navbar .nav>.nav-goals>a:hover,
+.navbar .nav>.nav-goals>a:focus { color: #86BB00; }
+#bv-page-goals nav { border-bottom: 1px solid #CEE495; }
+#bv-page-goals .header-profile-image { border: 1px solid #CEE495; }
+#bv-page-goals .page-header::after { background-color: #CEE495; }
+#bv-page-goals .span2 { background-color: #CEE495; }
+
+#bv-page-learning .navbar .nav>.nav-learning>a { color: #F0AE41; border-bottom: 5px solid #F5D191; } /* Targeting ID for "current page" effect */
+.navbar .nav>.nav-learning>a:hover,
+.navbar .nav>.nav-learning>a:focus { color: #F0AE41; }
+#bv-page-learning nav { border-bottom: 1px solid #F5D191; }
+#bv-page-learning .header-profile-image { border: 1px solid #F5D191; }
+#bv-page-learning .page-header::after { background-color: #F5D191; }
+#bv-page-learning .span2 { background-color: #F5D191; }
+
+#bv-page-collaboration .navbar .nav>.nav-collaboration>a { color: #BB90CD; border-bottom: 5px solid #D7C1E3; } /* Targeting ID for "current page" effect */
+.navbar .nav>.nav-collaboration>a:hover,
+.navbar .nav>.nav-collaboration>a:focus { color: #BB90CD; }
+#bv-page-collaboration nav { border-bottom: 1px solid #D7C1E3; }
+#bv-page-collaboration .header-profile-image { border: 1px solid #D7C1E3; }
+#bv-page-collaboration .page-header::after { background-color: #D7C1E3; }
+#bv-page-collaboration .span2 { background-color: #D7C1E3; }
+
+#bv-page-guide .navbar .nav>.nav-guide>a { color: #97999B; border-bottom: 5px solid #D5D6D7; } /* Targeting ID for "current page" effect */
+.navbar .nav>.nav-guide>a:hover,
+.navbar .nav>.nav-guide>a:focus { color: #97999B; }
+#bv-page-guide nav { border-bottom: 1px solid #D5D6D7; }
+#bv-page-guide .header-profile-image { border: 1px solid #D5D6D7; }
+#bv-page-guide .page-header::after { background-color: #D5D6D7; }
+#bv-page-guide .span2 { background-color: #D5D6D7; }
+
+/* adjust profile section */
+
+.page-header {
+    background-color: transparent;
+	position: relative;
+	padding: 0;
+	height: auto;
+	color: #002C72;
+	
+}
+
+.page-header .container {
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
+
+.page-header::before,
+.page-header::after {
+    content: '';
+    display: block;
+	position: absolute;
+	width: 100%;
+    z-index: 0;
+}
+
+.page-header::before {
+	height: 202px;
+	top: 0;
+	box-shadow:inset 0 0 50px 0px #EAEBEB; /*inset offset-x offset-y blur-radius spread-radius color*/
+}
+
+.page-header::after {
+	height: 100px;
+	bottom: 0;
+}
+
+.container {
+	position: relative;
+	z-index: 1;
+}
+
+.page-header .row:first-child {
+	height: 222px;
+}
+
+.span2 {
+	width: 222px;
+}
+
+.header-profile-image {
+	width: 220px;
+    height: 220px;
+	max-width: initial;
+}
+
+.header-profile-info {
+	height: auto;
+	margin: 10px 0;
+}
+
+.header-profile-info p {
+	margin: 0;
+}
+
+.header-profile-title,
+.header-profile-team {
+	overflow: visible;
+}
+
+.header-profile-location-city,
+.header-profile-location-country {
+	font-family: 'interstateextralight_italic';
+}
+
+.header-profile-title {
+	margin: 0;
+}
+
+.span10 {
+	position: relative;
+	width: 703px;
+	height: 100%;
+	margin-left: 35px;
+}
+
+.page-header .span5 {
+	height: initial;
+}
+
+.header-profile-name {
+    font-size: 40px;
+}
+
+.bvviz-playerRow .bvviz-data {
+	margin-left: 0;
+}
+
+#BVVIZ-playerRow {
+	position: relative;
+	padding-top: 10px;
+	bottom: initial;
+	color: white;
+}
+
+#BVVIZ-playerRow .bvviz-data.bvviz-unit {
+	background-color: #31a3d3;
+	padding: 0 7px;
+	border-radius: 5px;
+}
+
+.header-profile-highlights {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.header-profile-highlights::before {
+	content: '';
+	display: block;
+	border-left: 1px dotted white;
+	position: absolute;
+	height: 100px;
+	left: 255px;
+	top: -22px;
+}
+
+.header-profile-highlights,
+.highlights,
+.highlights > * {
+	height: 58px !important;
+	min-height: 58px;
+}
+
+.highlight1 {
+	width: 210px;
+	float:left;
+}
+
+.highlight2 {
+	width: 400px;
+	float: right;
+}
+
+.page-header .span10 .row.header-profile-info .span5:first-child+.span5 {
+	height: auto;
+	width: auto;
+    top: 16px;
+    position: relative;
+}
+
+#BVVIZ-playerStats.bvviz .bvviz-body {
+	background-color: transparent;
+	border: 0;
+	border-radius: 0;
+}
+
+#BVVIZ-playerStats .bvviz-card {
+    border: 0;
+	border-top: 1px dotted #95a88d;
+	border-radius: 0;
+    background-color: transparent;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+	position: relative;
+	height: 18px;
+}
+
+#BVVIZ-playerStats .bvviz-card:first-child {
+	border-top: 0;
+}
+
+#BVVIZ-playerStats .bvviz-card .bvviz-progress {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#BVVIZ-playerStats .bvviz-card .bvviz-name {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#BVVIZ-playerStats .bvviz-card img.bvviz-picture,
+#BVVIZ-playerStats .bvviz-card .bvviz-checkmark-corner {
+	display: none;
+}
+
+#BVVIZ-playerStats, #BVVIZ-customContainer-0 {
+	display: inline-block;
+}
+
+#BVVIZ-customContainer-0 .bvviz-card {
+    border: 0;
+	border-top: 0;
+	background-color: transparent;
+    padding: 0;
+    margin: 0;
+	width: 78px !important;
+}
+
+#BVVIZ-missionTutorial {
+	width: 300px;
+	height: 290px;
+}
+
+/* Main Section Adjustments */
+
+.subnav ul {
+	list-style-type: none;
+	list-style-position: inside;
+	margin: 0;
+}
+
+.subnav ul li a {
+	display: block;
+	border-left:5px solid transparent;
+}
+
+.subnav ul.subnav-pages {  }
+
+.subnav ul.subnav-pages li.subnav-page {  }
+
+.subnav ul.subnav-pages li.subnav-page > a {
+	font-size: 22px;
+	padding: 15px 20px 15px 30px;
+	margin-top: 25px;
+}
+
+.subnav ul.subnav-pages li.subnav-page:first-child > a {
+	margin-top: 0;
+}
+
+.subnav ul.subnav-subpages {
+	margin-left: 35px;
+}
+
+.subnav ul.subnav-subpages li.subnav-subpage {
+	padding: 25px 0;
+}
+
+.subnav ul.subnav-subpages li.subnav-subpage:first-child {
+	padding: 30px 0 25px;
+}
+
+.subnav ul.subnav-subpages li.subnav-subpage > a {
+	font-size: 16px;
+	padding: 1px 20px;
+}
+
+.subnav a { color: #002C72; text-decoration: none; }
+.subnav a:visited { color: #002C72; }
+
+#bv-page-onboarding .subnav a.active { border-left: 5px solid #53D1F8; }
+#bv-page-onboarding .subnav a:hover { color: #1DBDF4; }
+#bv-page-onboarding .subnav a.active:hover { color: #97999B; }
+#bv-page-onboarding .subnav a:active { color: #1DBDF4; }
+
+#bv-page-goals .subnav a.active { border-left: 5px solid #CEE495; }
+#bv-page-goals .subnav a:hover { color: #86BB00; }
+#bv-page-goals .subnav a.active:hover { color: #97999B; }
+#bv-page-goals .subnav a:active { color: #86BB00; }
+
+
+#bv-page-learning .subnav a.active { border-left: 5px solid #F5D191; }
+#bv-page-learning .subnav a:hover { color: #F0AE41; }
+#bv-page-learning .subnav a.active:hover { color: #97999B; }
+#bv-page-learning .subnav a:active { color: #F0AE41; }
+
+#bv-page-collaboration .subnav a.active { border-left: 5px solid #D8C0E2; }
+#bv-page-collaboration .subnav a:hover { color: #BB90CD; }
+#bv-page-collaboration .subnav a.active:hover { color: #97999B; }
+#bv-page-collaboration .subnav a:active { color: #BB90CD; }
+
+#bv-page-guide .subnav a.active { border-left: 5px solid #D5D6D7; }
+#bv-page-guide .subnav a:hover { color: #97999B; }
+#bv-page-guide .subnav a.active:hover { color: #97999B; }
+#bv-page-guide .subnav a:active { color: #97999B; }
+
+.subnav a.active { color: #97999B; pointer-events: none; cursor: text; }
+
+.main-section-title {
+	margin: 0 0 35px 0;
+	color: #85878B;
+	/*font-weight: normal;*/
+}
+
+.main-section-block-title {
+	margin: 0 0 20px 0;
+	color: #85858B;
+	font-size: 16px;
+	font-family: 'interstateregular';
+}
+
+.main-section-block-body {
+	margin: 0 0 25px 0;
+	color: #525259;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+.main-section-block-body p {
+	margin: 0 0 15px 0;
+}
+
+.main-section-block-break {
+	padding-bottom: 50px;
+}
+
+p.callouts {
+	outline: 1px solid #eee;
+	background-color: #eee;
+	width: 705px;
+	height: 150px;
+	margin: 50px 0;
+}
+
+p.callout-1 {
+	height: 90px;
+}
+
+p.callout-2 {
+	height: 328px;
+}
+
+p.callout-table {
+	height: 590px;
+	margin: 0 0 20px 0;
+}
+
+.footer {
+	height: 280px;
+}
+
+.footer .footer-banner,
+.footer .footer-banner .container,
+.footer .footer-banner .container .nav-bottom {
+	height: 75px;
+}
+
+.footer .footer-banner {
+	border-top: 1px solid #D5D6D7;
+	border-bottom: 1px solid #D5D6D7;
+}
+
+.footer .nav-bottom {
+	margin: 0;
+	list-style: none;
+	list-style-position: inside;
+}
+
+.footer .nav-bottom > li {
+	margin: 14px 0 0 60px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.footer .nav-bottom > li:first-child {
+	margin: 19px 105px 10px 0;
+}
+
+.footer .nav-bottom > li:first-child+li {
+	margin-left: 0;
+}
+
+.footer .nav-bottom > li.social {
+	margin-left: 105px;
+}
+
+.footer .nav-bottom li a {
+	font-size: 12px;
+	text-transform: uppercase;
+}
+
+.social ul {
+	height: 14px;
+	list-style: none;
+	list-style-position: inside;
+}
+
+.social ul,
+.social ul li { vertical-align: text-top; display: inline-block; }
+
+.social ul li.rss,
+.social ul li.facebook,
+.social ul li.twitter { width: 14px; height: 14px; }
+
+.social ul li.rss { background:url('/images/social-rss.png'); }
+.social ul li.facebook {  background:url('/images/social-fb.png');  }
+.social ul li.twitter {  background:url('/images/social-twitter.png');  }
+
+.footer .nav-bottom li a:active { background-color: transparent; }
+.footer .nav-bottom li a:hover { background-color: transparent; color: #97999B; }
+.footer .nav-bottom li a:link { background-color: transparent; }
+.footer .nav-bottom li a:visited { background-color: transparent; }
+
+.footer .bv-logo-r {
+	background:url('/images/citi-logo-r.png');
+	width: 60px;
+	height: 34px;
+}
+
+.footer-legal {
+	position: relative;
+	padding-top: 40px;
+	margin-bottom: 40px;
+	color: #525459;
+	font-size: 11px;
+	line-height: 17px;
+}
+	
+.footer-legal .copyright { width: 250px; float:left; }
+.footer-legal .eeo { width: 335px; float:right; }
+
+/*****************
+* Page Styles
+******************/
+
+/*--- Onboarding ---*/
+
+#bvviz-missionTutorial-1.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-siteStream-1.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-1.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-2.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+/*--- Goals ---*/
+
+#bvviz-missionProgress-1.bvviz-container,
+#bvviz-missionProgress-2.bvviz-container,
+#bvviz-missionProgress-3.bvviz-container {
+	width: 705px;
+	height: 80px;
+}
+
+#bvviz-missionTutorial-2.bvviz-container {
+	width: 705px;
+	height: 780px;
+}
+
+#bvviz-missionTutorial-3.bvviz-container {
+	width: 705px;
+	height: 850px;
+}
+
+#bvviz-missionTutorial-4.bvviz-container {
+	width: 705px;
+	height: 290px;
+}
+
+#bvviz-siteStream-2.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-3.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-4.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+/*--- Learning ---*/
+
+#bvviz-missionProgress-4.bvviz-container,
+#bvviz-missionProgress-5.bvviz-container,
+#bvviz-missionProgress-6.bvviz-container {
+	width: 705px;
+	height: 80px;
+}
+
+#bvviz-missionProgress-7.bvviz-container,
+#bvviz-missionProgress-8.bvviz-container,
+#bvviz-missionProgress-9.bvviz-container {
+	width: 705px;
+	height: 380px;
+}
+
+
+#bvviz-siteStream-3.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-5.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-6.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+/*--- Collaboration ---*/
+
+#bvviz-siteStream-4.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-7.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+#bvviz-leaderboard-8.bvviz-container {
+	width: 705px;
+	height: 580px;
+}
+
+/*--- Guide ---*/
+
+
+/*--- Other ---*/
+
+#BVVIZ-assetLBs {
+	width: 600px;
+	height: 400px;
+}
+
+#BVVIZ-assetLBs.bvviz-leaderboard .bvviz-body-header .bvviz-nav {
+    width: 140px;
+    line-height: 50px;
+    height: 50px;
+    font-size: 13px;
+}
+
+#BVVIZ-assetLBs .bvviz-header,
+#BVVIZ-siteStream .bvviz-picture {
+	display:none;
+}
+
+#BVVIZ-assetLBs.bvviz .bvviz-body-header {
+	width: 100% !important;
+}
+
+#BVVIZ-siteStream {
+	width:300px;
+	height:300px;
+}
+
+#BVVIZ-siteStream .bvviz-message {
+	position:relative;
+	margin:10px;
+	line-height:18px;
+}
+
+#BVVIZ-siteStream .bv-player-image {
+	float:left;
+	clear:right;
+	width: 50px;
+	height: 50px;
+    margin: 0 10px 10px 0;
+}
+
+/* Updating Site Stream Fonts */
+#BVVIZ-siteStream .bv-player-name { margin-right: 4px; font-weight: 600;}
+#BVVIZ-siteStream .bv-activity-detail { display: inline-block; width: 150px; position: relative; top: -2px; }
+#BVVIZ-siteStream .bv-activity-title { font-weight: 200; text-transform:lowercase; }
+#BVVIZ-siteStream .bv-asset-title { font-weight: 200; }
+#BVVIZ-siteStream .bv-player-info { clear:both; display:block; font-style: italic; color: #aaa; }
+#BVVIZ-siteStream .bv-player-title { font-weight: 200; }
+#BVVIZ-siteStream .bv-player-department { margin-left: 4px; }
+#BVVIZ-siteStream .bv-player-location { margin-left: 4px; }
+#BVVIZ-siteStream .bv-image-container { float: right; display:inline-block; height:40px; width: 40px; border-radius: 3px; border: 2px solid #ddd; background-color: #eee; padding: 4px; }
+#BVVIZ-siteStream img.bv-achievable-image {  height: 40px; width: 40px; }
+
+
+

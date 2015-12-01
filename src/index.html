@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>Player Profile</title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- JQUERY FILES - NOT INCLUDED IN THIS ZIP FILE -->
+      <!-- Include a working version of JQuery for the current browser -->
+      <!--[if IE 8]>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <![endif]-->
+      <!--[if gt IE 8]>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <![endif]-->
+      <!--[if !IE]-->
+        <script src="./Player Profile_files/jquery.min.js"></script>
+      <!--[endif]-->
+      <!-- Include a working version of JQuery UI for the current browser -->
+      <script src="./Player Profile_files/jquery-ui.min.js"></script>
+      <link href="./Player Profile_files/jquery-ui.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Frontend Library -->
+      <link href="./Player Profile_files/bootstrap.min.nr.css" rel="stylesheet">
+
+    <!-- BVSDK FILES - NOT INCLUDED IN THIS ZIP FILE -->
+      <!-- Include the BVSDK library -->
+      <script src="./Player Profile_files/badgeville.js"></script>
+
+    <!-- REQUIRED BVVIZ FILES -->
+    <!--
+      <link rel="stylesheet" href="http://bvconnectors.badgeville.com/bvviz/current/bvVisualize-light-teal.css" type="text/css" />
+      <script src="http://bvconnectors.badgeville.com/bvviz/current/bvVisualize.js"></script>
+    -->
+
+    <!-- Beta testing BVVIZ FILES -->
+      <link rel="stylesheet" href="./Player Profile_files/bvVisualize-light-teal_debug.css" type="text/css">
+      <script src="./Player Profile_files/bvVisualize_debug.js"></script>
+
+    <style>
+      /* reset default */
+      body {
+        font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+        text-rendering: optimizeLegibility;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+      }
+      .bvviz.ui-widget {
+        font-size: 118%;
+      }
+      /* force level progress using absolute length units */
+      .bvviz-levelProgress .bvviz-label {
+        width: 160px;
+      }
+      .bvviz-progress.bvviz-line {
+        width: 130px;
+      }
+      .bvviz-levelProgress .bvviz-progress-bar {
+        width: 130px;
+      }
+      .bvviz-levelProgress .bvviz-progress-label {
+        font-size: 12px;
+      }
+      /* activity stream reset */
+      .bvviz-playerStream .bvviz-card .bvviz-message {
+        margin-left: 40px;
+      }
+      .bvviz-missionTutorial .bvviz-body-header.bvviz-summary-icon .bvviz-info {
+        margin-left: 4.5em;
+        font-size: 12px;
+      }
+      .bvviz .bvviz-body.bvviz-col {
+        padding: 0;
+      }
+      .bvviz .bvviz-body-header {
+        margin-bottom: 0;
+      }
+      .bvviz .bvviz-body.bvviz-noframe{
+        padding: 0;
+      }
+      .bvviz .bvviz-body.bvviz-noframe .bvviz-cards.bvviz-row .bvviz-card {
+        margin: 0 .4em .8em .4em;
+        border-width: 2px;
+        border-color: #e3e3e3;
+      }
+      .span4 .bvviz .bvviz-body, .span4 .bvviz .bvviz-body-header, .span4 .bvviz .bvviz-cards {
+        border-color: #e3e3e3;
+      }
+      #BVVIZ-customContainer-1 .bvviz .bvviz-cards .bvviz-card {
+        background-color: #f8f8f8;
+      }
+      #BVVIZ-customContainer-1 .bvviz .bvviz-cards .bvviz-card:hover {
+        background-color: #f3f3f3;
+      }
+      /* page brand */
+      .page-brand, .page-header, .page-header .bvviz {
+        text-rendering: geometricPrecision;
+        color: #fff;
+      }
+      .page-brand {
+        margin: 0;
+        background-color: #17335C;
+        color: #fff;
+        height: 30x;
+        line-height: 30px;
+        overflow: hidden;
+      }
+      .page-brand div[class^="span12"] * {
+        display: inline-block;
+        margin: 0 1em 0 0;
+      }
+      .page-brand a {
+        font-size: 1.6em;
+        color: #fff;
+      }
+      .page-brand a:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+      .page-brand p {
+        font-weight: 200;
+      }
+      /* navbar */
+      .navbar {
+        margin: 0;
+        background-color: #5E8F9F;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0;
+      }
+      .navbar-inner {
+        min-height: 30px;
+        background-color: #5E8F9F;
+        background-image: none;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+        -ms-border-radius: 0;
+        border-radius: 0;
+        border-width: 0;
+      }
+      .navbar .nav>li>a {
+        padding: 5px 15px 5px;
+        text-shadow: none;
+        text-transform: uppercase;
+        font-weight: normal;
+        color: #fff;
+        border-bottom: 2px solid transparent;
+      }
+      .navbar .nav>li>a:hover, .navbar .nav>li>a:focus {
+        color: #fff;
+      }
+      .navbar .nav>li>a:hover {
+        border-bottom: 2px solid #999;
+      }
+      .navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+        color: #fff;
+        text-decoration: none;
+        background-color: transparent;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        border-bottom: 2px solid #fff;
+      }
+      /* page header */
+      .page-header {
+        background-color: #435062;
+        min-height: 120px;
+        margin: 0;
+        padding: 15px 0 15px 0;
+      }
+      .page-header div[class^="span5"] {
+        height: 70px;
+        vertical-align: bottom;
+        overflow: hidden;
+      }
+      .header-profile-image {
+        width: 120px;
+        height: 120px;
+        border: 1px solid #999;
+        cursor: pointer;
+      }
+      .header-profile-name {
+        font-weight: 100;
+        font-size: 32px;
+        margin: 0;
+      }
+      .header-profile-info {
+        height: 80px;
+        overflow: hidden;
+        position: relative;
+      }
+      .header-profile-title, .header-profile-team {
+        margin: 0;
+        height: 20px;
+        line-height: 20px;
+        overflow: hidden;
+      }
+      .header-profile-title {
+        margin-top: 2px;
+        font-size: 14px;
+      }
+      .header-profile-team {
+        font-size: 14px;
+      }
+      #BVVIZ-playerRow, #BVVIZ-levelProgress {
+        position: absolute;
+        bottom: 0;
+      }
+      /* page main */
+      .main-section {
+        padding-bottom: 45px;
+        display: none;
+      }
+      .main-section-extended {
+        background-color: #ededed;
+      }
+      .main-section-title {
+        text-rendering: geometricPrecision;
+        font-weight: 200;
+        font-size: 32px;
+        color: #445164;
+        line-height: 50px;
+        margin: 30px 0 0 0;
+      }
+      .main-section-block-title {
+        text-rendering: geometricPrecision;
+        font-weight: 200;
+        font-size: 20px;
+        color: #445164;    
+        margin: 20px 0;    
+      }
+    </style>
+
+  <link type="text/css" rel="stylesheet" href="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/stylesheets/style.css"><script type="text/javascript" charset="utf-8" src="chrome-extension://clcbnchcgjcjphmnpndoelbdhakdlfkk/javascripts/page_context.js"></script></head>
+  <body quick-markup_injected="true">
+    <div class="page-brand">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <a class="brand" href="./Player Profile_files/Player Profile.html">Hippogriff</a>
+            <p>A Technology Company</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+
+        <div class="span12" style="float:none; margin:auto;">
+
+          <ul class="nav">
+            <!--li><a href="#">Home</a></li-->
+            <li class="active"><a href="./Player Profile_files/Player Profile.html">Profile</a></li>
+            <li><a href="http://www.badgeville.io/560c6c559bbc3e0f574bfecc?player_id=55f1e2a0608f8f8e9c003545#about">About</a></li>
+            <li><a href="http://www.badgeville.io/560c6c559bbc3e0f574bfecc?player_id=55f1e2a0608f8f8e9c003545#contact">Contact</a></li>
+            <li><a href="./Player Profile_files/Player Profile.html">Link</a></li>
+          </ul>
+        </div><!--/.navbar-inner -->
+
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+
+
+    <div class="page-header">
+      <div class="container">
+        <div class="row">
+          <div class="span2">
+            <img class="header-profile-image" src="./Player Profile_files/mark_greenstone.jpg">
+          </div>
+          <div class="span10">
+            <h2 class="header-profile-name">Mark Greenstone</h2>
+            <div class="row header-profile-info">
+              <div class="span5">
+                <p class="header-profile-title">Team Lead</p>
+                <p class="header-profile-team">Medical Sciences</p>
+                <div id="BVVIZ-playerRow" class="bvviz bvviz-playerRow"><div class="bvviz-row"><div class="bvviz-data bvviz-level"><img src="./Player Profile_files/original.png"></div><div class="bvviz-data bvviz-track"><img src="./Player Profile_files/original(1).png"></div><div class="bvviz-data bvviz-track"><img src="./Player Profile_files/original(2).png"></div><div class="bvviz-data bvviz-track"><img src="./Player Profile_files/original(3).png"></div><div class="bvviz-data bvviz-unit"><div class="bvviz-value">30</div><div class="bvviz-label">pts</div></div><div class="bvviz-clear"></div></div></div>
+              </div>
+              <div class="span5">
+                <!-- DIV tag to be filled with playerCard display -->
+                <div id="BVVIZ-levelProgress" style="width:150px;" class="bvviz bvviz-levelProgress"><span class="bvviz-card bvviz-level" style="display: inline;"><div class="bvviz-label bvviz-line">Learning Level 5</div><div class="bvviz-progress bvviz-line"><progress class="bvviz-progress-bar" max="1" value="1"></progress><span class="bvviz-progress-label bvviz-forelabel" style="left: 5%;">Completed</span></div><img class="bvviz-level-icon bvviz-current" src="./Player Profile_files/original.png"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-main">
+
+      <div class="main-section" style="display: block;">
+
+        <div class="container">
+
+          <div class="main-section-title">Training &amp; Development</div>
+
+          <div class="row">
+            <div class="span8">
+              <div class="main-section-block-title">Specialization</div>
+              <!-- DIV tag to be filled with playerMission display -->
+              <div id="BVVIZ-customContainer-1" style="width:600px;height:290px;" class="bvviz bvviz-customContainer"><div class="bvviz-body bvviz-noframe bvviz-noheader" style="height: 290px;"><div class="bvviz bvviz-playerTracks"><div class="bvviz-cards bvviz-row"><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(3).png"><div class="bvviz-name" title="Mad Science">Mad Science</div><div class="bvviz-progress">2/4</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(2).png"><div class="bvviz-name" title="Paper Drones">Paper Drones</div><div class="bvviz-progress">2/4</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(1).png"><div class="bvviz-name" title="Canasta">Canasta</div><div class="bvviz-progress">3/4</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(4).png"><div class="bvviz-name" title="Inductive Reasoning">Inductive Reasoning</div><div class="bvviz-progress">0/0</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(5).png"><div class="bvviz-name" title="Navigation">Navigation</div><div class="bvviz-progress">0/0</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(6).png"><div class="bvviz-name" title="Jingoism">Jingoism</div><div class="bvviz-progress">0/0</div></div><div class="bvviz-card" style="width: 103.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(7).png"><div class="bvviz-name" title="Making connections">Making connections</div><div class="bvviz-progress">0/0</div></div></div></div></div></div>
+            </div>
+            <div class="span4">
+              <div class="main-section-block-title">Foundation</div>
+              <!-- DIV tag to be filled with missionTutorial display -->
+              <div id="BVVIZ-missionTutorial" style="width:300px;height:290px;" class="bvviz bvviz-missionTutorial"><div class="bvviz-body bvviz-col bvviz-noheader" style="height: 288px;"><div class="bvviz-body-header"><div class="bvviz-radial-progress" data-progress="17"><div class="bvviz-circle"><div class="bvviz-mask bvviz-full"><div class="bvviz-fill"></div></div><div class="bvviz-mask bvviz-half"><div class="bvviz-fill"></div><div class="bvviz-fill bvviz-fix"></div></div></div><div class="bvviz-inset"><div class="bvviz-percentage">17%</div></div></div><div class="bvviz-info">Complete these courses first<div class="bvviz-countdown">Days Left: n/a</div></div></div><div class="bvviz-cards bvviz-col" style="height: 237px;"><div class="bvviz-card bvviz-not-started bvviz-list-icon bvviz-grey bvviz-even" data-bvviz-reward_id="55f0744f1b85d6974e003112" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(8).png"></div><div class="bvviz-details"><div class="bvviz-name">Cloud Basics</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div><div class="bvviz-card bvviz-not-started bvviz-list-icon bvviz-grey bvviz-odd" data-bvviz-reward_id="55f073f55aa1a0403d003111" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(9).png"></div><div class="bvviz-details"><div class="bvviz-name">Business Strategy</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div><div class="bvviz-card bvviz-not-started bvviz-list-icon bvviz-grey bvviz-even" data-bvviz-reward_id="55f073ab608f8f0f94002fc2" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(10).png"></div><div class="bvviz-details"><div class="bvviz-name">Workforce Planning</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div><div class="bvviz-card bvviz-not-started bvviz-list-icon bvviz-grey bvviz-odd" data-bvviz-reward_id="55f073765aa1a0403d00310c" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(11).png"></div><div class="bvviz-details"><div class="bvviz-name">Employee Relations</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div><div class="bvviz-card bvviz-not-started bvviz-list-icon bvviz-grey bvviz-even" data-bvviz-reward_id="55f0734c5aa1a0b94f003016" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(12).png"></div><div class="bvviz-details"><div class="bvviz-name">Comp and Benefits</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div><div class="bvviz-card bvviz-complete bvviz-list-icon bvviz-odd" data-bvviz-reward_id="55f073431b85d6974e00310a" style="display: block;"><div class="bvviz-picture-container"><img class="bvviz-picture" src="./Player Profile_files/original(13).png"></div><div class="bvviz-details"><div class="bvviz-name">Risk Management</div><div class="bvviz-desc">Take the Course</div></div><div class="bvviz-checkmark-circle"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27"><path class="bvviz-checkmark-bg" fill="#fff" d="M13.5 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-border" fill="#D2D2D2" d="M13.5 0C6.2 0 0 6 0 13.5S6.1 27 13.5 27 27 20.8 27 13.5 21.2 0 13.5 0zm0 24.9c-6.1 0-11.4-5.1-11.4-11.4S7.2 2.2 13.5 2.2s11.4 4.9 11.4 11.4S20 24.9 13.5 24.9z"></path><path class="bvviz-checkmark-check" fill="#36A8DE" d="M11.7 15.4L8 11.9l-2.5 2.2 6.2 6.1L21.8 9.6l-2.2-2.5"></path></svg></div></div></div></div></div>
+            </div>
+          </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+      </div><!-- /.main-section -->
+
+      <div class="main-section main-section-extended" style="display: block;">
+
+        <div class="container">
+
+          <div class="main-section-title">Extended Learning</div>
+
+          <div class="row">
+            <div class="span8">
+              <!-- nested row -->
+              <div class="row">
+                <div class="span8">
+                  <div class="main-section-block-title">Achievement</div>
+                  <!-- DIV tag to be filled with playerMission display -->
+                  <div id="BVVIZ-customContainer-2" style="width:600px;height:120px;" class="bvviz bvviz-customContainer"><div class="bvviz-body bvviz-noframe bvviz-noheader" style="height: 120px;"><div class="bvviz bvviz-playerRewards"><div class="bvviz-cards bvviz-row"><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(14).png"><div class="bvviz-name" title="One Year Anniversary">One Year Anniversary</div><div class="bvviz-progress">0/1</div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(15).png"><div class="bvviz-name" title="Seal of Excellence">Seal of Excellence</div><div class="bvviz-progress">0/1</div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(16).png"><div class="bvviz-name" title="1 Red Flag">1 Red Flag</div><div class="bvviz-progress">0/1</div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(17).png"><div class="bvviz-name" title="3 Red Flags">3 Red Flags</div><div class="bvviz-progress">1/2</div></div><div class="bvviz-card" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(18).png"><div class="bvviz-name" title="Teach a Peer Session">Teach a Peer Session</div><div class="bvviz-progress">Completed<div class="bvviz-checkmark-corner"><svg xmlns="http://www.w3.org/2000/svg" width="41.45" height="41.45" viewBox="0 0 41.45 41.45"><path class="bvviz-checkmark-bg" fill="" d="M5.9 0C2.6 0 0 2.6 0 5.9v33.4L39.3 0H5.9z"></path><path fill="#D8D3CD" d="M0 41.45L41.45 0h-2.217L0 39.235"></path><path fill="#FFF" d="M21.725 7.84L19.61 5.65l-7.5 7.772-3.27-3.437-2.115 2.19 5.377 5.65"></path></svg></div></div></div><div class="bvviz-card" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(19).png"><div class="bvviz-name" title="Code Guru">Code Guru</div><div class="bvviz-progress">Completed<div class="bvviz-checkmark-corner"><svg xmlns="http://www.w3.org/2000/svg" width="41.45" height="41.45" viewBox="0 0 41.45 41.45"><path class="bvviz-checkmark-bg" fill="" d="M5.9 0C2.6 0 0 2.6 0 5.9v33.4L39.3 0H5.9z"></path><path fill="#D8D3CD" d="M0 41.45L41.45 0h-2.217L0 39.235"></path><path fill="#FFF" d="M21.725 7.84L19.61 5.65l-7.5 7.772-3.27-3.437-2.115 2.19 5.377 5.65"></path></svg></div></div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(20).png"><div class="bvviz-name" title="Video Instructor">Video Instructor</div><div class="bvviz-progress">0/2</div></div></div></div><div class="bvviz bvviz-playerMissions"><div class="bvviz-cards bvviz-row"><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(21).png"><div class="bvviz-name" title="Onboarding">Onboarding</div><div class="bvviz-progress">1/6</div></div></div></div></div></div>
+                </div>
+                <div class="span8">
+                  <div class="main-section-block-title">Monthly Learning Quota</div>
+                  <!-- DIV tag to be filled with playerMission display -->
+                  <div id="BVVIZ-customContainer-3" style="width:600px;height:120px;" class="bvviz bvviz-customContainer"><div class="bvviz-body bvviz-noframe bvviz-noheader" style="height: 120px;"><div class="bvviz bvviz-playerRewards"><div class="bvviz-cards bvviz-row"><div class="bvviz-card" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(22).png"><div class="bvviz-name" title="Nov 2015 Learning Quota">Nov 2015 Learning Quota</div><div class="bvviz-progress">Completed<div class="bvviz-checkmark-corner"><svg xmlns="http://www.w3.org/2000/svg" width="41.45" height="41.45" viewBox="0 0 41.45 41.45"><path class="bvviz-checkmark-bg" fill="" d="M5.9 0C2.6 0 0 2.6 0 5.9v33.4L39.3 0H5.9z"></path><path fill="#D8D3CD" d="M0 41.45L41.45 0h-2.217L0 39.235"></path><path fill="#FFF" d="M21.725 7.84L19.61 5.65l-7.5 7.772-3.27-3.437-2.115 2.19 5.377 5.65"></path></svg></div></div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(23).png"><div class="bvviz-name" title="Oct 2015 Learning Quota">Oct 2015 Learning Quota</div><div class="bvviz-progress">0/3</div></div><div class="bvviz-card" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(24).png"><div class="bvviz-name" title="Sept 2015 Learning Quota">Sept 2015 Learning Quota</div><div class="bvviz-progress">Completed<div class="bvviz-checkmark-corner"><svg xmlns="http://www.w3.org/2000/svg" width="41.45" height="41.45" viewBox="0 0 41.45 41.45"><path class="bvviz-checkmark-bg" fill="" d="M5.9 0C2.6 0 0 2.6 0 5.9v33.4L39.3 0H5.9z"></path><path fill="#D8D3CD" d="M0 41.45L41.45 0h-2.217L0 39.235"></path><path fill="#FFF" d="M21.725 7.84L19.61 5.65l-7.5 7.772-3.27-3.437-2.115 2.19 5.377 5.65"></path></svg></div></div></div><div class="bvviz-card bvviz-grey" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(25).png"><div class="bvviz-name" title="July 2015 Learning Quota">July 2015 Learning Quota</div><div class="bvviz-progress">0/3</div></div><div class="bvviz-card" style="width: 100.42px; display: block;"><img class="bvviz-picture" src="./Player Profile_files/original(26).png"><div class="bvviz-name" title="June 2015 Learning Quota">June 2015 Learning Quota</div><div class="bvviz-progress">Completed<div class="bvviz-checkmark-corner"><svg xmlns="http://www.w3.org/2000/svg" width="41.45" height="41.45" viewBox="0 0 41.45 41.45"><path class="bvviz-checkmark-bg" fill="" d="M5.9 0C2.6 0 0 2.6 0 5.9v33.4L39.3 0H5.9z"></path><path fill="#D8D3CD" d="M0 41.45L41.45 0h-2.217L0 39.235"></path><path fill="#FFF" d="M21.725 7.84L19.61 5.65l-7.5 7.772-3.27-3.437-2.115 2.19 5.377 5.65"></path></svg></div></div></div></div></div></div></div>
+                </div>
+              </div><!-- /.row -->
+            </div>
+            <div class="span4">
+              <div class="main-section-block-title">Activity Stream</div>
+              <!-- DIV tag to be filled with missionTutorial display -->
+              <div id="BVVIZ-playerStream" style="width:300px;height:300px;" class="bvviz bvviz-playerStream"><div class="bvviz-body bvviz-col bvviz-noheader" style="height: 298px;"><div class="bvviz-cards bvviz-col" style="height: 296px;"><div class="bvviz-card bvviz-even"><img class="bvviz-picture" src="./Player Profile_files/original(27).png"><div class="bvviz-message">Mark Greenstone earned Micro Armament Delivery.<div class="bvviz-timestamp">4 weeks ago</div></div></div><div class="bvviz-card bvviz-odd"><img class="bvviz-picture" src="./Player Profile_files/original(28).png"><div class="bvviz-message">Mark Greenstone earned Theory of Insanity.<div class="bvviz-timestamp">4 weeks ago</div></div></div><div class="bvviz-card bvviz-even"><img class="bvviz-picture" src="./Player Profile_files/original(3).png"><div class="bvviz-message">Mark Greenstone completed Mad Science Level 2<div class="bvviz-timestamp">4 weeks ago</div></div></div><div class="bvviz-card bvviz-odd"><img class="bvviz-picture" src="./Player Profile_files/original(29).png"><div class="bvviz-message">Mark Greenstone earned Introduction to Doomsday Devices.<div class="bvviz-timestamp">4 weeks ago</div></div></div><div class="bvviz-card bvviz-even"><img class="bvviz-picture" src="./Player Profile_files/original(30).png"><div class="bvviz-message">Mark Greenstone earned Monsters working Session.<div class="bvviz-timestamp">4 weeks ago</div></div></div></div></div></div>
+            </div>
+          </div><!-- /.row -->
+
+        </div><!-- /.container -->
+
+      </div><!-- /.main-section -->
+
+    </div><!-- /.page-main -->
+
+
+    <script type="text/javascript">
+
+      var BVProfile = function() {
+
+        var pub = {},
+
+            // Configuration settings
+            notFoundMsg = 'Badgeville player not found',
+            defaultImg = 'http://bvconnectors.badgeville.com/bvviz/images/person.png',
+            warning = $( '<div class="container">' ).append(
+                        $( '<div class="alert">' ).append(
+                          $( '<strong>Warning!</strong>' ).append( ' Please check your site settings and the players involved.' )
+                        )
+                      ),
+
+            // global variables to store the instance of visualizations
+            playerRow,
+            levelProgress,
+            specialization,
+            achievement,
+            learningQuota,
+            missionTutorial,
+            playerActivities;
+
+
+        // Utility function
+        function parseURLParam( query ) {
+          var o = {};
+          query = (query.indexOf('?') === 0) ? query.substr(1) : query ;
+          var p = query.split('&');
+          for ( var i=0; i<p.length; i++ ) {
+            var q = p[i].split('=');
+            if ( q[1] && q[1] != '' ) {
+              o[q[0]] = q[1];
+            }
+          }
+          return o;
+        }
+
+        function handleImgErrorFailover( target ) {
+          // Try to fix the the broken image in the activity stream by replacing the source extension
+          target.find('img').one( 'error', function( event ){
+            this.src = this.src.toString().replace( '.jpg', '.png' );
+          })
+        }
+
+        function showProfile( flag, playerObj ) {
+          var profileImage = playerObj && playerObj.image ? playerObj.image : defaultImg,
+              profileName = playerObj && playerObj.display_name || playerObj && plaerObj.name || 'Unknown',
+              playerId;
+
+          if ( $.isPlainObject( playerObj ) ) {
+            playerId = playerObj.id + '';
+
+            // Retrieve the 'job_title' and 'department' data from player's custom attributes, 
+            // The attributes of 'job_title' and 'department' need to be set up from admin console
+            BVSDK( 'players', { players: playerId }, { fields:'custom' } )
+              .ok( function( data ) {
+                if ( BVVIZ.utility.validateNestedObj( data, 'players', [0], 'custom' ) ) {
+                  var playerCustom = data.players[0].custom;
+                  $( '.header-profile-title' ).append( playerCustom.job_title ? playerCustom.job_title : 'Job title (n/a)' );
+                  $( '.header-profile-team' ).append( playerCustom.department ? playerCustom.department : 'Department (n/a)' );
+                }
+              });
+
+            $( '.header-profile-name' ).text( profileName );
+            $( '.header-profile-image' ).attr( 'src', profileImage );
+
+            // If the playerProfile function is defined, add event handler
+            if ( $.isFunction( BVVIZ.playerProfile ) ) {
+              $( '.header-profile-image' ).bind( 'click', function() {
+                BVVIZ.helper.showModal( BVVIZ.playerProfile, [ playerId ] );
+              });
+            }
+
+            // Show page main
+            $( '.main-section').show();
+
+            // Initialize the visualizations
+            loadBVVIZ( playerId );
+
+          } else {
+            renderNotFound();
+          }
+        }
+
+        // Default display when player not found
+        function renderNotFound() {
+          $( '.header-profile-name' ).text( notFoundMsg )
+          $( '.header-profile-image' ).attr( 'src', defaultImg );
+          $( '.page-main' ).empty().prepend( warning );
+        }
+
+        // Initialize the visualizations
+        function loadBVVIZ( playerId ) {
+          // Render a playerRow visualizations for the player provided
+          playerRow = BVVIZ.playerRow(
+            $( '#BVVIZ-playerRow' ),
+            playerId // playerId
+          );
+
+          // Render a levelProgress visualization for the player provided
+          levelProgress = BVVIZ.levelProgress(
+            $( '#BVVIZ-levelProgress' ),
+            playerId, // playerId
+            '55ef61106d11ef7010002ecb' // missionId (level mission)
+          );
+
+          // Render a customContainer visualization with options for the player provided
+          specialization = BVVIZ.customContainer(
+            $( '#BVVIZ-customContainer-1' ),
+            playerId, // playerId
+            // options for current visualization instance
+            {
+              // Whether the containter frame (i.e. header, border and background) should be displayed
+              showContainerFrame: false,
+
+              // Contents and the order included in the custom container, default has all 3 types
+              contentsTypes: ['tracks'],
+
+              // Contents options
+              contents: {
+
+                badges: {
+
+                  // miniBadge shows a smaller badge icon
+                  miniBadge: false
+                }
+              }
+            }
+          );
+
+          // Render a missionTutorial visualization for the player provided
+          missionTutorial = BVVIZ.missionTutorial(
+            $( '#BVVIZ-missionTutorial' ),
+            playerId, // playerId
+            '55f0859d1b85d69eaa002020', // missionId (tutorial mission)
+            true
+          );
+
+          // Render a missionRewards visualization for the player provided
+          achievement = BVVIZ.customContainer(
+            $( '#BVVIZ-customContainer-2' ),
+            playerId, // playerId
+            // options for current visualization instance
+            {
+              // Whether the containter frame (i.e. header, border and background) should be displayed
+              showContainerFrame: false,
+
+              // Category can be used to filter the data, default is null which request all cards, example: 'education'
+              category: 'achievement',
+
+              // Contents and the order included in the custom container, default has all 3 types
+              contentsTypes: ['rewards', 'missions'],
+
+              // Contents options
+              contents: {
+
+                badges: {
+
+                  // miniBadge shows a smaller badge icon
+                  miniBadge: false
+                }
+              }
+            }
+          );
+
+          // Render a missionRewards visualization for the player provided
+          learningQuota = BVVIZ.customContainer(
+            $( '#BVVIZ-customContainer-3' ),
+            playerId, // playerId
+            // options for current visualization instance
+            {
+              // Whether the containter frame (i.e. header, border and background) should be displayed
+              showContainerFrame: false,
+
+              // Category can be used to filter the data, default is null which request all cards, example: 'education'
+              category: 'Quota',
+
+              // Contents and the order included in the custom container, default has all 3 types
+              contentsTypes: ['rewards'],
+
+              // Contents options
+              contents: {
+
+                badges: {
+
+                  // miniBadge shows a smaller badge icon
+                  miniBadge: false
+                }
+              }
+            }
+          );
+
+          // Render a playerStream visualization
+          playerActivities = BVVIZ.playerStream(
+            $( '#BVVIZ-playerStream' ),
+            '55f1fb6c6d11eff78d003675', // Following (consumer = "activity") streamId
+            playerId, // playerId
+            // options for current visualization instance
+            {
+              // Whether the header should be rendered
+              inline: true,
+             
+              // Callback handler on completion of stream item
+              itemCompleteCallback: handleImgErrorFailover
+            }
+          );
+        }
+
+        // init function
+        function init() {
+          var paramObj = parseURLParam( window.location.search ),
+              playerId = ( 'player_id' in paramObj ) ? paramObj['player_id'] : null;
+
+          if ( $.type( playerId ) !== 'string' ) {
+            // Player ID not passed appropriately
+            renderNotFound();
+            return false;
+          }
+
+          // Call setPlayer using the player id
+          if ( $.type(BVVIZ.currentPlayer) !== 'object' || $.isEmptyObject(BVVIZ.currentPlayer) ) {
+            BVVIZ.setPlayer( playerId, showProfile );
+          }
+
+        }
+
+        pub.playerRow = playerRow;
+        pub.levelProgress = levelProgress;
+        pub.specialization = specialization;
+        pub.achievement = achievement;
+        pub.learningQuota = learningQuota;
+        pub.missionTutorial = missionTutorial;
+        pub.playerActivities = playerActivities;
+        pub.init = init;
+
+        return pub;
+      }
+
+      // Always place BVVIZ calls inside a JQuery "ready" block to ensure that the DOM is ready
+      $(function() {
+        // Global reference variable
+        arcDemo = BVProfile();
+
+        // Initialize the ARC demo page
+        arcDemo.init();
+
+      });
+    </script>
+  
+
+	<iframe id="BVSDK_1446239573830" name="" src="https://sandbox.badgeville.com/sdk/js/v1/badgeville.JSSDK.html?_=1446239573830&amp;version=1&amp;namespace=BVSDK&amp;canUseStorage=true" style="position: absolute; width: 1px; height: 1px; left: -9999px;"></iframe>
+	</body>
+</html>

@@ -1,0 +1,851 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.8
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+
+@import "base";
+
+.bvviz {
+  font-family: Arial, Helvetica, sans-serif;
+  color: $background_font;
+  position: relative;
+  &.ui-widget{
+    font-size: 100%;
+  }
+}
+
+.bvviz .bvviz-header,
+.bvviz.bvviz-background,
+.bvviz .bvviz-background {
+  background-color: $bvviz_header_gradient_start_color;
+  @include background-image( linear-gradient($bvviz_header_gradient_start_color 0%, $bvviz_header_gradient_end_color 100%) );
+}
+
+.bvviz .bvviz-header {
+  font-family: Verdana,Arial,sans-serif;
+  // set header top left and top right round corners
+  @include border-radius(.25em .25em 0 0);
+  text-align: center;
+  overflow: hidden;
+  padding: 0 .25em 0 .25em;
+  position: relative;
+  @include box-shadow( 0 2px 4px -2px $bvviz_header_box_shadow_color);
+  color: $bvviz_header_font_color;
+}
+.bvviz .bvviz-header-text {
+  height: 2em;
+  line-height: 2em;
+  font-size: 2.2em;
+}
+
+.bvviz .bvviz-body {
+  border: 1px solid $bvviz_body_border_color;
+  font-size: .9em;
+  border-top-width: 0;
+  overflow: hidden;
+  background-color: $bvviz_body_bg_color;
+  // set body bottom left and bottom right round corners
+  @include border-radius(0 0 .25em .25em);
+
+  // set optional body frame display
+  &.bvviz-noframe {
+    border: none;
+    background: transparent;
+  }
+  &.bvviz-noheader {
+    border-top-width: 1px;
+  }
+}
+.bvviz .bvviz-body .bvviz-body {
+  border: none;
+}
+.bvviz .bvviz-body:first-child {
+  @include border-radius(.25em);
+}
+
+.bvviz .bvviz-body.bvviz-col {
+  padding: .2em;
+}
+
+.bvviz .bvviz-body-header {
+  border: 1px solid $bvviz_body_header_border_color;
+  @include border-radius(.25em);
+  background-color: $bvviz_body_header_bg_color;
+  margin-bottom: .2em;
+  overflow: hidden;
+  padding: 0.25em;
+}
+
+.bvviz .bvviz-nav {
+  text-align: center;
+  border-right: 1px solid $bvviz_body_header_border_color;
+  float: left;
+  height: 2.4em;
+  line-height: 2.4em;
+  cursor: pointer;
+  color: $bvviz_nav_font_color;
+  overflow: hidden;
+  font-size: .8em;
+}
+.bvviz .bvviz-nav.bvviz-active {
+  background-color: $bvviz_nav_active_bg_color;
+  color: $bvviz_nav_active_font_color;
+}
+
+/* Overlay */
+.bvviz-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;
+  background: $bvviz_overlay_bg_color;
+  @include border-radius(.25em);
+}
+
+/* Unit Bar */
+.bvviz.bvviz-unitbar {
+  position: relative;
+  color: $bvviz_unitbar_font_color;
+}
+.bvviz.bvviz-unitbar .bvviz-level {
+  color: $bvviz_unitbar_font_color;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items {
+  overflow: hidden;
+  height: 3.2em;
+  margin: 0 1em;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-boundry {
+  position: relative;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-container {
+  position: absolute;
+  margin: 0 auto;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-unit {
+  float: left;
+  width: 10.8em;
+  height: 3.2em;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: .1em 0;
+  margin: 0 auto;
+  border-width: 0px;
+  border-right: 1px solid transparent;
+  @include border_gradient($contrast_border);
+}
+
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-unit.bvviz-last {
+  border-right: 0px solid transparent;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-value {
+  font-size: .8em;
+  overflow: hidden;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-label {
+  font-size: .7em;
+  line-height: 1em;
+  overflow: hidden;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-title {
+  display: block;
+  font-size: .8em;
+  overflow: hidden;
+  font-weight: bold;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-line {
+  height: 1.2em;
+  line-height: 1.2em;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-level img,
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-track img,
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-activity img  {
+  width: 1.75em;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-track img {
+  margin-right: .3em;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-level .bvviz-label {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-track .bvviz-label,
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-activity .bvviz-label {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: top;
+}
+.bvviz.bvviz-unitbar .bvviz-unitbar-items .bvviz-basic .bvviz-label {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+  width: 6em;
+  text-align: left;
+}
+.bvviz.bvviz-unitbar .bvviz-units-fade {
+  position: absolute;
+  height: 3.2em;
+  width: 1.5em;
+  z-index: 1;
+}
+.bvviz.bvviz-unitbar .bvviz-units-leftFade {
+  text-align: left;
+  left: 1em;
+  @include background-image(linear-gradient(to right, rgba($playerProfile_unitbar_bg_color, 1), rgba($playerProfile_unitbar_bg_color, 0)));
+}
+.bvviz.bvviz-unitbar .bvviz-units-rightFade {
+  text-align: right;
+  right: 1em;
+  @include background-image(linear-gradient(to right, rgba($playerProfile_unitbar_bg_color, 0), rgba($playerProfile_unitbar_bg_color, 1)));
+}
+.bvviz.bvviz-unitbar .bvviz-units-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -1.2em;
+  height: 2.4em;
+  line-height: 2em;
+  width: 1em;
+  color: $accent_font;
+  background-color: $playerProfile_unitbar_bg_color;
+  z-index: 2;
+  cursor: pointer;
+}
+.bvviz.bvviz-unitbar .bvviz-units-arrow:hover {
+  color: $playerProfile_unitbar_circle_font_hover;
+  background-color: $playerProfile_unitbar_circle_bg_hover;
+}
+.bvviz.bvviz-unitbar .bvviz-units-left {
+  text-align: left;
+  left: 0;
+  padding-left: .2em;
+  width: 1.4em;
+  height: 2.4em;
+  border-top-right-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
+  border: 3px solid shade(adjust-hue($playerProfile_unitbar_bg_color, 5deg), 20%);
+  border-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.bvviz.bvviz-unitbar .bvviz-units-right {
+  text-align: right;
+  right: 0;
+  padding-right: .2em;
+  width: 1.4em;
+  height: 2.4em;
+  border-top-left-radius: 1.2em;
+  border-bottom-left-radius: 1.2em;
+  border: 3px solid shade(adjust-hue($playerProfile_unitbar_bg_color, 5deg), 20%);
+  border-right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* table display in unitbar */
+.bvviz.bvviz-unitbar .bvviz-table {
+  width: 100%;
+  height: 100%;
+  display: table;
+  * display: block;
+}
+.bvviz.bvviz-unitbar .bvviz-row {
+  display: table-row;
+  * display: block;
+}
+.bvviz.bvviz-unitbar .bvviz-cell {
+  min-width: 1.7em;
+  display: table-cell;
+  * display: inline;
+  padding: 0 .5em;
+  vertical-align: middle;
+  overflow: hidden;
+}
+.bvviz.bvviz-unitbar .bvviz-units-leftalign {
+  text-align: left;
+  left: .3em;
+}
+.bvviz.bvviz-unitbar .bvviz-units-rightalign {
+  text-align: right;
+  right: .3em;
+}
+.bvviz.bvviz-unitbar .bvviz-units-topalign {
+  vertical-align: top;
+}
+.bvviz.bvviz-unitbar .bvviz-units-middlealign {
+  vertical-align: middle;
+}
+/* flex display in unitbar */
+.bvviz.bvviz-unitbar .bvviz-flex {
+  display: block;
+  display: -webkit-flex; /* Safari */
+  display: flex;
+}
+.bvviz.bvviz-unitbar .bvviz-flex .bvviz-flex-item-1 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  -webkit-flex: 1;  /* Safari 6.1+ */
+  -ms-flex: 1;  /* IE 10 */    
+  flex: 1;
+}
+.bvviz.bvviz-unitbar .bvviz-flex .bvviz-flex-item-2 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  -webkit-flex: 2;  /* Safari 6.1+ */
+  -ms-flex: 2;  /* IE 10 */    
+  flex: 2;
+}
+.bvviz.bvviz-unitbar .bvviz-flex .bvviz-flex-item-3 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  -webkit-flex: 3;  /* Safari 6.1+ */
+  -ms-flex: 3;  /* IE 10 */    
+  flex: 3;
+}
+
+/* Custom Scrollbar */
+@if $boolean_custom_scrollbar {
+  @include custom-scrollbar($bvviz_scrollbar_color);
+}
+
+/* Loading Icon */
+.bvviz-loading {
+  text-align: center;
+  width:80px;
+  height:50px;
+  filter: alpha(opacity=70);
+  -moz-opacity: 0.7;
+  -khtml-opacity: 0.7;
+  opacity: 0.7;
+}
+.bvviz-loading span {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+  margin: 25px auto;
+  background: $bvviz_loading_bg_color;
+  -moz-animation: bvviz-loading 1.3s infinite alternate;
+  -webkit-animation: bvviz-loading 1.3s infinite alternate;
+  -ms-animation: bvviz-loading 1.3s infinite alternate;
+  -o-animation: bvviz-loading 1.3s infinite alternate;
+  animation: bvviz-loading 1.3s infinite alternate;
+  @include border-radius(50px);
+}
+
+@include loading-animation( $bvviz_loading_animation_start_color, $bvviz_loading_animation_end_color );
+
+/* Area where list of items (rewards, missions, etc.) are shown */
+.bvviz .bvviz-cards {
+  overflow-y: auto;
+  background-color: $bvviz_card_bg_color;
+  border: 1px solid $bvviz_card_border_color;
+  @include border-radius(.25em);
+  min-height: 1px;
+}
+.bvviz .bvviz-cards .bvviz-card {
+  background-color: $bvviz_card_bg_color;
+  border: 1px solid $bvviz_card_border_color;
+  border-width: 0 0 1px 0;
+  cursor: pointer;
+}
+.bvviz .bvviz-cards .bvviz-card.bvviz-even {
+  background-color: $bvviz_card_alternate_bg_color;
+}
+.bvviz .bvviz-cards .bvviz-card:hover {
+  background-color: $bvviz_card_bg_hover;
+}
+.bvviz .bvviz-card.bvviz-grey .bvviz-name,
+.bvviz .bvviz-card.bvviz-grey .bvviz-category,
+.bvviz .bvviz-card.bvviz-grey .bvviz-progress {
+  color: $bvviz_card_greyout_font_color;
+}
+.bvviz .bvviz-card.bvviz-grey .bvviz-picture, .bvviz .bvviz-card.bvviz-grey .bvviz-sprite-icon {
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";  
+  filter: alpha(opacity=50);
+  -moz-opacity:0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+.bvviz .bvviz-card.bvviz-locked .bvviz-picture {
+  background: url('../images/lockedbadge.png') no-repeat center center;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/lockedbadge.png', sizingMethod='scale');
+  @include background-size(cover);
+}
+.bvviz .bvviz-card .bvviz-picture.bvviz-broken {
+  background: url('../images/brokenimage.png') no-repeat center center;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/brokenimage.png', sizingMethod='scale');
+  @include background-size(cover);
+}
+
+/* single row layout */
+.bvviz .bvviz-cards.bvviz-row {
+  border: none;
+  background: none; 
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-avatar {
+  width: 5em;
+  height: 5em;
+  display: block;
+  margin: auto;
+  margin-bottom: .4em;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini .bvviz-picture,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini .bvviz-avatar {
+  width: 4em;
+  height: 4em;
+  margin-top: .4em;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card {
+  border-width: 1px;
+  float: left;
+  margin: .4em;
+  text-align: center;
+  @include border-radius(.5em);
+  width: 8.2em;
+  position: relative;
+  padding: .6em 0 .4em 0;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini {
+  width: 5em;
+  margin: .2em;
+  border: none;
+  background: none;
+  padding: 0;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-borderless {
+  border-style: none;
+}
+
+.bvviz .bvviz-cards.bvviz-row .bvviz-card > div:last-child {
+  margin-bottom: .4em;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-category,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-progress {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  height: 1.5em;
+  line-height: 1.5em;
+  font-size: .8em;
+  padding: 0 .2em 0 .2em;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini .bvviz-name,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini .bvviz-category,
+.bvviz .bvviz-cards.bvviz-row .bvviz-card.bvviz-mini .bvviz-progress {
+  height: 1em;
+  line-height: 1em;
+  margin: 0;
+  padding: 0;
+}
+.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-progress {
+  font-weight: bold;
+}
+
+/* single column layout */
+.bvviz .bvviz-cards.bvviz-col .bvviz-card {
+  padding: .17em;
+  position: relative;
+  overflow: hidden;
+}
+.bvviz .bvviz-cards.bvviz-col .bvviz-card .bvviz-picture,
+.bvviz .bvviz-cards.bvviz-col .bvviz-card .bvviz-avatar {
+  width: 2.6em;
+  height: 2.6em;
+}
+.bvviz .bvviz-cards.bvviz-col .bvviz-card .bvviz-avatar {
+  @include border-radius(3.5em);
+  float: left;
+}
+.bvviz .bvviz-cards.bvviz-col .bvviz-card .bvviz-name {
+  font-weight: bold;
+  height: 1.2em;
+  line-height: 1.2em;
+  overflow: hidden;
+}
+.bvviz .bvviz-cards.bvviz-col .bvviz-details {
+  margin: .3em 0 .5em 3em;
+  overflow: hidden;
+  padding: .2em;
+}
+.bvviz .bvviz-cards.bvviz-col .bvviz-details .bvviz-desc {
+  color: $bvviz_card_col_font_color;
+  font-size: .8em;
+}
+
+/* MISC Components */
+.bvviz .bvviz-card .bvviz-checkmark-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.bvviz .bvviz-card .bvviz-checkmark-corner .bvviz-checkmark-bg {
+  fill: $playerProfile_card_checkmark_bg_color;
+}
+.bvviz .bvviz-card .bvviz-progress .bvviz-checkmark-mini {
+  fill: $playerProfile_card_checkmark_bg_color;
+}
+.bvviz .bvviz-card .bvviz-checkmark-corner.bvviz-nosvg{
+  background: url('../images/checkcorner.png') no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+}
+.bvviz .bvviz-card .bvviz-knobs {
+  position: absolute;
+  bottom: .1em;
+  right: .9em;
+  cursor: pointer;
+  height: 1em;
+  padding-top: .2em;
+  color: $bvviz_card_knobs_font_color;
+  font-size: .7em;
+}
+.bvviz.bvviz-card .bvviz-knobs:hover .bvviz-knob {
+  border-color: $bvviz_card_knobs_font_color;
+}
+.bvviz .bvviz-card .bvviz-knob {
+  border: .2em solid $bvviz_card_knobs_border_color;
+  float: left;
+  margin: 0 0 0 .35em;
+}
+.bvviz .bvviz-card .bvviz-drawer {
+  display: none;
+  border-top: 1px dotted $bvviz_card_btn_separator_color;
+  padding: 0 0 .9em;
+}
+.bvviz .bvviz-view-player-profile,
+.bvviz .bvviz-view-team-profile {
+  width: 7em;
+  text-align: center;
+  border: 1px solid $bvviz_card_btn_separator_color;
+  cursor: pointer;
+  padding: .4em;
+  font-size: .7em;
+  background-color: $bvviz_card_btn_bg_color;
+  @include border-radius(.3em);
+  margin: .2em auto 0;
+  @include box-shadow(0 4px 4px -2px $bvviz_view_profile_box_shadow_color null);  
+}
+.bvviz .bvviz-view-player-profile:hover,
+.bvviz .bvviz-view-team-profile:hover {
+  background-color: $bvviz_view_profile_bg_hover;
+  color: $accent_font;
+}
+.bvviz .bvviz-view-player-profile.bvviz-inverted,
+.bvviz .bvviz-view-team-profile.bvviz-inverted {
+  background-color: $bvviz_view_profile_bg_color;
+  color: $accent_font;
+}
+.bvviz .bvviz-view-player-profile.bvviz-inverted:hover,
+.bvviz .bvviz-view-team-profile.bvviz-inverted:hover {
+  background-color: $background_hover;
+  color: $background_font;
+}
+
+.bvviz .bvviz-loading {
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 2;
+}
+.bvviz .bvviz-loading.bvviz-tr {
+  top: 0;
+}
+
+/* Scrollbar */
+.bvviz-show-scroll {
+  color: $bvviz_showscroll_font_color;
+  clear: both;
+  float: right;
+  cursor: pointer;
+  margin-right: 1em;
+  min-width: 1em;
+  min-height: 6em;
+}
+
+/* Utility classes */
+.bvviz-clear {
+  clear: both;
+}
+.bvviz-invisible {
+  visibility: hidden;
+}
+.bvviz-profile-load .bvviz-loading {
+  margin: 10% auto;
+  right: inherit;
+  bottom: inherit;
+  position: inherit;
+}
+
+/* JQuery UI Dialog adjustments */
+.bvviz.ui-dialog {
+  position: absolute;
+}
+.bvviz.ui-dialog .ui-dialog-content {
+  overflow: hidden;
+  padding: 0;
+}
+.bvviz.ui-dialog .ui-dialog-titlebar  {
+  width: 0;
+  height: 0;
+  padding: 0;
+  border: 0;
+  left: 100%;
+}
+.bvviz.ui-dialog .ui-button-icon-only.ui-dialog-titlebar-close {
+  margin: 0;
+  right: -.1em;
+  top: -.1em;
+  z-index: 1;
+  margin: 4px;
+  border: none;
+  background: none;
+  z-index: 2;
+}
+.bvviz.ui-dialog.ui-widget {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+}
+
+/* Tooltip Arrows */
+.bvviz-toolip-arrow::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  display: block;
+  width: 0;
+}
+.bvviz-toolip-arrow.bvviz-right::after {
+  top: 18px;
+  left: -10px;
+  border-color: transparent $bvviz_tooltip_pointer_color;
+  border-width: 10px 10px 10px 0;
+}
+.bvviz-toolip-arrow.bvviz-left::after {
+  top: 18px;
+  right: -10px;
+  border-color: transparent $bvviz_tooltip_pointer_color;
+  border-width: 10px 0 10px 10px;
+}
+.bvviz-toolip-arrow.bvviz-top::after {
+  bottom: -10px;
+  left: 72px;
+  border-color: $bvviz_tooltip_pointer_color transparent;
+  border-width: 10px 10px 0;    
+}
+.bvviz-toolip-arrow.bvviz-bottom::after {
+  top: -9px;
+  left: 38px;
+  border-color: $bvviz_tooltip_pointer_color transparent;
+  border-width: 0 10px 10px;
+}
+
+/* Timestamp strings */
+.bvviz .bvviz-card .bvviz-timestamp {
+  color: $bvviz_card_timestamp_font_color;
+}
+
+/* Clear float withou adding new element */
+.bvviz-clearfix:before,
+.bvviz-clearfix:after {
+    content: " ";
+    display: table;
+}
+.bvviz-clearfix:after {
+    clear: both;
+}
+
+/* override focus outline on ui-dialog close icon */
+.bvviz :focus {
+  outline: initial;
+}
+
+/* override the default background close icon image */
+.bvviz.ui-dialog .ui-icon {
+  background: url( '../images/close.svg' ) no-repeat;
+  background: url( '../images/close.png' )\9;
+  @if $boolean_bleach_theme {
+    background-position: -16px;
+  }
+}
+
+/* icon sprite for behaviors */
+.bvviz .bvviz-sprite-icon{
+  width:24px;
+  height:26px;
+  display: inline-block;
+  background:url('https://s3.amazonaws.com/badgeville-production-images/v2/images/icon_sprite.png') no-repeat;
+}
+.bvviz .bvviz-sprite-icon.question_dialog{
+  background-position:0;
+}
+.bvviz .bvviz-sprite-icon.exclamation_dialog{
+  background-position:-24px;
+}
+.bvviz .bvviz-sprite-icon.play{
+  background-position:-48px;
+}
+.bvviz .bvviz-sprite-icon.heart{
+  background-position:-72px;
+}
+.bvviz .bvviz-sprite-icon.dialog{
+  background-position:-96px;
+}
+.bvviz .bvviz-sprite-icon.twitter_bird{
+  background-position:-120px;
+}
+.bvviz .bvviz-sprite-icon.question{
+  background-position:-144px;
+}
+.bvviz .bvviz-sprite-icon.star{
+  background-position:-168px;
+}
+.bvviz .bvviz-sprite-icon.facebook{
+  background-position:-192px;
+}
+.bvviz .bvviz-sprite-icon.like{
+  background-position:-216px;
+}
+.bvviz .bvviz-sprite-icon.shopping{
+  background-position:-240px;
+}
+.bvviz .bvviz-sprite-icon.graph{
+  background-position:-264px;
+}
+.bvviz .bvviz-sprite-icon.mail{
+  background-position:-288px;
+}
+.bvviz .bvviz-sprite-icon.burst{
+  background-position:-312px;
+}
+.bvviz .bvviz-sprite-icon.star_dialog{
+  background-position:-336px;
+}
+.bvviz .bvviz-sprite-icon.hand{
+  background-position:-360px;
+}
+.bvviz .bvviz-sprite-icon.run{
+  background-position:-384px;
+}
+.bvviz .bvviz-sprite-icon.thumbs_up{
+  background-position:-408px;
+}
+.bvviz .bvviz-sprite-icon.price_tag{
+  background-position:-432px;
+}
+
+
+/* 
+  <progress> polyfill by Lea Verou, under MIT license 
+  @author Lea Verou http://leaverou.me
+ */
+progress[role] {
+  display: inline-block;
+  position: relative;
+  width: 10em;
+  height: 1em;
+  vertical-align: -.2em;
+  background-image: url('data:image/gif;base64,R0lGODlhIAAQAIAAAP///////yH/C05FVFNDQVBFMi4wAwEAAAAh+QQJBwABACwAAAAAIAAQAAACLISPF8vtkWJ8lMlrasVXb554FBiKDomYJ5qpFgu4LysvcFzfNQTvet4D0hgFACH5BAkHAAEALAAAAAAgABAAAAIshH+hyx0Io3F0yTsrxVdvHnkOGIoMCZknmqgWC7gvKytwXN/1A+963gPSKAUAIfkECQcAAQAsAAAAACAAEAAAAi2EHanLcQ9hmyraR+ndee7bNZ8VMmNULqeUJivWOi8Sz3RrA7E77/LrswV7oQIAIfkECQcAAQAsAAAAACAAEAAAAixEjqkB7Q/bmijaR+ndee7bLZ8VKmNUJieUVqvTHi8cz1Jtx0yOz7pt6L10BQAh+QQJBwABACwAAAAAIAAQAAACLIyPB8vtkGJ8lMlrasVXb554FBiKDomYJ5qpFhu4LysvcFzfNQTvet4D0hgFACH5BAkHAAEALAAAAAAgABAAAAIsjH+gyw0Io3F0yTsrxVdvHnkOGIoMCZknmqgWG7gvKytwXN/1A+963gPSKAUAIfkECQcAAQAsAAAAACAAEAAAAi2MDanLcA9hmyraR+ndee7bNZ8VMmNULqeUJivWOi8Sz3RrB7E77/LrswV7oQIAIfkEAQcAAQAsAAAAACAAEAAAAiwMjqkQ7Q/bmijaR+ndee7bLZ8VKmNUJieUVqvTHi8cz1Jtx0yOz7pt6L10BQA7');
+  
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+progress[role],
+progress[aria-valuenow]:before {
+  background-color: #5af;
+}
+
+progress[role],
+progress[role]:after {
+  background-repeat:repeat-x;
+  background-position: 0 0;
+  -moz-background-size: auto 100%;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+}
+
+/* Determinate only overrides */
+progress[aria-valuenow] {
+  background: #eee;
+}
+
+progress[aria-valuenow]:before {
+  content: "";
+  display: block;
+  height: 100%;
+}
+
+/* Overlay */
+progress[role]:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAQBAMAAAAlsQiEAAAABGdBTUEAALGPC/xhBQAAAC1QTFRF////////gYGA+/v7////3NzcQUFCkZGQWFlZAAAAAAAA////WFhY////r6+w5vktvgAAAA90Uk5TZB4sW3ZODgMEJgBVHDY+cmAeZAAAACZJREFUeNpjmMBQwHCBAQQMGAIYHjAoMBxgSGBoYFjAIMCwgcEBAGgwBpG64ZoMAAAAAElFTkSuQmCC');
+}
+
+.bvviz-progress-bar {
+  color: $bvviz_progress_bar_fg_color;
+  background: $bvviz_progress_bar_bg_color;
+  height: .75em;
+  border: none;
+  @include border-radius(.5em);
+}
+/* Firefox */
+.bvviz-progress-bar::-moz-progress-bar {
+  background: $bvviz_progress_bar_fg_color;
+  height: .75em;
+  border: none;
+  @include border-radius(.5em);
+}
+/* Chrome and Safari */
+.bvviz-progress-bar::-webkit-progress-bar { 
+  background: $bvviz_progress_bar_bg_color;
+  height: .75em;
+  border: none;
+  @include border-radius(.5em);
+}
+.bvviz-progress-bar::-webkit-progress-value {
+  background: $bvviz_progress_bar_fg_color;
+  height: .75em;
+  border: none;
+  @include border-radius(.5em);
+}  
+

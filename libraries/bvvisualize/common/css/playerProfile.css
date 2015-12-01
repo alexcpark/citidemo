@@ -1,0 +1,118 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.8
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+.bvviz-playerProfile {
+  min-height: 300px;
+  min-width: 180px;
+}
+
+/* header area */
+.bvviz-playerProfile .bvviz-header {
+  height: 4.5em;
+  padding: .5em;
+  font-size: 1.5em;
+}
+
+.bvviz-playerProfile .bvviz-header .bvviz-avatar {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  width: 3em;
+  height: 3em;
+  border: 0.15em solid #fff;
+  display: block;
+  margin: 0 auto .3em;
+}
+
+/* Unit Bar */
+.bvviz-playerProfile .bvviz-units {
+  background-color: #3aa7da;
+  border-top: 1px solid #fff;
+  padding: .3em 0;
+  height: 3.2em;
+}
+
+.bvviz-playerProfile .bvviz.bvviz-unitbar .bvviz-level {
+  color: #fff;
+}
+
+.bvviz-playerProfile .bvviz-unitbar .bvviz-units-leftFade {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhYTdkYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNhYTdkYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3aa7da), color-stop(100%, rgba(58, 167, 218, 0)));
+  background-image: -moz-linear-gradient(left, #3aa7da, rgba(58, 167, 218, 0));
+  background-image: -webkit-linear-gradient(left, #3aa7da, rgba(58, 167, 218, 0));
+  background-image: linear-gradient(to right, #3aa7da, rgba(58, 167, 218, 0));
+}
+
+.bvviz-playerProfile .bvviz-unitbar .bvviz-units-rightFade {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhYTdkYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYWE3ZGEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(58, 167, 218, 0)), color-stop(100%, #3aa7da));
+  background-image: -moz-linear-gradient(left, rgba(58, 167, 218, 0), #3aa7da);
+  background-image: -webkit-linear-gradient(left, rgba(58, 167, 218, 0), #3aa7da);
+  background-image: linear-gradient(to right, rgba(58, 167, 218, 0), #3aa7da);
+}
+
+/* body area */
+.bvviz-playerProfile .bvviz-body {
+  padding: .17em;
+}
+
+/* navs area */
+.bvviz-playerProfile .bvviz-body-header {
+  width: 272px;
+  margin: .17em auto 0;
+  padding: 0;
+}
+
+.bvviz-playerProfile .bvviz-nav {
+  width: 90px;
+}
+
+.bvviz-playerProfile .bvviz-nav:hover {
+  background-color: #f6f6f6;
+}
+
+.bvviz-playerProfile .bvviz-nav.bvviz-last {
+  border: none;
+}
+
+/* cards area */
+.bvviz-playerProfile .bvviz-cards {
+  background: none;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  margin-top: .17em;
+}
+
+.bvviz-playerProfile .bvviz-cards.reward-cards-widget .bvviz-card .bvviz-name {
+  border-top-style: dotted;
+}
+
+.bvviz-playerProfile .mission-cards-widget.bvviz-cards.bvviz-row .bvviz-card .bvviz-name {
+  height: 1.2em;
+  line-height: 1.2em;
+}
+
+/* for reward cards dialog */
+.bvviz-playerProfile .ui-widget-overlay {
+  position: absolute;
+  -webkit-border-radius: .25em;
+  -moz-border-radius: .25em;
+  border-radius: .25em;
+}

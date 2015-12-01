@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<!--
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.8
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+-->
+<html>
+  <head>
+    <title>BVVIZ - Mission Progress</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <!--
+      DEPLOYMENT NOTE: The following files should be merged together and minified and/or
+                       obfuscated during deployment for optimal performance.
+    -->
+
+    <!-- JQUERY FILES - NOT INCLUDED IN THIS ZIP FILE -->
+      <!-- Include a working version of JQuery for the current browser -->
+      <!--[if IE 8]>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <![endif]-->
+      <!--[if gt IE 8]>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <![endif]-->
+      <![if !IE]>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <![endif]>
+      <!-- Include a working version of JQuery UI for the current browser -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+      <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <!-- BVSDK FILES - NOT INCLUDED IN THIS ZIP FILE -->
+      <!-- Include the BVSDK library -->
+      <script src="https://sandbox.badgeville.com/sdk/js/v1/badgeville.js#key=b1558f2ee115b818618394cba5e48a00&sites_id=52a7576b6173b15b3c000477"></script>
+
+    <!-- REQUIRED BVVIZ FILES -->
+      <!-- Include the global BVVIZ files -->
+      <script src="../common/js/bvviz.js"></script>
+      <link href="../common/css/bvviz.css" rel="stylesheet" type="text/css" />
+
+      <!-- Include the utility file -->
+      <script src="../common/js/utilities.js"></script>
+
+      <!-- Include the rewardProgress files -->
+      <script src="rewardProgress.js"></script>
+      <link href="../common/css/rewardProgress.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    <!-- DIV tag to be filled with rewardProgress display -->
+    <div id="BVVIZ-rewardProgress" style="width:300px;height:400px;"></div>
+
+    <script type="text/javascript">
+      var rewardProgress;
+
+      // Always place BVVIZ calls inside a JQuery "ready" block to ensure that the DOM is ready
+      $(function() {
+        // Render a rewardProgress visualization for the player provided
+        rewardProgress = BVVIZ.rewardProgress(
+          $( '#BVVIZ-rewardProgress' ),
+          '52aa2eeed4ed0ec397000f25', // playerId
+          '5510b131d4ed0e4f1a002b6b' // rewardId
+        );
+
+        // To reload the rewardProgress with fresh data:
+        // rewardProgress.init();
+
+        // To trigger a modal version of the rewardProgress, use the helper "showModal":
+        // BVVIZ.helper.showModal( BVVIZ.rewardProgress, [ 'playerId', 'rewardId' ] );
+        
+      });
+    </script>
+  </body>
+</html>
