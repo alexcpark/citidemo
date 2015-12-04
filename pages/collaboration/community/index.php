@@ -1,48 +1,24 @@
 <?php include '../../../includes/header-meta.php'; ?>
 
-	<body id="bv-page-collaboration">
+	<body id="bv-page-collaboration" class="page2">
 		
 		<?php include '../../../includes/header-branding.php'; ?>
 		<?php include '../../../includes/header-nav-program.php'; ?>
 		<?php include '../../../includes/header-program-collaboration.php'; ?> 
-					
-					<!-- START PROGRAM SUB NAV -->
-				    <div class="subnav">
-				    	<ul class="subnav-pages">
-							<li class="subnav-page"><a href="/pages/collaboration/progress/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Progress</a>
-								<ul class="subnav-subpages">
-									<li class="subnav-subpage"><a href="/pages/collaboration/progress/culture/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Cultural Advocacy</a></li>
-									<li class="subnav-subpage"><a href="/pages/collaboration/progress/interests/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Product Interests</a></li>
-									<li class="subnav-subpage"><a href="/pages/collaboration/progress/milestones/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Milestones</a></li>
-									<li class="subnav-subpage"><a href="/pages/collaboration/progress/stats?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Stats</a></li>
-								</ul>
-							</li>
-							<li class="subnav-page"><a href="/pages/collaboration/community/?program_id=1&player_id=5643c424a33c43d250002cb5" class="active" >Community</a>
-								<ul class="subnav-subpages">
-									<li class="subnav-subpage"><a href="/pages/collaboration/community/context/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >You in Context</a></li>
-									<li class="subnav-subpage"><a href="/pages/collaboration/community/leaders/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Leaders</a></li>
-								</ul>
-							</li>
-				    	</ul>
-				    </div>
-					<!-- END PROGRAM SUB NAV -->
-	
+
 					<!-- START CONTENT -->
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Progress Overview</div>
+					          <div class="main-section-title">Learning Community</div>
 					          <div class="row">
 					            <div class="span8">
-								  <div class="main-section-block-body main-section-block-break">
-									  <p>Track weekly goals. Identifying a starting list of steps and goals can help surface useful work patterns and best practices.</p>
+								  <div class="main-section-block-body main-section-block-break2">
+									  <p>Surfacing group performance is a great way to establish context for your personal achievements. See the chart below for brief summary on how everyone stacks up!</p>
 								  </div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-1" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-2" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-3" class="bvviz-container main-section-block-break"></div>
+					              <!-- BVVIZ - Goals -->
+								  <div class="main-section-block-title">Recent Activity in Learning @ Citi></div>
+								  <div id="BVVIZ-collaboration_community0_siteStream" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

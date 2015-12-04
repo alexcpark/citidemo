@@ -1,23 +1,11 @@
 <?php include '../../../includes/header-meta.php'; ?>
 
-	<body id="bv-page-guide">
+	<body id="bv-page-guide" class="page4">
 		
 		<?php include '../../../includes/header-branding.php'; ?>
 		<?php include '../../../includes/header-nav-program.php'; ?>
 		<?php include '../../../includes/header-program-guide.php'; ?> 
-					
-					<!-- START PROGRAM SUB NAV -->
-				    <div class="subnav">
-				    	<ul class="subnav-pages">
-							<li class="subnav-page"><a href="/pages/guide/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Overview</a></li>
-							<li class="subnav-page"><a href="/pages/guide/types_of_success/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Types of Success</a></li>
-							<li class="subnav-page"><a href="/pages/guide/how_to_play/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >How to Play</a></li>
-							<li class="subnav-page"><a href="/pages/guide/where_to_play/?program_id=1&player_id=5643c424a33c43d250002cb5" class="active" >Where to Play</a></li>
-							<li class="subnav-page"><a href="/pages/guide/key_activities/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Key Activities</a></li>
-				    	</ul>
-				    </div>
-					<!-- END PROGRAM SUB NAV -->
-	
+
 					<!-- START CONTENT -->
 				    <div class="content">
 						<div class="main-section" style="display: block;">

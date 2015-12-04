@@ -42,7 +42,6 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
 
     // Individual reward card
     card: function( reward, earned ) {
-      console.log(reward);
 	  var card =  $( '<div class="bvviz-card bvviz-invisible ' + ( earned ? 'bvviz-complete' : 'bvviz-not-started' ) + '"' +
 		// Add a data attribute to track the reward Id
         ' data-bvviz-reward_id="' + reward.id + '"></div>' ).append(

@@ -1,31 +1,11 @@
 <?php include '../../../../includes/header-meta.php'; ?>
 
-	<body id="bv-page-learning">
+	<body id="bv-page-learning" class="page1-subpage2">
 		
 		<?php include '../../../../includes/header-branding.php'; ?>
 		<?php include '../../../../includes/header-nav-program.php'; ?>
 		<?php include '../../../../includes/header-program-learning.php'; ?> 
-					
-					<!-- START PROGRAM SUB NAV -->
-				    <div class="subnav">
-				    	<ul class="subnav-pages">
-							<li class="subnav-page"><a href="/pages/learning/progress/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Progress</a>
-								<ul class="subnav-subpages">
-									<li class="subnav-subpage"><a href="/pages/learning/progress/products/?program_id=1&player_id=5643c424a33c43d250002cb5" class="active" >Products</a></li>
-									<li class="subnav-subpage"><a href="/pages/learning/progress/tools/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Tools</a></li>
-									<li class="subnav-subpage"><a href="/pages/learning/progress/gamification/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Gamification</a></li>
-								</ul>
-							</li>
-							<li class="subnav-page"><a href="/pages/learning/community/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Community</a>
-								<ul class="subnav-subpages">
-									<li class="subnav-subpage"><a href="/pages/learning/community/context/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >You in Context</a></li>
-									<li class="subnav-subpage"><a href="/pages/learning/community/leaders/?program_id=1&player_id=5643c424a33c43d250002cb5" class="" >Leaders</a></li>
-								</ul>
-							</li>
-				    	</ul>
-				    </div>
-					<!-- END PROGRAM SUB NAV -->
-	
+						
 					<!-- START CONTENT -->
 				    <div class="content">
 						<div class="main-section" style="display: block;">

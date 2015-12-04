@@ -30,8 +30,33 @@
 					</div>
 				</div>
 			</div> <!-- /.footer -->
+			
+		  <?php
+  		  // Define & store verb
+  		  switch ($programId) {
+  		      case '1':
+				  $verb = 'visit-rc-onboarding';
+  		          break;
+  		      case '2':
+				  $verb = 'visit-rc-goals';
+  		          break;
+  		      case '3':
+				  $verb = 'visit-rc-learning';
+  		          break;
+  		      case '4':
+				  $verb = 'visit-rc-collaboration';
+  		          break;
+  		      case '5':
+				  $verb = 'visit-rc-guide';
+  				  break;
+  			  default:
+				  $verb = '';
+  				  break;
+  		  }
+		  ?>
+			
 		    <script type="text/javascript">
-
+			  
 		      var BVProfile = function() {
 
 		        var pub = {},
@@ -48,37 +73,38 @@
 			    // global variables to store the instance of visualizations: section_page_viz (41 total)
 	            onboarding_header_playerMeta, // playerCard
 				onboarding_header_missionProgressBar, // goalProgress (progress bar only)
-			    onboarding_progress0_missionTutorial, // missionTutorial (tasklist)
-				onboarding_progress1_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
+			    onboarding_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
+				onboarding_progress0_missionTutorial, // missionTutorial (tasklist)
 				onboarding_community0_siteStream, // siteStream (designed to be auto scrolling and more detailed.)
 				onboarding_community1_leaderboardContext, // modified radar chart
 				onboarding_community2_leaderboardLeaders, // standard leaderboard to see top performers in svrl categories ( simple)
 				goals_header_playerStats, // missionRewards
 				goals_header_quarterlyRev, // missionTutorial_alex (progress bar only) (quarter)
+				goals_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
 				goals_progress0_weeklyLeads, // missionTutorial_alex (progress bar only, repeatable)
 				goals_progress0_weeklyOpps, // missionTutorial_alex (progress bar only, repeatable)
 				goals_progress0_weeklyRev, // missionTutorial_alex (progress bar only, repeatable)
 				goals_progress1_weeklyLeads, // missionTutorial_alex (for checklist, repeatable)
 				goals_progress2_weeklyOpps, // missionTutorial_alex (for checklist, repeatable)
 				goals_progress3_weeklyRev, // missionTutorial_alex (for checklist, repeatable)
-				goals_progress4_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
 				goals_community0_siteStream, // siteStream (designed to be auto scrolling and more detailed.)
 				goals_community1_leaderboardContext, // modified radar chart
 				goals_community2_leaderboardLeaders, // standard leaderboard to see top performers in svrl categories ( simple)
 				learning_header_playerStats, // missionRewards
 				learning_header_learningUnits, // tracks (queried by category)
+				learning_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
 				learning_progress0_productProgress, // missionTutorial_alex (progress bar only, repeatable)
 				learning_progress0_toolsProgress, // missionTutorial_alex (progress bar only, repeatable)
 				learning_progress0_gamificationProgress, // missionTutorial_alex (progress bar only, repeatable)
 				learning_progress1_productProgress, // 
 				learning_progress2_toolsProgress, // 
-				learning_progress3_gamificationProgress, // 
-				learning_progress4_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
+				learning_progress3_gamificationProgress, //
 				learning_community0_siteStream, // siteStream (designed to be auto scrolling and more detailed.)
 				learning_community1_leaderboardContext, // modified radar chart, // 
 				learning_community2_leaderboardLeaders, // standard leaderboard to see top performers in svrl categories ( simple)
 				collaboration_header_playerStats, // missionRewards 
 				collaboration_header_affinityTracks, // playerTracks (queried by category) or community expert
+				collaboration_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
 				collaboration_progress0_cultureChart, // missionChart
 				collaboration_progress0_productChart, // missionChart
 				collaboration_progress1_ceProgress, // missionProgress
@@ -91,7 +117,6 @@
 				collaboration_progress2_stocksProgress, // missionProgress
 				collaboration_progress3_missionRewards, // milestones?
 				collaboration_progress4_missionRewards, // extended stats?
-				collaboration_progress5_playerStream, // playerStream (My Activities) (designed for simple/easy control [buttons])
 				collaboration_community0_siteStream, // siteStream (designed to be auto scrolling and more detailed.)
 				collaboration_community1_leaderboardContext, // modified radar chart
 				collaboration_community2_leaderboardLeaders; // standard ldrbd to see top performers in svrl categories ( simple)
@@ -140,13 +165,23 @@
 		              });
 
 		            $( '.header-profile-name' ).text( profileName );
-		            $( '.header-profile-image' ).attr( 'src', profileImage );
+		            //$( '.header-profile-image' ).attr( 'src', profileImage );
+		            $( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
+
+		            // If the playerProfile function is defined, add event handler
+		            if ( $.isFunction( BVVIZ.playerProfile ) ) {
+		              $( '.header-profile-image' ).bind( 'click', function() {
+		                BVVIZ.helper.showModal( BVVIZ.playerProfile, [ playerId ] );
+		              });
+		            }
 
 		            // Show page main
 		            $( '.main-section').show();
 
 		            // Initialize the visualizations
 		            loadBVVIZ( playerId );
+					
+					BVSDK( 'players/activities', { players: playerId } ).create( {verb: '<?php echo $verb; ?>'} );	
 
 		          } else {
 		            renderNotFound();
@@ -181,6 +216,21 @@
 						'' // missionId
 			        );
 					
+					// Onboarding0 Progress, My Activities
+					onboarding_progress0_playerStream = BVVIZ.playerStream(
+						$( '#BVVIZ-onboarding_progress0_playerStream' ),
+						'56615b887369b2fb26000f9e', // Following (consumer = "activity") streamId
+						playerId, // playerId
+						// options for current visualization instance
+						{
+							// Whether the header should be rendered
+							inline: true,
+
+							// Callback handler on completion of stream item
+							itemCompleteCallback: handleImgErrorFailover
+						}
+					);
+					
 					// Onboarding0 Progress Overview, missionTutorial
 					onboarding_progress0_missionTutorial = BVVIZ.missionTutorial_Ra(
 						$( '#BVVIZ-onboarding_progress0_missionTutorial' ),
@@ -189,10 +239,31 @@
 						true
 					);
 					
-					// Onboarding1 Progress, My Activities
 					// Onboarding0 Community, Everyone's Activities
+					onboarding_community0_siteStream = BVVIZ.siteStream(
+			            $( '#BVVIZ-onboarding_community0_siteStream' ),
+			            '564b83a6280aabc8550017d2', // Following (consumer = "activity") streamId
+			            playerId, // playerId
+			            // options for current visualization instance
+			            {
+			              // Whether the header should be rendered
+			              inline: true,
+             
+			              // Callback handler on completion of stream item
+			              itemCompleteCallback: handleImgErrorFailover
+			            }
+			          );
 					// Onboarding1 Community, Contextual Leaderboard (You vs. Everyone)
 					// Onboarding2 Community, Leaders
+  					onboarding_community2_leaderboardLeaders = BVVIZ.leaderboard(
+  						$( '#BVVIZ-onboarding_community2_leaderboardLeaders' ),
+  						[
+  							'564b820db4b280d5e0000fa2'
+  						], // leaderboard IDs
+  						{
+  							inline: true
+  						}// Options
+  					);
 					
 					/**********************
 					* Goals
@@ -229,6 +300,21 @@
 						'' // missionId
 			        );*/
 					
+  					// Goals0 Progress, My Activities
+  					goals_progress0_playerStream = BVVIZ.playerStream(
+  						$( '#BVVIZ-goals_progress0_playerStream' ),
+  						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+  						playerId, // playerId
+  						// options for current visualization instance
+  						{
+  							// Whether the header should be rendered
+  							inline: true,
+
+  							// Callback handler on completion of stream item
+  							itemCompleteCallback: handleImgErrorFailover
+  						}
+  					);
+					
 					// Goals Progress0 Overview, Weekly Leads Summary
 					// Goals Progress0 Overview, Weekly Opportunities Summary
 					// Goals Progress0 Overview, Weekly Revenue Summary
@@ -259,8 +345,22 @@
 					
 					// Goals Progress4, My Activities
 					// Goals Community, Everyone's Activities
+					goals_community0_siteStream = BVVIZ.siteStream(
+			            $( '#BVVIZ-goals_community0_siteStream' ),
+			            '564b83d87369b295910010ef', // Following (consumer = "activity") streamId
+			            playerId, // playerId
+			            // options for current visualization instance
+			            {
+			              // Whether the header should be rendered
+			              inline: true,
+             
+			              // Callback handler on completion of stream item
+			              itemCompleteCallback: handleImgErrorFailover
+			            }
+			          );
 					// Goals Community, Contextual Leaderboard (You vs. Everyone)
 					// Goals Community, Leaders
+					// Render a leaderboard visualization
 					
 					/**********************
 					* Learning
@@ -288,9 +388,25 @@
 				                        }
 				              }
 				        }
-			        );
+			        );*/
 					
 					// Learning Header, List of learning units and your progress in each
+					
+  					// Learning Progress0, My Activities
+  					learning_progress0_playerStream = BVVIZ.playerStream(
+  						$( '#BVVIZ-learning_progress0_playerStream' ),
+  						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+  						playerId, // playerId
+  						// options for current visualization instance
+  						{
+  							// Whether the header should be rendered
+  							inline: true,
+
+  							// Callback handler on completion of stream item
+  							itemCompleteCallback: handleImgErrorFailover
+  						}
+  					);
+					
 					// Learning Progress0 Overview, "product" learning unit progress
 					// Learning Progress0 Overview, "tools" learning unit progress
 					// Learning Progress0 Overview, "gamification" learning unit progress
@@ -299,6 +415,19 @@
 					// Learning Progress3, Detailed "gamification" progress
 					// Learning Progress4, My Activities
 					// Learning Community, Everyone's Activities
+					learning_community0_siteStream = BVVIZ.siteStream(
+			            $( '#BVVIZ-learning_community0_siteStream' ),
+			            '564b83eb1c19fa4990001656', // Following (consumer = "activity") streamId
+			            playerId, // playerId
+			            // options for current visualization instance
+			            {
+			              // Whether the header should be rendered
+			              inline: true,
+             
+			              // Callback handler on completion of stream item
+			              itemCompleteCallback: handleImgErrorFailover
+			            }
+			          );
 					// Learning Community, Contextual Leaderboard (You vs. Everyone)
 					// Learning Community, Leaders
 					
@@ -328,9 +457,25 @@
 				                        }
 				              }
 				        }
-			        );
+			        );*/
 					
 					// Collaboration Header, List of Tracks
+					  
+					// Collaboration Progress0, My Activities
+					collaboration_progress0_playerStream = BVVIZ.playerStream(
+						$( '#BVVIZ-collaboration_progress0_playerStream' ),
+						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+						playerId, // playerId
+						// options for current visualization instance
+						{
+							// Whether the header should be rendered
+							inline: true,
+
+							// Callback handler on completion of stream item
+							itemCompleteCallback: handleImgErrorFailover
+						}
+					);
+					
 					// Collaboration Progress0 Overview, Overview of Cultural Advocacy Missions
 					// Collaboration Progress0 Overview, Overview of Product Interest Missions
 					// Collaboration Progress1, Detailed "Collaboration & Efficiency" progress
@@ -345,6 +490,19 @@
 					// Collaboration Progress4, List of extended stats
 					// Collaboration Progress5, My Activities
 					// Collaboration Community, Everyone's Activities
+  					collaboration_community0_siteStream = BVVIZ.siteStream(
+  			            $( '#BVVIZ-collaboration_community0_siteStream' ),
+  			            '564a600b6fb709815500062c', // Following (consumer = "activity") streamId
+  			            playerId, // playerId
+  			            // options for current visualization instance
+  			            {
+  			              // Whether the header should be rendered
+  			              inline: true,
+             
+  			              // Callback handler on completion of stream item
+  			              itemCompleteCallback: handleImgErrorFailover
+  			            }
+  			          );
 					// Collaboration Community, Contextual Leaderboard (You vs. Everyone)
 					// Collaboration Community, Leaders
 					
@@ -611,37 +769,38 @@
 				
 				pub.onboarding_header_playerMeta = onboarding_header_playerMeta;
 				pub.onboarding_header_missionProgressBar = onboarding_header_missionProgressBar;
+				pub.onboarding_progress0_playerStream = onboarding_progress0_playerStream;
 				pub.onboarding_progress0_missionTutorial = onboarding_progress0_missionTutorial;
-				pub.onboarding_progress1_playerStream = onboarding_progress1_playerStream;
 				pub.onboarding_community0_siteStream = onboarding_community0_siteStream;
 				pub.onboarding_community1_leaderboardContext = onboarding_community1_leaderboardContext;
 				pub.onboarding_community2_leaderboardLeaders = onboarding_community2_leaderboardLeaders;
 				pub.goals_header_playerStats = goals_header_playerStats;
 				pub.goals_header_quarterlyRev = goals_header_quarterlyRev;
+				pub.goals_progress0_playerStream = goals_progress0_playerStream;
 				pub.goals_progress0_weeklyLeads = goals_progress0_weeklyLeads;
 				pub.goals_progress0_weeklyOpps = goals_progress0_weeklyOpps;
 				pub.goals_progress0_weeklyRev = goals_progress0_weeklyRev;
 				pub.goals_progress1_weeklyLeads = goals_progress1_weeklyLeads;
 				pub.goals_progress2_weeklyOpps = goals_progress2_weeklyOpps;
 				pub.goals_progress3_weeklyRev = goals_progress3_weeklyRev;
-				pub.goals_progress4_playerStream = goals_progress4_playerStream;
 				pub.goals_community0_siteStream = goals_community0_siteStream;
 				pub.goals_community1_leaderboardContext = goals_community1_leaderboardContext;
 				pub.goals_community2_leaderboardLeaders = goals_community2_leaderboardLeaders;
 				pub.learning_header_playerStats = learning_header_playerStats;
 				pub.learning_header_learningUnits = learning_header_learningUnits;
+				pub.learning_progress0_playerStream = learning_progress0_playerStream;
 				pub.learning_progress0_productProgress = learning_progress0_productProgress;
 				pub.learning_progress0_toolsProgress = learning_progress0_toolsProgress;
 				pub.learning_progress0_gamificationProgress = learning_progress0_gamificationProgress;
 				pub.learning_progress1_productProgress = learning_progress1_productProgress;
 				pub.learning_progress2_toolsProgress = learning_progress2_toolsProgress;
 				pub.learning_progress3_gamificationProgress = learning_progress3_gamificationProgress;
-				pub.learning_progress4_playerStream = learning_progress4_playerStream;
 				pub.learning_community0_siteStream = learning_community0_siteStream;
 				pub.learning_community1_leaderboardContext = learning_community1_leaderboardContext;
 				pub.learning_community2_leaderboardLeaders = learning_community2_leaderboardLeaders;
 				pub.collaboration_header_playerStats = collaboration_header_playerStats;
 				pub.collaboration_header_affinityTracks = collaboration_header_affinityTracks;
+				pub.collaboration_progress0_playerStream = collaboration_progress0_playerStream;
 				pub.collaboration_progress0_cultureChart = collaboration_progress0_cultureChart;
 				pub.collaboration_progress0_productChart = collaboration_progress0_productChart;
 				pub.collaboration_progress1_ceProgress = collaboration_progress1_ceProgress;
@@ -654,7 +813,6 @@
 				pub.collaboration_progress2_stocksProgress = collaboration_progress2_stocksProgress;
 				pub.collaboration_progress3_missionRewards = collaboration_progress3_missionRewards;
 				pub.collaboration_progress4_missionRewards = collaboration_progress4_missionRewards;
-				pub.collaboration_progress5_playerStream = collaboration_progress5_playerStream;
 				pub.collaboration_community0_siteStream = collaboration_community0_siteStream;
 				pub.collaboration_community1_leaderboardContext = collaboration_community1_leaderboardContext;
 				pub.collaboration_community2_leaderboardLeaders = collaboration_community2_leaderboardLeaders;
@@ -672,6 +830,8 @@
 		        arcDemo.init();
 
 		      });
+			  
 		    </script>
+			  
 	</body>
 </html>
