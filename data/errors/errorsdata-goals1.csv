@@ -1,0 +1,4 @@
+player_email,verb,created_at,page,lead_id,opportunity_id,account_id,creation_date,income_level,marital_status,dependents,is_primary,first_contact_date,last_contact_date,bank,product,unit_revenue,value,bv_errors
+lucas@citidemo.badgeville.com,close-win,2012-03-26T06:12:51Z,,,,,,,,,,,,,,#REF!,,"[""Limit exceeded""]"
+roselyn@citidemo.badgeville.com,create-lead,2013-11-14T16:36:36Z,,,,,,,,,,,,,,,,"[""Limit exceeded""]"
+julianne@citidemo.badgeville.com,add-target-product-value,2012-01-05T16:52:51Z,,,,,,,,,,,,,Bond,,,"[""Limit exceeded""]"

@@ -1,0 +1,249 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.8
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+.bvviz-playerCard {
+  min-height: 110px;
+  min-width: 300px;
+}
+
+.bvviz-playerCard .bvviz-header-band {
+  height: 1.7em;
+  line-height: 1.7em;
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  -webkit-border-top-left-radius: .25em;
+  -webkit-border-top-right-radius: .25em;
+  -moz-border-radius-topleft: .25em;
+  -moz-border-radius-topright: .25em;
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+  border-bottom: 1px solid #fff;
+  background: #36a8de;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM2YThkZSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzIxOTNjYSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #36a8de), color-stop(100%, #2193ca));
+  background-image: -moz-linear-gradient(#36a8de, #2193ca);
+  background-image: -webkit-linear-gradient(#36a8de, #2193ca);
+  background-image: linear-gradient(#36a8de, #2193ca);
+  color: #fff;
+  overflow: visible;
+  cursor: pointer;
+}
+
+/* Player card header */
+.bvviz-playerCard .bvviz-header-band .bvviz-avatar {
+  width: 2.6em;
+  height: 2.6em;
+  position: absolute;
+  top: .1em;
+  left: .1em;
+  margin: .14em 0 0 .28em;
+  border: 0.15em solid #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.bvviz-playerCard .bvviz-header-band .bvviz-name {
+  margin-left: 3.5em;
+}
+
+.bvviz-playerCard .bvviz-header-subband {
+  height: 1.2em;
+  color: #fff;
+  background-color: #b8b8b8;
+  border-bottom: 1px solid #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.bvviz-playerCard .bvviz-header-subband .bvviz-desc {
+  margin-left: 4.8em;
+  font-size: .8em;
+  line-height: 1.4em;
+}
+
+.bvviz-playerCard .bvviz-body-header .bvviz-desc {
+  margin: 0;
+  overflow: visible;
+  color: #fff;
+  height: 1.2em;
+  border-bottom: 1px solid #fff;
+  background: #b8b8b8;
+  padding: 0 .25em 0 .25em;
+  font-size: .8em;
+  vertical-align: center;
+}
+
+/* Player card body */
+.bvviz-playerCard .bvviz-body {
+  background-color: #ebebeb;
+}
+
+.bvviz-playerCard .bvviz-card {
+  border: none;
+  padding: 0;
+  background: #ebebeb;
+  /* Old browsers */
+}
+
+/* Unit Bar Container */
+.bvviz-playerCard .bvviz-stats {
+  margin: 1.5em 0;
+}
+
+/* Unit Bar */
+.bvviz-playerCard .bvviz-unitbar {
+  color: #666;
+  margin: .3em 0;
+}
+
+.bvviz.bvviz-unitbar .bvviz-level {
+  color: #666;
+}
+
+.bvviz-playerCard .bvviz-unitbar .bvviz-unitbar-items .bvviz-unit {
+  color: #666;
+  border-width: 0px;
+  border-right: 1px solid #bbb;
+  -moz-border-image: -moz-linear-gradient(top, rgba(97, 97, 97, 0) 0%, rgba(97, 97, 97, 0.5) 25%, rgba(97, 97, 97, 0.5) 75%, rgba(97, 97, 97, 0) 100%);
+  /* FF3.6+ */
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(97, 97, 97, 0)), color-stop(25%, rgba(97, 97, 97, 0.5)), color-stop(75%, rgba(97, 97, 97, 0.5)), color-stop(100%, rgba(97, 97, 97, 0)));
+  /* Chrome,Safari4+ */
+  -webkit-border-image: -webkit-linear-gradient(top, rgba(97, 97, 97, 0) 0%, rgba(97, 97, 97, 0.5) 25%, rgba(97, 97, 97, 0.5) 75%, rgba(97, 97, 97, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+  border-image: -o-linear-gradient(top, rgba(97, 97, 97, 0) 0%, rgba(97, 97, 97, 0.5) 25%, rgba(97, 97, 97, 0.5) 75%, rgba(97, 97, 97, 0) 100%);
+  /* Opera 11.10+ */
+  border-image: -ms-linear-gradient(top, rgba(97, 97, 97, 0) 0%, rgba(97, 97, 97, 0.5) 25%, rgba(97, 97, 97, 0.5) 75%, rgba(97, 97, 97, 0) 100%);
+  /* IE10+ */
+  border-image: linear-gradient(to bottom, rgba(97, 97, 97, 0) 0%, rgba(97, 97, 97, 0.5) 25%, rgba(97, 97, 97, 0.5) 75%, rgba(97, 97, 97, 0) 100%);
+  /* W3C */
+  border-image-slice: 1;
+  border-right: 1px solid #616161;
+}
+
+.bvviz-playerCard .bvviz-unitbar .bvviz-units-leftFade {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWJlYiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ViZWJlYiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ebebeb), color-stop(100%, rgba(235, 235, 235, 0)));
+  background-image: -moz-linear-gradient(left, #ebebeb, rgba(235, 235, 235, 0));
+  background-image: -webkit-linear-gradient(left, #ebebeb, rgba(235, 235, 235, 0));
+  background-image: linear-gradient(to right, #ebebeb, rgba(235, 235, 235, 0));
+}
+
+.bvviz-playerCard .bvviz-unitbar .bvviz-units-rightFade {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWJlYiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYmViZWIiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(235, 235, 235, 0)), color-stop(100%, #ebebeb));
+  background-image: -moz-linear-gradient(left, rgba(235, 235, 235, 0), #ebebeb);
+  background-image: -webkit-linear-gradient(left, rgba(235, 235, 235, 0), #ebebeb);
+  background-image: linear-gradient(to right, rgba(235, 235, 235, 0), #ebebeb);
+}
+
+/* Player Stats unitbar */
+.bvviz-playerCard .bvviz.bvviz-unitbar .bvviz-units-arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -1.2em;
+  line-height: 2.1em;
+  color: #54b5e3;
+  background-color: #fff;
+  cursor: pointer;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bvviz-playerCard .bvviz.bvviz-unitbar .bvviz-units-arrow:hover {
+  color: #fff;
+  background-color: #36a8de;
+}
+
+.bvviz-playerCard .bvviz.bvviz-unitbar .bvviz-units-left {
+  text-align: left;
+  left: 0;
+  border-top-right-radius: 1.2em;
+  border-bottom-right-radius: 1.2em;
+  border: 2px solid #c1c1c1;
+  border-left: 0;
+}
+
+.bvviz-playerCard .bvviz.bvviz-unitbar .bvviz-units-right {
+  text-align: right;
+  right: 0;
+  border-top-left-radius: 1.2em;
+  border-bottom-left-radius: 1.2em;
+  border: 2px solid #c1c1c1;
+  border-right: 0;
+}
+
+/* level progress */
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-bar {
+  color: rgba(42, 172, 234, 0.8);
+  background: #b8b8b8;
+  border: 1px solid #b8b8b8;
+  width: 8em;
+  height: 14px;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+  vertical-align: middle;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-bar::-moz-progress-bar {
+  background: rgba(42, 172, 234, 0.8);
+  border: 1px solid #b8b8b8;
+  height: 14px;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-bar::-moz-progress-value {
+  background: #b8b8b8;
+  border: 0 solid #b8b8b8;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-bar::-webkit-progress-bar {
+  background: #b8b8b8;
+  border: 0 solid #b8b8b8;
+  height: calc(14px - 1px - 1px);
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-bar::-webkit-progress-value {
+  background: rgba(42, 172, 234, 0.8);
+  border: 1px solid #b8b8b8;
+  height: calc(14px - 1px - 1px);
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  -ms-border-radius: 0.25em;
+  border-radius: 0.25em;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-label.bvviz-forelabel {
+  color: #fff;
+}
+
+.bvviz-playerCard .bvviz-levelProgress .bvviz-progress-label.bvviz-backlabel {
+  color: #fff;
+}

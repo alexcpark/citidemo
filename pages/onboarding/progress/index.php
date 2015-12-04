@@ -31,7 +31,7 @@
 									  <p>A proper start is important for a successful journey. For employees, onboarding is that start. Begin this mission to help surface useful ways for you to hit the ground running @ Citi!</p>
 								  </div>
 					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionTutorial-1" class="bvviz-container"></div>
+								  <div id="BVVIZ-onboarding_progress0_missionTutorial" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

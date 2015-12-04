@@ -4,9 +4,9 @@
 		        <div class="span12" style="float:none; margin:auto;">
 		          <ul class="nav">
 		            <li class="nav-onboarding"><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Onboarding</a></li>
-		            <li class="nav-goals"><a href="/pages/goals/progress/?program_id=1&player_id=5643c424a33c43d250002cb5">Goals</a></li>
-		            <li class="nav-learning"><a href="/pages/learning/progress/?program_id=1&player_id=5643c424a33c43d250002cb5">Learning</a></li>
-					<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=1&player_id=5643c424a33c43d250002cb5">Collaboration</a></li>
+		            <li class="nav-goals"><a href="/pages/goals/progress/?program_id=2&player_id=5643c2f2b1f5431173002d7a">Goals</a></li>
+		            <li class="nav-learning"><a href="/pages/learning/progress/?program_id=3&player_id=564a5e987369b2315f000d68">Learning</a></li>
+					<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=4&player_id=564a61586907ff0771000767">Collaboration</a></li>
 					<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_id=5643c424a33c43d250002cb5">Guide</a></li>
 		          </ul>
 		        </div><!-- /.navbar-inner -->

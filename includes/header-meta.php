@@ -128,6 +128,10 @@ under the License.
 	      <!-- Include the playerCard files -->
 	      <script src="/libraries/bvvisualize/playerCard/playerCard.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/playerCard.css" rel="stylesheet" type="text/css" />
+		  
+	      <!-- Include the playerMeta files -->
+	      <script src="/libraries/bvvisualize/playerMeta/playerMeta.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/playerMeta.css" rel="stylesheet" type="text/css" />
 
 	    <!-- OPTIONAL BVVIZ FILES (ORIGINAL) -->
 	      <!-- These sets are optional and need only be included if you want the functionality involved -->
@@ -148,6 +152,12 @@ under the License.
 		  
 	      <script src="/libraries/bvvisualize/missionProgress/missionProgress.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/missionProgress.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/missionTutorial_Ra/missionTutorial_Ra.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/missionTutorial/missionTutorial.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
 
 	      <script src="/libraries/bvvisualize/trackProgress/trackProgress.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/trackProgress.css" rel="stylesheet" type="text/css" />
@@ -163,7 +173,7 @@ under the License.
 		
 	      <!-- Beta-testing, BVVIZ FILES - LOCAL -->
 			<link rel="stylesheet" href="/css/bvVisualize-light-teal_debug.css" type="text/css">
-	        <script src="/js/bvVisualize_debug.js"></script>
+	        <!--<script src="/js/bvVisualize_debug.js"></script>-->
 		
 		<!-- REQUIRED TEMPLATE FILES -->
 		  <!-- These sets are required and cover additional specifically for this template or demo -->

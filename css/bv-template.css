@@ -1,6 +1,6 @@
 /* reset default */
 body {
-  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif!important;
+  font-family: proxima-nova, "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-rendering: optimizeLegibility;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -301,6 +301,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Global outlines for design planning. */
 * {
 	outline: 0px dotted blue;
+	font-family: 'interstateextralight' !important;
+	text-rendering: geometricPrecision;
+	font-weight: 200;
+	color: #002C72;
 }
 /* Viz outlines for planning. */
 #BVVIZ-playerRow,
@@ -314,16 +318,21 @@ h1, h2, h3, h4, h5, h6 {
 	outline: 0px dotted blue;
 }
 
-.bvviz-container {
-	background-color: #eee;
-	outline: 1px solid #eee;
+#bv-page-onboarding .bvviz-container,
+#bv-page-goals .bvviz-container,
+#bv-page-learning .bvviz-container,
+#bv-page-collaboration .bvviz-container,
+#bv-page-guide .bvviz-container {
+	overflow: hidden;
 }
 
-body {
-	font-family: 'interstateextralight' !important;
-	text-rendering: geometricPrecision;
-	font-weight: 200;
-	color: #002C72;
+/*#bv-page-onboarding .bvviz-container,*/
+#bv-page-goals .bvviz-container,
+#bv-page-learning .bvviz-container,
+#bv-page-collaboration .bvviz-container,
+#bv-page-guide .bvviz-container {
+	background-color: transparent;
+	outline: 1px dotted #aaa;
 }
 
 .container,
@@ -602,21 +611,88 @@ body {
 	top: -22px;
 }
 
-.header-profile-highlights,
-.highlights,
-.highlights > * {
+.header-profile-highlights > .highlights.highlight1 > *,
+.header-profile-highlights > .highlights.highlight1 {
 	height: 58px !important;
 	min-height: 58px;
 }
 
-.highlight1 {
+.header-profile-highlights > .highlights.highlight2 > *,
+.header-profile-highlights > .highlights.highlight2.ui-progressbar {
+	height: 48px !important;
+	min-height: 48px;
+}
+
+.highlight1,
+.highlight1 .bvviz-header-band,
+.highlight1 .bvviz-body {
 	width: 210px;
+	min-width: 210px;
+}
+
+.highlight1.bvviz-playerCard .bvviz-header-band {
+	background: none !important;
+}
+	
+.highlight1 {
 	float:left;
 }
 
+.highlight1 * {
+	color: white;
+	font-size: 14px;
+	text-shadow: none;
+}
+
+.highlight1 .bvviz-meta {
+	float: left;
+	width: 210px;
+}
+
+.highlight1 .bvviz-meta::after {
+	content:'';
+	display:block;
+	width:210px;
+	height:1px;
+	border-bottom:1px dotted white;
+	position:relative;
+	top: 12px;
+	z-index: 1;
+}
+
+.highlight1 .label {
+	background-color: transparent;
+	float: left;
+	padding:0;
+	padding-right:5px;
+}
+
+.highlight1 .value {
+	float:right;
+	padding:0;
+	padding-left:5px;
+}
+
+.highlight1 .label,
+.highlight1 .value {
+	position: relative;
+	background-color: #53D1F8;
+	line-height: 20px;
+	z-index: 100;
+}
+
 .highlight2 {
+	display: none;
+	border:5px solid white;
+	border-radius:15px;
+	background-color: #CCF2FC;
 	width: 400px;
 	float: right;
+}
+
+.highlight2 .ui-progressbar-value {
+	background-color: #CEE599;
+	border: 0;
 }
 
 .page-header .span10 .row.header-profile-info .span5:first-child+.span5 {
@@ -896,11 +972,93 @@ p.callout-table {
 * Page Styles
 ******************/
 
+/*--- General ---*/
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body-header {
+	display: none;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial,
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body.bvviz-col.bvviz-noheader,
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body-header,
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-cards.bvviz-col,
+.bvviz-container.bvviz.bvviz-missionTutorial {
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-cards.bvviz-col {
+	border-top: border-bottom: 1px solid #D5D6D7;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card {
+	border-bottom: 1px solid #D5D6D7;
+	background: transparent;
+	padding: 20px 0;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-details .bvviz-image {
+	border: 5px solid #9BE5FB;
+	background-color: #FFF5CA;
+	margin-right: 20px;
+	float: left;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-details .bvviz-image img {
+	width: 60px;
+	height: 60px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-details .bvviz-name {
+    margin-bottom: 5px;
+	color: #525459;
+	font-size: 16px;
+	font-weight: 200 !important;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-drawer,
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-details .bvviz-desc {
+	font-size: 13px;
+	line-height: 19px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-checkmark-circle {
+	margin: 0;
+	right: 0;
+	top: 1.8em;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-checkmark-circle svg {
+	width: 60px;
+	height: 60px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-drawer {
+	border: 0;
+	border-radius: 15px;
+	background-color: #EAEBEB;
+	margin: 20px 0;
+	padding: 20px 23px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-card .bvviz-drawer div {
+	padding: 0;
+	color: #999;
+}
+
 /*--- Onboarding ---*/
 
-#bvviz-missionTutorial-1.bvviz-container {
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container {
 	width: 705px;
-	height: 580px;
+	height: 700px;
+}
+
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container,
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-body.bvviz-col.bvviz-noheader,
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-cards.bvviz-col {
+	overflow:visible;
 }
 
 #bvviz-siteStream-1.bvviz-container {

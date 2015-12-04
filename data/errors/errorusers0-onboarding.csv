@@ -1,0 +1,2 @@
+first_name,last_name,name,display_name,email,custom_picture_url,location_city,location_country,title,department,manager,bv_errors
+Jessica,Warren-Locke,Jessica Warren-Locke,Jessica Warren-Locke,jessica@citidemo.badgeville.com,http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-jessicawarrenlocke-cropped.jpg,Seattle,US,Relationship Manager,Wealth Management,Margaret Park,"[""Email player email is already taken""]"
