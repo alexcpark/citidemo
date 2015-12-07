@@ -10,7 +10,7 @@
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Onboarding Community</div>
+					          <div class="main-section-title">Onboarding Community &nbsp;>&nbsp; Leader</div>
 					          <div class="row">
 					            <div class="span8">
 								  <div class="main-section-block-body main-section-block-break2">

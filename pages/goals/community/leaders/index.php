@@ -17,7 +17,7 @@
 									  <p>Surfacing group performance is a great way to establish context for your personal achievements. See the chart below for brief summary on how everyone stacks up!</p>
 								  </div>
 					              <!-- BVVIZ - Goals -->
-								  <div id="bvviz-leaderboard-4" class="bvviz-container"></div>
+								  <div id="BVVIZ-goals_community2_leaderboardLeaders" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

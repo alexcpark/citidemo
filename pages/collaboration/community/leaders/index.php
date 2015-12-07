@@ -10,18 +10,15 @@
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Progress Overview</div>
+					          <div class="main-section-title">Collaboration Community &nbsp;>&nbsp; Leader</div>
 					          <div class="row">
 					            <div class="span8">
-								  <div class="main-section-block-body main-section-block-break">
-									  <p>Track weekly goals. Identifying a starting list of steps and goals can help surface useful work patterns and best practices.</p>
+								  <div class="main-section-block-body main-section-block-break2">
+									  <p>Surfacing group performance is a great way to establish context for your personal achievements. See the chart below for brief summary on how everyone stacks up!</p>
 								  </div>
 					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-1" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-2" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-3" class="bvviz-container main-section-block-break"></div>
+								  <div class="main-section-block-title">Where You Stand</div>
+								  <div id="BVVIZ-collaboration_community2_leaderboardLeaders" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

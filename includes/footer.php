@@ -260,7 +260,7 @@
   					onboarding_community2_leaderboardLeaders = BVVIZ.leaderboard(
   						$( '#BVVIZ-onboarding_community2_leaderboardLeaders' ),
   						[
-  							'564b83a6280aabc8550017d2'
+  							'564b820db4b280d5e0000fa2'
   						], // leaderboard IDs
   						{
   							inline: true
@@ -333,9 +333,11 @@
 						playerId, // playerId
 						'564a591ab4b280a083000d97', // missionId (tutorial mission)
 						true
-					);
+					);*/
 					
 					// Goals Progress4, My Activities
+					
+					
 					// Goals Community, Everyone's Activities
 					goals_community0_siteStream = BVVIZ.siteStream(
 			            $( '#BVVIZ-goals_community0_siteStream' ),
@@ -351,7 +353,18 @@
 			            }
 			          );
 					// Goals Community, Contextual Leaderboard (You vs. Everyone)
+					
 					// Goals Community, Leaders
+  					goals_community2_leaderboardLeaders = BVVIZ.leaderboard(
+  						$( '#BVVIZ-goals_community2_leaderboardLeaders' ),
+  						[
+  							'564b820db4b280d5e0000fa2'
+  						], // leaderboard IDs
+  						{
+  							inline: true
+  						}// Options
+  					);
+					
 					// Render a leaderboard visualization
 					
 					/**********************
@@ -427,6 +440,15 @@
 			          );
 					// Learning Community, Contextual Leaderboard (You vs. Everyone)
 					// Learning Community, Leaders
+					learning_community2_leaderboardLeaders = BVVIZ.leaderboard(
+						$( '#BVVIZ-learning_community2_leaderboardLeaders' ),
+						[
+							'564b820db4b280d5e0000fa2'
+						], // leaderboard IDs
+						{
+							inline: true
+						}// Options
+					);
 					
 					/**********************
 					* Collaboration
@@ -505,7 +527,17 @@
   			            }
   			          );
 					// Collaboration Community, Contextual Leaderboard (You vs. Everyone)
+					
 					// Collaboration Community, Leaders
+  					collaboration_community2_leaderboardLeaders = BVVIZ.leaderboard(
+  						$( '#BVVIZ-collaboration_community2_leaderboardLeaders' ),
+  						[
+  							'564b820db4b280d5e0000fa2'
+  						], // leaderboard IDs
+  						{
+  							inline: true
+  						}// Options
+  					);
 					
 					/**********************
 					* Legacy
