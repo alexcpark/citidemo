@@ -36,7 +36,7 @@ BVVIZ.playerMeta = function( target, player, options ) {
               //$( '<img class="bvviz-avatar" src="' + player.image + '" />' ),
               //$( '<div class="bvviz-name">' + player.display_name + '</div>' ),
               $( '<div class="bvviz-meta bvviz-custom1"><span class="label">Embarked</span><span class="value">' + player.custom.hire_date + '</span></div>' ),
-              $( '<div class="bvviz-meta bvviz-custom2"><span class="label">Last Entry</span><span class="value">' + player.custom.last_acces_date + '</span></div>' ),
+              $( '<div class="bvviz-meta bvviz-custom2"><span class="label">Last Entry</span><span class="value">' + player.custom.last_access_date + '</span></div>' ),
               $( '<div class="bvviz-meta bvviz-custom3"><span class="label">Birthday</span><span class="value">' + player.custom.birthday + '</span></div>' )
             ); 
     },
@@ -173,6 +173,13 @@ BVVIZ.playerMeta = function( target, player, options ) {
 
       // Render player's unitBar
       BVVIZ.helper.unitBar( $( '.bvviz-units', target ), playerObj, unitBarSettings );
+
+      // If the playerProfile function is defined, add event handler
+      if ( $.isFunction( BVVIZ.playerProfile ) ) {
+        header.add( subHeader ).bind( 'click', function() {
+          BVVIZ.helper.showModal( BVVIZ.playerProfile, [ playerObj.id ] );
+        });
+      }
 
       // Remove the loading indicator
       loading.remove();

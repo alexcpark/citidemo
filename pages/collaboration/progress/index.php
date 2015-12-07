@@ -10,18 +10,15 @@
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Progress Overview</div>
+					          <div class="main-section-title">Progress & Activity</div>
 					          <div class="row">
 					            <div class="span8">
-								  <div class="main-section-block-body main-section-block-break">
-									  <p>Learning tracks are a great way to solidify expertise or surface reputation. Complete these learning units to solidify your expertise in that subject area.</p>
+								  <div class="main-section-block-body main-section-block-break2">
+									  <p>Insight begins with visibility. Seeing the things you do every day is the first step towards understanding your habits and planning for success. See your most recent activity below! </p>
 								  </div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-4" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-5" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-6" class="bvviz-container main-section-block-break"></div>
+					              <!-- BVVIZ - Goals -->
+								  <div class="main-section-block-title">Your activity in Collaboration</div>
+								  <div id="BVVIZ-collaboration_progress0_playerStream" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

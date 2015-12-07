@@ -1,6 +1,6 @@
 <?php include '../../../../includes/header-meta.php'; ?>
 
-	<body id="bv-page-onboarding" class="page1-subpage1">
+	<body id="bv-page-onboarding" class="page1-subpage0">
 		
 		<?php include '../../../../includes/header-branding.php'; ?>
 		<?php include '../../../../includes/header-nav-program.php'; ?>
@@ -10,7 +10,7 @@
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Progress > Checklist</div>
+					          <div class="main-section-title">Progress &nbsp;>&nbsp; Checklist</div>
 					          <div class="row">
 					            <div class="span8">
 								  <div class="main-section-block-body">

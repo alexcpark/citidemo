@@ -14,10 +14,10 @@
 					          <div class="row">
 					            <div class="span8">
 								  <div class="main-section-block-body main-section-block-break2">
-									  <p>Track weekly goals. Identifying a starting list of steps can help surface useful work patterns and best practices. Asking questions is the critical to customer success. You’re lead pipeline is where that journey begins. </p>
+									  <p>Surfacing group performance is a great way to establish context for your personal achievements. See the chart below for brief summary on how everyone stacks up!</p>
 								  </div>
 					              <!-- BVVIZ - Goals -->
-								  <div class="main-section-block-title">Recent Activity in Goals @ Citi></div>
+								  <div class="main-section-block-title">All Recent Activity in Goals @ Citi></div>
 								  <div id="BVVIZ-goals_community0_siteStream" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->

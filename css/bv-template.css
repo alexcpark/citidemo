@@ -359,12 +359,24 @@ h1, h2, h3, h4, h5, h6 {
 	float: left;
 	padding: 65px 0 0;
 	margin: 0 0 0 35px;
+	color: #85858B;
+}
+.content * {
+	color: #85858B;
 }
 
 .content,
 .main-section .container,
 .span8 {
 	width: 705px;
+}
+
+.bv-bold {
+	font-family: "interstateregular" !important;
+}
+
+.bv-italic {
+	font-family: "interstateextralight_italic" !important;
 }
 
 /* branding */
@@ -631,8 +643,22 @@ h1, h2, h3, h4, h5, h6 {
 	min-height: 58px;
 }
 
+.header-profile-highlights > .highlights.highlight2,
 .header-profile-highlights > .highlights.highlight2 > *,
 .header-profile-highlights > .highlights.highlight2.ui-progressbar {
+	height: 58px !important;
+	min-height: 58px;
+}
+
+#bv-page-onboarding .header-profile-highlights > .highlights.highlight2,
+#bv-page-onboarding .header-profile-highlights > .highlights.highlight2 > *,
+#bv-page-onboarding .header-profile-highlights > .highlights.highlight2.ui-progressbar,
+#bv-page-goals .header-profile-highlights > .highlights.highlight2,
+#bv-page-goals .header-profile-highlights > .highlights.highlight2 > *,
+#bv-page-goals .header-profile-highlights > .highlights.highlight2.ui-progressbar,
+#bv-page-guide .header-profile-highlights > .highlights.highlight2,
+#bv-page-guide .header-profile-highlights > .highlights.highlight2 > *,
+#bv-page-guide .header-profile-highlights > .highlights.highlight2.ui-progressbar {
 	height: 48px !important;
 	min-height: 48px;
 }
@@ -690,24 +716,57 @@ h1, h2, h3, h4, h5, h6 {
 .highlight1 .label,
 .highlight1 .value {
 	position: relative;
-	background-color: #53D1F8;
 	line-height: 20px;
 	z-index: 100;
 }
 
+#bv-page-onboarding .highlight1 .label,
+#bv-page-onboarding .highlight1 .value {
+	background-color: #53D1F8;
+}
+
+#bv-page-guide .highlight1 .label,
+#bv-page-guide .highlight1 .value {
+	background-color: #D5D6D7;
+}
+
 .highlight2 {
-	display: none;
+	width: 400px;
+	float: right;
+	position: relative !important;
+}
+
+.highlight2.progressBar {
 	border:5px solid white;
 	border-radius:15px;
 	background-color: #CCF2FC;
-	width: 400px;
-	float: right;
 }
 
 .highlight2 .ui-progressbar-value {
 	background-color: #CEE599;
 	border: 0;
 }
+
+.bv-progressBar-inner-percent {
+	display: block;
+	position: absolute;
+	top: 15px;
+	bottom: 0;
+	left: 19px;
+	right: 0;
+	text-align: center;
+	color: white;
+	font-size: 32px;
+	font-family: 'interstatebold' !important;
+	text-shadow: 0 0 20px #999;
+}
+
+.bv-progressBar-inner-percent span {
+	color: white;
+	font-size: 32px;
+	font-family: 'interstatebold' !important;
+}
+
 
 .page-header .span10 .row.header-profile-info .span5:first-child+.span5 {
 	height: auto;
@@ -716,48 +775,99 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-#BVVIZ-playerStats.bvviz .bvviz-body {
-	background-color: transparent;
-	border: 0;
-	border-radius: 0;
+/* Player Stats, built from Player Rewards visualizations */
+
+.bvviz-playerStats.playerRewards {
+	
 }
 
-#BVVIZ-playerStats .bvviz-card {
-    border: 0;
-	border-top: 1px dotted #95a88d;
-	border-radius: 0;
-    background-color: transparent;
-    text-align: left;
-    padding: 0;
-    margin: 0;
-	position: relative;
-	height: 18px;
-}
-
-#BVVIZ-playerStats .bvviz-card:first-child {
-	border-top: 0;
-}
-
-#BVVIZ-playerStats .bvviz-card .bvviz-progress {
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-#BVVIZ-playerStats .bvviz-card .bvviz-name {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-#BVVIZ-playerStats .bvviz-card img.bvviz-picture,
-#BVVIZ-playerStats .bvviz-card .bvviz-checkmark-corner {
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture {
 	display: none;
 }
 
-#BVVIZ-playerStats, #BVVIZ-customContainer-0 {
-	display: inline-block;
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body .bvviz-cards.bvviz-row {
+	overflow: visible;
 }
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body .bvviz-cards.bvviz-row,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body .bvviz-cards.bvviz-row .bvviz-card,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+	position: relative;
+	top: initial;
+	right: initial;
+	bottom: initial;
+	left: initial;
+	display:inline-block;
+}
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	
+	position: relative;
+	font-size: 14px;
+	font-family: 'interstateregular' !important;
+	line-height: 20px;
+	text-align: left;
+	z-index: 100;
+	vertical-align: baseline;
+	min-height: auto;
+	height: auto;
+	width: auto;
+	min-width: auto;
+}
+
+#bv-page-goals .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+#bv-page-goals .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	background-color: #CEE495;
+}
+
+#bv-page-learning .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+#bv-page-learning .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	background-color: #F5D191;
+}
+
+#bv-page-collaboration .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,
+#bv-page-collaboration .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	background-color: #D7C1E3;
+}
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	float: left;
+	width: 210px;
+}
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-body .bvviz-cards.bvviz-row .bvviz-card::after {
+	content:'';
+	display:block;
+	width:210px;
+	height:1px;
+	border-bottom:1px dotted white;
+	position:relative;
+	top: 12px;
+	z-index: 1;
+}
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name {
+	float: left;
+	padding:0;
+	padding-right:5px;
+}
+
+.bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-count {
+	float: right;
+	padding: 0;
+	padding-left: 5px;
+	text-align: right;
+}
+
+/* Other Stuff */
 
 #BVVIZ-customContainer-0 .bvviz-card {
     border: 0;
@@ -791,9 +901,10 @@ h1, h2, h3, h4, h5, h6 {
 .subnav ul.subnav-pages li.subnav-page {  }
 
 .subnav ul.subnav-pages li.subnav-page > a {
-	font-size: 22px;
 	padding: 15px 20px 15px 30px;
 	margin-top: 25px;
+	font-size: 22px;
+	line-height: 33px;
 }
 
 .subnav ul.subnav-pages li.subnav-page:first-child > a {
@@ -821,27 +932,28 @@ h1, h2, h3, h4, h5, h6 {
 .subnav a:visited { color: #002C72; }
 
 #bv-page-onboarding.page1 .page1 > a { border-left: 5px solid #53D1F8; color: #97999B; }
-#bv-page-onboarding.page1-subpage1 .page1 > ul > .subpage1 > a { border-left: 5px solid #53D1F8; color: #97999B; }
+#bv-page-onboarding.page1-subpage0 .page1 > ul > .subpage0 > a { border-left: 5px solid #53D1F8; color: #97999B; }
 #bv-page-onboarding.page2 .page2 > a { border-left: 5px solid #53D1F8; color: #97999B; }
 #bv-page-onboarding.page2-subpage1 .page2 > ul > .subpage1 > a { border-left: 5px solid #53D1F8; color: #97999B; }
 #bv-page-onboarding.page2-subpage2 .page2 > ul > .subpage2 > a { border-left: 5px solid #53D1F8; color: #97999B; }
 #bv-page-onboarding.page1 .page1 > a:hover { color: #1DBDF4; }
-#bv-page-onboarding.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #1DBDF4; }
+#bv-page-onboarding.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #1DBDF4; }
 #bv-page-onboarding.page2 .page2 > a:hover { color: #1DBDF4; }
 #bv-page-onboarding.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #1DBDF4; }
 #bv-page-onboarding.page2-subpage2 .page2 > ul > .subpage1 > a:hover { color: #1DBDF4; }
 #bv-page-onboarding.page1 .page1 > a:hover { color: #97999B; }
-#bv-page-onboarding.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #97999B; }
+#bv-page-onboarding.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #97999B; }
 #bv-page-onboarding.page2 .page2 > a:hover { color: #97999B; }
 #bv-page-onboarding.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-onboarding.page2-subpage2 .page2 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-onboarding.page1 .page1 > a:active { color: #1DBDF4; }
-#bv-page-onboarding.page1-subpage1 .page1 > ul > .subpage1 > a:active { color: #1DBDF4; }
+#bv-page-onboarding.page1-subpage0 .page1 > ul > .subpage0 > a:active { color: #1DBDF4; }
 #bv-page-onboarding.page2 .page2 > a:active { color: #1DBDF4; }
 #bv-page-onboarding.page2-subpage1 .page2 > ul > .subpage1 > a:active { color: #1DBDF4; }
 #bv-page-onboarding.page2-subpage2 .page2 > ul > .subpage1 > a:active { color: #1DBDF4; }
 
 #bv-page-goals.page1 .page1 > a { border-left: 5px solid #CEE495; color: #97999B; }
+#bv-page-goals.page1-subpage0 .page1 > ul > .subpage0 > a { border-left: 5px solid #CEE495; color: #97999B; }
 #bv-page-goals.page1-subpage1 .page1 > ul > .subpage1 > a { border-left: 5px solid #CEE495; color: #97999B; }
 #bv-page-goals.page1-subpage2 .page1 > ul > .subpage2 > a { border-left: 5px solid #CEE495; color: #97999B; }
 #bv-page-goals.page1-subpage3 .page1 > ul > .subpage3 > a { border-left: 5px solid #CEE495; color: #97999B; }
@@ -849,6 +961,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-goals.page2-subpage1 .page2 > ul > .subpage1 > a { border-left: 5px solid #CEE495; color: #97999B; }
 #bv-page-goals.page2-subpage2 .page2 > ul > .subpage2 > a { border-left: 5px solid #CEE495; color: #97999B; }
 #bv-page-goals.page1 .page1 > a:hover { color: #86BB00; }
+#bv-page-goals.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #86BB00; }
 #bv-page-goals.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #86BB00; }
 #bv-page-goals.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #86BB00; }
 #bv-page-goals.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #86BB00; }
@@ -856,6 +969,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-goals.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #86BB00; }
 #bv-page-goals.page2-subpage2 .page2 > ul > .subpage2 > a:hover { color: #86BB00; }
 #bv-page-goals.page1 .page1 > a:hover { color: #97999B; }
+#bv-page-goals.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #97999B; }
 #bv-page-goals.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-goals.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #97999B; }
 #bv-page-goals.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #97999B; }
@@ -863,6 +977,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-goals.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-goals.page2-subpage2 .page2 > ul > .subpage2 > a:hover { color: #97999B; }
 #bv-page-goals.page1 .page1 > a:active { color: #86BB00; }
+#bv-page-goals.page1-subpage0 .page1 > ul > .subpage0 > a:active { color: #86BB00; }
 #bv-page-goals.page1-subpage1 .page1 > ul > .subpage1 > a:active { color: #86BB00; }
 #bv-page-goals.page1-subpage2 .page1 > ul > .subpage2 > a:active { color: #86BB00; }
 #bv-page-goals.page1-subpage3 .page1 > ul > .subpage3 > a:active { color: #86BB00; }
@@ -871,6 +986,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-goals.page2-subpage2 .page2 > ul > .subpage2 > a:active { color: #86BB00; }
 
 #bv-page-learning.page1 .page1 > a { border-left: 5px solid #F5D191; color: #97999B; }
+#bv-page-learning.page1-subpage0 .page1 > ul > .subpage0 > a { border-left: 5px solid #F5D191; color: #97999B; }
 #bv-page-learning.page1-subpage1 .page1 > ul > .subpage1 > a { border-left: 5px solid #F5D191; color: #97999B; }
 #bv-page-learning.page1-subpage2 .page1 > ul > .subpage2 > a { border-left: 5px solid #F5D191; color: #97999B; }
 #bv-page-learning.page1-subpage3 .page1 > ul > .subpage3 > a { border-left: 5px solid #F5D191; color: #97999B; }
@@ -878,6 +994,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-learning.page2-subpage1 .page2 > ul > .subpage1 > a { border-left: 5px solid #F5D191; color: #97999B; }
 #bv-page-learning.page2-subpage2 .page2 > ul > .subpage2 > a { border-left: 5px solid #F5D191; color: #97999B; }
 #bv-page-learning.page1 .page1 > a:hover { color: #F0AE41; }
+#bv-page-learning.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #F0AE41; }
 #bv-page-learning.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #F0AE41; }
 #bv-page-learning.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #F0AE41; }
 #bv-page-learning.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #F0AE41; }
@@ -885,6 +1002,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-learning.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #F0AE41; }
 #bv-page-learning.page2-subpage2 .page2 > ul > .subpage2 > a:hover { color: #F0AE41; }
 #bv-page-learning.page1 .page1 > a:hover { color: #97999B; }
+#bv-page-learning.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #97999B; }
 #bv-page-learning.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-learning.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #97999B; }
 #bv-page-learning.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #97999B; }
@@ -892,6 +1010,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-learning.page2-subpage1 .page2 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-learning.page2-subpage2 .page2 > ul > .subpage2 > a:hover { color: #97999B; }
 #bv-page-learning.page1 .page1 > a:active { color: #F0AE41; }
+#bv-page-learning.page1-subpage0 .page1 > ul > .subpage0 > a:active { color: #F0AE41; }
 #bv-page-learning.page1-subpage1 .page1 > ul > .subpage1 > a:active { color: #F0AE41; }
 #bv-page-learning.page1-subpage2 .page1 > ul > .subpage2 > a:active { color: #F0AE41; }
 #bv-page-learning.page1-subpage3 .page1 > ul > .subpage3 > a:active { color: #F0AE41; }
@@ -900,6 +1019,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-learning.page2-subpage2 .page2 > ul > .subpage2 > a:active { color: #F0AE41; }
 
 #bv-page-collaboration.page1 .page1 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
+#bv-page-collaboration.page1-subpage0 .page1 > ul > .subpage0 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
 #bv-page-collaboration.page1-subpage1 .page1 > ul > .subpage1 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
 #bv-page-collaboration.page1-subpage2 .page1 > ul > .subpage2 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
 #bv-page-collaboration.page1-subpage3 .page1 > ul > .subpage3 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
@@ -908,6 +1028,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-collaboration.page2-subpage1 .page2 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
 #bv-page-collaboration.page2-subpage2 .page2 > a { border-left: 5px solid #D8C0E2; color: #97999B; }
 #bv-page-collaboration.page1 .page1 > a:hover { color: #BB90CD; }
+#bv-page-collaboration.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #BB90CD; }
@@ -916,6 +1037,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-collaboration.page2-subpage1 .page2 > a:hover { color: #BB90CD; }
 #bv-page-collaboration.page2-subpage2 .page2 > a:hover { color: #BB90CD; }
 #bv-page-collaboration.page1 .page1 > a:hover { color: #97999B; }
+#bv-page-collaboration.page1-subpage0 .page1 > ul > .subpage0 > a:hover { color: #97999B; }
 #bv-page-collaboration.page1-subpage1 .page1 > ul > .subpage1 > a:hover { color: #97999B; }
 #bv-page-collaboration.page1-subpage2 .page1 > ul > .subpage2 > a:hover { color: #97999B; }
 #bv-page-collaboration.page1-subpage3 .page1 > ul > .subpage3 > a:hover { color: #97999B; }
@@ -924,6 +1046,7 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-collaboration.page2-subpage1 .page2 > a:hover { color: #97999B; }
 #bv-page-collaboration.page2-subpage2 .page2 > a:hover { color: #97999B; }
 #bv-page-collaboration.page1 .page1 > a:active { color: #BB90CD; }
+#bv-page-collaboration.page1-subpage0 .page1 > ul > .subpage0 > a:active { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage1 .page1 > ul > .subpage1 > a:active { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage2 .page1 > ul > .subpage2 > a:active { color: #BB90CD; }
 #bv-page-collaboration.page1-subpage3 .page1 > ul > .subpage3 > a:active { color: #BB90CD; }
@@ -937,11 +1060,6 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-guide.page3 .page3 > a { border-left: 5px solid #D5D6D7; color: #97999B; }
 #bv-page-guide.page4 .page4 > a { border-left: 5px solid #D5D6D7; color: #97999B; }
 #bv-page-guide.page5 .page5 > a { border-left: 5px solid #D5D6D7; color: #97999B; }
-#bv-page-guide.page1 .page1 > a:hover { color: #97999B; }
-#bv-page-guide.page2 .page2 > a:hover { color: #97999B; }
-#bv-page-guide.page3 .page3 > a:hover { color: #97999B; }
-#bv-page-guide.page4 .page4 > a:hover { color: #97999B; }
-#bv-page-guide.page5 .page5 > a:hover { color: #97999B; }
 #bv-page-guide.page1 .page1 > a:hover { color: #97999B; }
 #bv-page-guide.page2 .page2 > a:hover { color: #97999B; }
 #bv-page-guide.page3 .page3 > a:hover { color: #97999B; }
@@ -982,19 +1100,45 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .main-section-block-break2 {
-	padding-bottom: 15px;
+	padding-bottom: 20px;
+}
+
+.main-section-block-break-margin {
+	margin-bottom: 50px !important;
+}
+.main-section-block-break2-margin {
+	margin-bottom: 20px !important;
+}
+
+.main-section-block-list {
+	margin: 20px 0 30px 50px;
+}
+
+.main-section-block-list2 {
+	margin: 20px 0 30px 50px;
+}
+
+.main-section-block-list li {
+	margin-bottom: 20px;
+	padding-left: 5px;
+}
+
+.main-section-block-list-2 li {
+	margin-bottom: 5px;
+	padding-left: 5px;
 }
 
 p.callouts {
-	outline: 1px solid #eee;
-	background-color: #eee;
+	outline: 0px solid #eee;
+	background-color: transparent;
 	width: 705px;
 	height: 150px;
-	margin: 50px 0;
+	margin: 30px 0 40px;
+	text-align: center;
 }
 
 p.callout-1 {
-	height: 90px;
+	height: auto;
 }
 
 p.callout-2 {
@@ -1002,8 +1146,19 @@ p.callout-2 {
 }
 
 p.callout-table {
+	outline: 0px solid #eee;
+	background-color: ;
 	height: 590px;
 	margin: 0 0 20px 0;
+}
+
+.callout-title {
+	display:inline-block;
+	margin-bottom: 50px;
+	color: #CD9FBE;
+	font-size: 16px;
+	font-family: 'interstatebold' !important;
+	
 }
 
 .footer {
@@ -1095,7 +1250,139 @@ p.callout-table {
 * Page Styles
 ******************/
 
-/*--- General ---*/
+/*--- GENERAL---*/
+
+
+
+#bv-page-collaboration .bvviz-headerTracks.bvviz-container,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	overflow: visible;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row,
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row {
+	
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture {
+	height: 60px;
+	width: 60px;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture:hover {
+	position: relative;
+	top: -5px;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-name {
+	background-color: #D7C1E3;
+	position: absolute;
+	padding: 4px;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: white;
+	font-size: 11px;
+	font-family: 'interstatebold' !important;
+	text-align: center;
+	-webkit-box-shadow: 0 -6px 10px -7px #999;
+	-moz-box-shadow: 0 -6px 10px -7px #999;
+	box-shadow: 0 -6px 10px -7px #999;
+	z-index:100;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-progress {
+	border-radius: 20px;
+	background-color: #F5D191;
+	position: absolute;
+	padding: 5px;
+	top: 0;
+	right: 10px;
+	color: white;
+	font-family: 'interstatebold' !important;
+	z-index:80;
+	display: none;
+}
+
+/*--- Header List of Tracks or Missions ---*/
+
+#bv-page-learning .bvviz-headerTracks.bvviz-container,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	overflow: visible;
+}
+
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row,
+#bv-page-learning .bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row {
+	
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture {
+	height: 60px;
+	width: 60px;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture:hover {
+	position: relative;
+	top: -5px;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-name {
+	background-color: #F5D191;
+	position: absolute;
+	padding: 4px;
+	top: 40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	color: white;
+	font-size: 11px;
+	font-family: 'interstatebold' !important;
+	text-align: center;
+	-webkit-box-shadow: 0 -6px 10px -7px #999;
+	-moz-box-shadow: 0 -6px 10px -7px #999;
+	box-shadow: 0 -6px 10px -7px #999;
+	z-index:100;
+}
+
+.bvviz-headerTracks.highlight2.bvviz.bvviz-playerTracks .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-progress {
+	border-radius: 20px;
+	background-color: #F5D191;
+	position: absolute;
+	padding: 5px;
+	top: 0;
+	right: 10px;
+	color: white;
+	font-family: 'interstatebold' !important;
+	z-index:80;
+	display: none;
+}
 
 /*--- Large Checklist (missionTutorial)  ---*/
 
@@ -1281,6 +1568,19 @@ p.callout-table {
     top: -20px;
     left: 80px;
 }
+/*
+.bvviz-container.bvviz.bvviz-playerStream .bvviz-timestamp {
+    display: block;
+    position: relative;
+	margin-left: 5px;
+	float: right
+};*/
+
+.bvviz-container.bvviz.bvviz-siteStream .bv-achievable-image {
+    height: 60px;
+    width: 60px;
+    float: right;
+}
 
 /*--- Community Stream (playerStream)  ---*/
 
@@ -1312,15 +1612,19 @@ p.callout-table {
 .bvviz-container.bvviz.bvviz-playerStream .bvviz-card::after {
 	content:'';
 	display:block;
-	width: 15px;
-	border:5px solid #9BE5FB;
+	width: 25px;
 	border-radius: 5px;
-	background-color: #9BE5FB;
+	background-color: #D5D6D7f;
 	position: absolute;
 	top: 10px;
 	bottom: 10px;
 	left: 2px;
 }
+
+#bv-page-onboarding .bvviz-container.bvviz.bvviz-playerStream .bvviz-card::after { background-color: #53D1F8; }
+#bv-page-goals .bvviz-container.bvviz.bvviz-playerStream .bvviz-card::after { background-color: #CEE495; }
+#bv-page-learning .bvviz-container.bvviz.bvviz-playerStream .bvviz-card::after { background-color: #F5D191; }
+#bv-page-collaboration .bvviz-container.bvviz.bvviz-playerStream .bvviz-card::after { background-color: #D7C1E3; }
 
 .bvviz-container.bvviz.bvviz-playerStream .bvviz-message {
 	position:relative;
@@ -1400,10 +1704,16 @@ p.callout-table {
 
 
 .bvviz-container.bvviz.bvviz-playerStream .bvviz-timestamp {
-    display: inline-block;
+    display: block;
     position: relative;
-	margin-left: 5px;
-	float: right;
+	/*margin-left: 5px;
+	float: right;*/
+}
+
+.bvviz-container.bvviz.bvviz-playerStream .bv-achievable-image {
+    height: 60px;
+    width: 60px;
+    float: right;
 }
 
 /*--- Standard Leaderboards Stream (leaderboard)  ---*/
@@ -1528,9 +1838,80 @@ p.callout-table {
     left: 80px;
 }
 
+
+/* --- GUIDE --- */
+
+/* Examples of Success */
+
+.callout-list-group * { color: #525259; font-size: 13px; }
+
+.callout-list-group.list-group-first { margin: 0; list-style: none; }
+
+.callout-list-group.list-group-progress { background-color: #FFF5CA; }
+.callout-list-group.list-group-progress .list-title { background-color: #FEEA94; }
+
+.callout-list-group.list-group-status { background-color: #CDEFF1; }
+.callout-list-group.list-group-status .list-title { background-color: #9BDFE4; }
+
+.callout-list-group.list-group-recognition { background-color: #E6CEDE; }
+.callout-list-group.list-group-recognition .list-title { background-color: #CF9FBD; }
+
+.callout-list-group .list-title { padding: 20px 25px; }
+
+.list-group-first ul { list-style: disc; margin: 0; padding: 20px 30px 20px 60px; }
+.list-group-first ul li { line-height: 24px; }
+
+.callout-list-group .list-examples li { margin-bottom: 10px; font-family: 'interstateextralight_italic' !important; }
+
+/* Key Activities */
+
+.bv-behavior-list .bv-list-header { border: 1px solid white; }
+
+.bv-behavior-list .bv-list-header th {
+	padding: 12px;
+	color: #525359;
+	font-size: 16px;
+	font-family: 'interstatelight_italic' !important;
+	text-align: left;
+}
+
+.bv-behavior-list .bv-list-header th.column3 { text-align: right;}
+
+.bv-behavior-list .bv-behavior td {
+	border: 1px solid white;
+	padding: 12px;
+	color: #525259;
+	font-size: 13px;
+	font-family: 'interstatelight' !important;
+	vertical-align: top;
+}
+
+.bv-behavior-list .bv-behavior td.column1 { width: 30%; }
+.bv-behavior-list .bv-behavior td.column2 { width: 60%; }
+.bv-behavior-list .bv-behavior td.column3 { width: 10%; text-align: right; }
+
+.bv-behavior-list .bv-behavior .behavior-value,
+.bv-behavior-list .bv-behavior .behavior-lable { display: block; }
+
+.bv-behavior-list .bv-behavior .behavior-value { color: #525259; font-size: 22px; }
+.bv-behavior-list .bv-behavior .behavior-label { color: #B6B7B9; }
+
+#bv-table-onboarding { background-color: #CDF2FD; }
+#bv-table-onboarding .bv-list-header { background-color: #9BE5FB; }
+
+#bv-table-goals { background-color: #E6F1CA; }
+#bv-table-goals .bv-list-header { background-color: #CEE495; }
+
+#bv-table-learning { background-color: #FAE8CA; }
+#bv-table-learning .bv-list-header { background-color: #F7D199; }
+
+#bv-table-collaboration { background-color: #ECDFF1; }
+#bv-table-collaboration .bv-list-header { background-color: #D8C0E2; }
+
+
 /****************
 *
-*  HEIGHTS
+*  HEIGHTS & FINAL BORDER PRESENTATION
 *
 *****************/
 
@@ -1568,10 +1949,24 @@ p.callout-table {
 
 #BVVIZ-onboarding_community2_leaderboardLeaders.bvviz-container {
 	width: 705px;
-	height: 580px;
+	height: 540px;
 }
 
 /*--- Goals ---*/
+
+#BVVIZ-goals_header_playerStats.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-goals_header_quarterlyRev.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-goals_progress0_playerStream.bvviz-container {
+	outline: 0;
+	width: 705px;
+	height: 540px;
+}
 
 #bvviz-missionProgress-1.bvviz-container,
 #bvviz-missionProgress-2.bvviz-container,
@@ -1613,6 +2008,20 @@ p.callout-table {
 
 /*--- Learning ---*/
 
+#BVVIZ-learning_header_playerStats.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-learning_header_learningUnits.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-learning_progress0_playerStream.bvviz-container {
+	outline: 0;
+	width: 705px;
+	height: 540px;
+}
+
 #bvviz-missionProgress-4.bvviz-container,
 #bvviz-missionProgress-5.bvviz-container,
 #bvviz-missionProgress-6.bvviz-container {
@@ -1646,6 +2055,20 @@ p.callout-table {
 
 /*--- Collaboration ---*/
 
+#BVVIZ-collaboration_header_playerStats.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-collaboration_header_affinityTracks.bvviz-container {
+	outline: 0;
+}
+
+#BVVIZ-collaboration_progress0_playerStream.bvviz-container {
+	outline: 0;
+	width: 705px;
+	height: 540px;
+}
+
 #BVVIZ-collaboration_community0_siteStream.bvviz-container {
 	outline: 0;
 	width: 705px;
@@ -1664,6 +2087,14 @@ p.callout-table {
 
 /*--- Guide ---*/
 
+
+#bv-page-guide #BVVIZ-onboarding_header_playerMeta {
+	outline: 0;
+}
+
+#bv-page-guide #BVVIZ-onboarding_header_missionProgressBar {
+	outline: 0;
+}
 
 /*--- Other ---*/
 

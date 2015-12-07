@@ -35,12 +35,58 @@ $(function() {
 	// goalProgress, custom, using jquery plugin
 	BVVIZ.goalProgress = function ( target, playerId, missionId, options ) {
 		
-		//quick and dirty
-		var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
-				value: 20
-			}).animate({height:'toggle'},3000);
+		BVSDK( 'players/missions', { players: playerId, missions: missionId }, { // immediately define and use variable
+			fields: ['progress'],
+		}).ok( function(missionData) {
 			
-		return mainBar;
+			console.log(missionData);
+			console.log(missionData.missions[0].progress.percent);
+			
+			//quick and dirty
+			var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
+					value: missionData.missions[0].progress.percent
+			});
+			
+			$('.progressBar').append('<span class="bv-progressBar-inner-percent"><span>' + missionData.missions[0].progress.percent + '</span> % ' + (($('body').attr('id') == 'bv-page-onboarding' || 'bv-page-guide' ) ? 'Onboarded' : '') + '</span>');
+		
+			return mainBar;
+		});	
+	};
+	
+	// goalProgress2, custom, using jquery plugin
+	BVVIZ.goalProgress2 = function ( target, playerId, missionId, options ) {
+		
+		BVSDK( 'missions/rewards', { players: playerId, missions: missionId }, { // immediately define and use variable
+			fields: 'all',
+		}).ok( function(rewardData) {
+			
+			var goal;
+			
+			// grab values for markers
+			for (i = 0; i < rewardData.length; i++) {
+				// iterate and store goals
+				goal[i] = rewardData.rewards[0].player_criteria[0].value;
+				//console.log(rewardData);
+			}
+			
+			//quick and dirty
+			var mainBar2 = $( "#BVVIZ-goals_header_missionProgressBar" ).progressbar({
+					value: 60
+			});
+			
+			return mainBar2;
+			
+			//console.log(missionData.missions[0].progress.percent);
+			
+			//quick and dirty
+			/*var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
+					value: missionData.missions[0].progress.percent
+			});
+			
+			$('.progressBar').append('<span class="bv-progressBar-inner-percent"><span>' + missionData.missions[0].progress.percent + '</span> % ' + (($('body').attr('id') == 'bv-page-onboarding' || 'bv-page-guide' ) ? 'Onboarded' : '') + '</span>');
+		
+			return mainBar;*/
+		});	
 		/*
 		// Variables and methods are defined in a private scope and then exposed publicly as needed later
 		var pub = {},
@@ -148,7 +194,7 @@ $(function() {
 		pub.show = show;
 		pub.load = load;
 		return pub; */
-	}; 
+	};
 	/*
 	// contextualLeaderboard, based on BV leaderboard
 	BVVIZ.contextLeaderboard = function ( target, leaderboardIds, options ) {

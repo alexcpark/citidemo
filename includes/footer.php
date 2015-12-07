@@ -213,7 +213,7 @@
 					onboarding_header_missionProgressBar = BVVIZ.goalProgress(
 						$( '#BVVIZ-onboarding_header_missionProgressBar' ),
 						playerId, // playerId
-						'' // missionId
+						'564a591ab4b280a083000d97' // missionId
 			        );
 					
 					// Onboarding0 Progress, My Activities
@@ -253,12 +253,14 @@
 			              itemCompleteCallback: handleImgErrorFailover
 			            }
 			          );
+					  
 					// Onboarding1 Community, Contextual Leaderboard (You vs. Everyone)
+					  
 					// Onboarding2 Community, Leaders
   					onboarding_community2_leaderboardLeaders = BVVIZ.leaderboard(
   						$( '#BVVIZ-onboarding_community2_leaderboardLeaders' ),
   						[
-  							'564b820db4b280d5e0000fa2'
+  							'564b83a6280aabc8550017d2'
   						], // leaderboard IDs
   						{
   							inline: true
@@ -269,41 +271,31 @@
 					* Goals
 					*********/
 					
-					/*
 					// Goals Header, Stats
-					goals_header_playerStats = BVVIZ.missionRewards(
+					goals_header_playerStats = BVVIZ.playerStats(
 						$( '#BVVIZ-goals_header_playerStats' ),
 						playerId, // playerId
 						// options for current visualization instance
 						{
-				              // Player Summary options
-				              unitBar: {
-
-				                // Module list and order
-				                modules: [ 'units', 'level', 'expertise', 'teams', 'activities' ],
-
-				                // Titles displayed within the unitbar for each module
-				                titles: { 
-				                          'level': 'Level',
-				                          'expertise': 'Expertise',
-				                          'teams': 'Teams',
-				                          'activities': 'Recent Activity'
-				                        }
-				              }
+							  // Whether the header should be rendered
+							  inline: true,
+							
+					          // Category can be used to filter the data, default is null which request all cards, example: 'education'
+					          category: 'stats-goals'
 				        }
 			        );
 					
 					// Goals Header, Progress Bar for Quarterly Revenue Goals ( Good, Better, Best )  goalProgress Bar
-					goals_header_quarterlyRev = BVVIZ.goalProgress(
+					goals_header_quarterlyRev = BVVIZ.goalProgress2(
 						$( '#BVVIZ-goals_header_quarterlyRev' ),
 						playerId, // playerId
-						'' // missionId
-			        );*/
+						'5654e36ba33c43783f002de2' // missionId
+			        );
 					
   					// Goals0 Progress, My Activities
   					goals_progress0_playerStream = BVVIZ.playerStream(
   						$( '#BVVIZ-goals_progress0_playerStream' ),
-  						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+  						'565cad0862f1c1bb5200543f', // Following (consumer = "activity") streamId
   						playerId, // playerId
   						// options for current visualization instance
   						{
@@ -314,7 +306,7 @@
   							itemCompleteCallback: handleImgErrorFailover
   						}
   					);
-					
+					/*
 					// Goals Progress0 Overview, Weekly Leads Summary
 					// Goals Progress0 Overview, Weekly Opportunities Summary
 					// Goals Progress0 Overview, Weekly Revenue Summary
@@ -366,36 +358,41 @@
 					* Learning
 					*********/
 					
-					/*
 					// Learning Header, Stats
-					onboarding_header_playerStats = BVVIZ.playerCard(
-						$( '#BVVIZ-onboarding_header_playerStats' ),
+					learning_header_playerStats = BVVIZ.playerStats(
+						$( '#BVVIZ-learning_header_playerStats' ),
 						playerId, // playerId
 						// options for current visualization instance
 						{
-				              // Player Summary options
-				              unitBar: {
-
-				                // Module list and order
-				                modules: [ 'units', 'level', 'expertise', 'teams', 'activities' ],
-
-				                // Titles displayed within the unitbar for each module
-				                titles: { 
-				                          'level': 'Level',
-				                          'expertise': 'Expertise',
-				                          'teams': 'Teams',
-				                          'activities': 'Recent Activity'
-				                        }
-				              }
+							  // Whether the header should be rendered
+							  inline: true,
+							
+					          // Category can be used to filter the data, default is null which request all cards, example: 'education'
+					          category: 'stats-learning'
 				        }
-			        );*/
+			        );
 					
 					// Learning Header, List of learning units and your progress in each
+					learning_header_learningUnits = BVVIZ.playerTracks(
+						$( '#BVVIZ-learning_header_learningUnits' ),
+						playerId, // playerId
+						{
+							// Whether the header should be rendered
+							inline: true,
+
+							// Category can be used to filter the data, default is null which request all cards, example: 'education'
+							category: 'learning-tracks',
+
+							// Whether the cards are rendered as the child content inside a custom container
+							childContentCards: false
+
+						}
+					); 
 					
   					// Learning Progress0, My Activities
   					learning_progress0_playerStream = BVVIZ.playerStream(
   						$( '#BVVIZ-learning_progress0_playerStream' ),
-  						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+  						'56618e751c19fa1c7d001139', // Following (consumer = "activity") streamId
   						playerId, // playerId
   						// options for current visualization instance
   						{
@@ -435,36 +432,40 @@
 					* Collaboration
 					*********/
 					
-					/*
 					// Collaboration Header, Stats
-					onboarding_header_playerStats = BVVIZ.playerCard(
-						$( '#BVVIZ-onboarding_header_playerStats' ),
+					collaboration_header_playerStats = BVVIZ.playerStats(
+						$( '#BVVIZ-collaboration_header_playerStats' ),
 						playerId, // playerId
 						// options for current visualization instance
 						{
-				              // Player Summary options
-				              unitBar: {
-
-				                // Module list and order
-				                modules: [ 'units', 'level', 'expertise', 'teams', 'activities' ],
-
-				                // Titles displayed within the unitbar for each module
-				                titles: { 
-				                          'level': 'Level',
-				                          'expertise': 'Expertise',
-				                          'teams': 'Teams',
-				                          'activities': 'Recent Activity'
-				                        }
-				              }
+							  // Whether the header should be rendered
+							  inline: true,
+							
+					          // Category can be used to filter the data, default is null which request all cards, example: 'education'
+					          category: 'stats-collab-top'
 				        }
-			        );*/
+			        );
 					
 					// Collaboration Header, List of Tracks
-					  
+			        collaboration_header_affinityTracks = BVVIZ.playerMissions(
+			          $( '#BVVIZ-collaboration_header_affinityTracks' ),
+			          playerId, // playerId
+						{
+						          // Whether the header should be rendered
+						          inline: true,
+
+						          category: 'collaboration',
+
+						          // Whether the cards are rendered as the child content inside a custom container
+						          childContentCards: false,
+         
+						} // options for current playerMissions
+			        );
+					
 					// Collaboration Progress0, My Activities
 					collaboration_progress0_playerStream = BVVIZ.playerStream(
 						$( '#BVVIZ-collaboration_progress0_playerStream' ),
-						'563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
+						'56618ec85ec7a929f400105d', // Following (consumer = "activity") streamId
 						playerId, // playerId
 						// options for current visualization instance
 						{

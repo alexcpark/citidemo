@@ -158,6 +158,9 @@ under the License.
 		  
 	      <script src="/libraries/bvvisualize/missionTutorial/missionTutorial.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/playerStats/playerStats.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/playerStats.css" rel="stylesheet" type="text/css" />
 
 	      <script src="/libraries/bvvisualize/trackProgress/trackProgress.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/trackProgress.css" rel="stylesheet" type="text/css" />

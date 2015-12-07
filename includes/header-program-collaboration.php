@@ -1,7 +1,7 @@
 		             <!-- Program Header Visualizations, Onboarding -->
 					 <div class="header-profile-highlights">
-				  	    <div id="BVVIZ-playerStats" class="highlights highlight1 bvviz-container"></div>
-					    <div id="BVVIZ-customContainer-0" class="highlights highlight2 bvviz-container"></div>
+				  	    <div id="BVVIZ-collaboration_header_playerStats" class="bvviz-playerStats highlights highlight1 bvviz-container"></div>
+					    <div id="BVVIZ-collaboration_header_affinityTracks" class="bvviz-headerTracks highlights highlight2 bvviz-container"></div>
 					 </div> <!-- /.header-profile-highlights -->
 				   </div> <!-- /.span10 -->
 		          </div> <!-- /.row -->
@@ -18,15 +18,16 @@
 					    	<ul class="subnav-pages">
 								<li class="subnav-page page1"><a href="/pages/collaboration/progress/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Progress</a>
 									<ul class="subnav-subpages">
+										<!--<li class="subnav-subpage subpage1"><a href="/pages/collaboration/progress/culture/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Overview</a></li>
 										<li class="subnav-subpage subpage1"><a href="/pages/collaboration/progress/culture/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Cultural Advocacy</a></li>
 										<li class="subnav-subpage subpage2"><a href="/pages/collaboration/progress/interests/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Product Interests</a></li>
 										<li class="subnav-subpage subpage3"><a href="/pages/collaboration/progress/milestones/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Milestones</a></li>
-										<li class="subnav-subpage subpage4"><a href="/pages/collaboration/progress/stats?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Stats</a></li>
+										<li class="subnav-subpage subpage4"><a href="/pages/collaboration/progress/stats?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Stats</a></li>-->
 									</ul>
 								</li>
 								<li class="subnav-page page2"><a href="/pages/collaboration/community/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Community</a>
 									<ul class="subnav-subpages">
-										<li class="subnav-subpage subpage1"><a href="/pages/collaboration/community/context/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">You in Context</a></li>
+										<!--<li class="subnav-subpage subpage1"><a href="/pages/collaboration/community/context/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">You in Context</a></li>-->
 										<li class="subnav-subpage subpage2"><a href="/pages/collaboration/community/leaders/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Leaders</a></li>
 									</ul>
 								</li>
@@ -38,15 +39,16 @@
 					    	<ul class="subnav-pages">
 								<li class="subnav-page page1"><a href="/pages/collaboration/progress/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Progress</a>
 									<ul class="subnav-subpages">
+										<!--<li class="subnav-subpage subpage1"><a href="/pages/collaboration/progress/culture/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Overview</a></li>
 										<li class="subnav-subpage subpage1"><a href="/pages/collaboration/progress/culture/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Cultural Advocacy</a></li>
 										<li class="subnav-subpage subpage2"><a href="/pages/collaboration/progress/interests/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Product Interests</a></li>
 										<li class="subnav-subpage subpage3"><a href="/pages/collaboration/progress/milestones/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Milestones</a></li>
-										<li class="subnav-subpage subpage4"><a href="/pages/collaboration/progress/stats?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Stats</a></li>
+										<li class="subnav-subpage subpage4"><a href="/pages/collaboration/progress/stats?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Stats</a></li>-->
 									</ul>
 								</li>
 								<li class="subnav-page page2"><a href="/pages/collaboration/community/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Community</a>
 									<ul class="subnav-subpages">
-										<li class="subnav-subpage subpage1"><a href="/pages/collaboration/community/context/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">You in Context</a></li>
+										<!--<li class="subnav-subpage subpage1"><a href="/pages/collaboration/community/context/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">You in Context</a></li>-->
 										<li class="subnav-subpage subpage2"><a href="/pages/collaboration/community/leaders/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Leaders</a></li>
 									</ul>
 								</li>

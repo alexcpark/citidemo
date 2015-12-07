@@ -51,9 +51,9 @@ under the License.
       <!-- Include the utility file -->
       <script src="../common/js/utilities.js"></script>
 
-      <!-- Include the missionRewards files -->
-      <script src="missionRewards.js"></script>
-      <link href="../common/css/missionRewards.css" rel="stylesheet" type="text/css" />
+      <!-- Include the playerRewards files -->
+      <script src="playerRewards.js"></script>
+      <link href="../common/css/playerRewards.css" rel="stylesheet" type="text/css" />
 
     <!-- OPTIONAL BVVIZ FILES -->
       <!-- These sets are optional and need only be included if you want the functionality involved -->
@@ -62,33 +62,31 @@ under the License.
       
   </head>
   <body>
-    <!-- DIV tag to be filled with missionRewards display -->
-    <div id="BVVIZ-missionRewards" style="width:520px;height:300px;"></div>
+    <!-- DIV tag to be filled with playerRewards display -->
+    <div id="BVVIZ-playerRewards" style="width:520px;height:300px;"></div>
 
     <script type="text/javascript">
-      var missionRewards;
+      var playerRewards;
 
       // Always place BVVIZ calls inside a JQuery "ready" block to ensure that the DOM is ready
       $(function() {
         // Set the rewards option object
-        var missionRewardsOptions = {
+        var playerRewardsOptions = {
           // Whether the header should be rendered
           inline: false,
 
-          // Whether the containter frame (i.e. header, border and background) should be displayed
-          showContainerFrame: true,
+          // The title displayed in the header, default 'Reward' is displayed
+          // headerTitle: 'Rewards',
 
-          // The title displayed in the header, default the mission name is displayed
-          headerTitle: '',
+          // The number of rewards that will be requested in a single API call, default is 10
+          // When set to 0, all data should be requested
+          pageSize: 10,
 
-          // Whether display the container description, normally it describes the identifier such as categories
-          showDescription: false,
+          // Category can be used to filter the data, default is null which request all cards, example: 'education'
+          category: '',
 
-          // Container description text
-          description: '',
-
-          // Override default container description CSS font color
-          descriptionFontColor: '',
+          // Whether the cards are rendered as the child content inside a custom container
+          childContentCards: false,
 
           badges: {
             // badgeBackgroundColor can override default CSS background color
@@ -117,19 +115,18 @@ under the License.
           }
         };
 
-        // Render a missionRewards visualization for the player provided
-        missionRewards = BVVIZ.missionRewards(
-          $( '#BVVIZ-missionRewards' ),
+        // Render a playerRewards visualization for the player provided
+        playerRewards = BVVIZ.playerStats(
+          $( '#BVVIZ-playerRewards' ),
           '52aa2eeed4ed0ec397000f25', // playerId
-          '564b89f86907ffb6d6000fbb', // missionId
-          missionRewardsOptions        // options for current missionRewards
+          playerRewardsOptions        // options for current playerRewards
         );
 
-        // To reload the missionRewards with fresh data:
-        // missionRewards.init();
+        // To reload the playerRewards with fresh data:
+        // playerRewards.init();
 
-        // To trigger a modal version of the missionRewards, use the helper "showModal":
-        // BVVIZ.helper.showModal( BVVIZ.missionRewards, [ 'playerId', 'missionId' ] );
+        // To trigger a modal version of the playerRewards, use the helper "showModal":
+        // BVVIZ.helper.showModal( BVVIZ.playerRewards, [ 'playerId' ] );
         
       });
     </script>
