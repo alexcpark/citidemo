@@ -33,7 +33,7 @@ $(function() {
 	******/
 	
 	// goalProgress, custom, using jquery plugin
-	BVVIZ.goalProgress = function ( target, playerId, missionId, options ) {
+	BVVIZ.missionProgressBar = function ( target, playerId, missionId, options ) {
 		
 		BVSDK( 'players/missions', { players: playerId, missions: missionId }, { // immediately define and use variable
 			fields: ['progress'],
@@ -53,40 +53,76 @@ $(function() {
 		});	
 	};
 	
+	
 	// goalProgress2, custom, using jquery plugin
-	BVVIZ.goalProgress2 = function ( target, playerId, missionId, options ) {
+	BVVIZ.goalProgress = function ( target, playerId, missionId, options ) {
 		
-		BVSDK( 'missions/rewards', { players: playerId, missions: missionId }, { // immediately define and use variable
-			fields: 'all',
-		}).ok( function(rewardData) {
-			
-			var goal;
-			
-			// grab values for markers
-			for (i = 0; i < rewardData.length; i++) {
-				// iterate and store goals
-				goal[i] = rewardData.rewards[0].player_criteria[0].value;
-				//console.log(rewardData);
-			}
-			
-			//quick and dirty
-			var mainBar2 = $( "#BVVIZ-goals_header_missionProgressBar" ).progressbar({
-					value: 60
-			});
-			
-			return mainBar2;
-			
-			//console.log(missionData.missions[0].progress.percent);
-			
-			//quick and dirty
-			/*var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
-					value: missionData.missions[0].progress.percent
-			});
-			
-			$('.progressBar').append('<span class="bv-progressBar-inner-percent"><span>' + missionData.missions[0].progress.percent + '</span> % ' + (($('body').attr('id') == 'bv-page-onboarding' || 'bv-page-guide' ) ? 'Onboarded' : '') + '</span>');
+		// store the id's incase i need them later
+		var mission_id = missionId,
+		player_id = playerId;
 		
-			return mainBar;*/
-		});	
+		// define core function for processing rewards
+		BVSDK( 'players', { players: player_id }, { // immediately define and use variable
+			fields: 'all'
+		}).ok( function(playerData) {
+			
+			// store player object data
+			var playerObject = playerData;
+			
+			//retrieve the 3 rewards to work with
+			BVSDK( 'missions/rewards', { players: playerId, missions: missionId }, { // immediately define and use variable
+				fields: 'all'
+			}).ok( function(rewardData) {
+				
+				// re-store ids incase we need them
+				var player_id = this.ids.players,
+				mission_id = this.ids.missions;
+				
+				// store length of set
+				var dataLength = rewardData.rewards.length, // adding one for "your current" progress bar
+				number_goal = [''],
+				percent_goal = [''];
+				
+				// grab goal numbers and store
+				for (i = 0; i < dataLength; i++) {
+					// iterate and store number goals
+					number_goal[i] = rewardData.rewards[i].player_criteria[0].value;
+				}
+				
+				// grab largest goal from numbers
+				var number_max = Math.max.apply(null, number_goal),
+				current_number = playerObject.players[0].units.unit_revenue.all,
+				current_percentage = (current_number / number_max) * 100; // stores your personal score @ the end
+			
+				// convert goal percentages from numbers & print progress bars
+				for (d = 0; d < dataLength; d++) {
+					// iterate and store percents
+					percent_goal[d] = Math.floor((number_goal[d] / number_max) * 100);
+					console.log(percent_goal[d]);
+					// append each container element to the main progress bar holder
+					$('#BVVIZ-goals_header_quarterlyRev').append('<div class="bars bar-' + d + '"></div>');
+				
+					// print the bars
+					$('.bars.bar-' + d ).progressbar({
+						value: percent_goal[d]
+					});
+				
+					// on last element, print the flag to the element
+					if (d == (dataLength -1)) {
+						var goal_flag = '<div class="goal-flag" title="$' + number_max.toLocaleString() + ' revenue needed, in total">Quarterly Goal</div>';
+						$('.bars.bar-' + d ).append(goal_flag); // print to last flag
+					}
+				}
+				
+				// prepend your current results
+				$('#BVVIZ-goals_header_quarterlyRev').prepend('<div class="bars bars-me"></div>');
+				$('.bars.bars-me').progressbar({
+					value: current_percentage // stores your current points
+				});
+				$('.bars.bars-me .ui-progressbar-value').append('<div class="my-flag" title="You have $'+ current_number.toLocaleString() + '">You</div>'); // print to second to last element
+			});
+		});
+		
 		/*
 		// Variables and methods are defined in a private scope and then exposed publicly as needed later
 		var pub = {},

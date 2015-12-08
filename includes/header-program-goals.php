@@ -1,7 +1,7 @@
 		             <!-- Program Header Visualizations, Onboarding -->
 					 <div class="header-profile-highlights">
 				  	    <div id="BVVIZ-goals_header_playerStats" class="bvviz-playerStats highlights highlight1 bvviz-container"></div>
-					    <div id="BVVIZ-goals_header_quarterlyRev" class="highlights highlight2 bvviz-container progressBar"></div>
+					    <div id="BVVIZ-goals_header_quarterlyRev" class="bvviz-goalProgress highlights highlight2 bvviz-container progressBar"></div>
 					 </div> <!-- /.header-profile-highlights -->
 				   </div> <!-- /.span10 -->
 		          </div> <!-- /.row -->

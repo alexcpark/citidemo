@@ -198,9 +198,9 @@
 		        // Initialize the visualizations
 		        function loadBVVIZ( playerId ) {
 			          
-					/**********************
+					/*******************************************************
 					* Onboarding
-					*********/
+					***********************************************/
 					
 					// Onboarding Global Header, Stats
 					onboarding_header_playerMeta = BVVIZ.playerMeta(
@@ -210,7 +210,7 @@
 					
 					
 					// Onboarding Global Header, goalProgress Bar
-					onboarding_header_missionProgressBar = BVVIZ.goalProgress(
+					onboarding_header_missionProgressBar = BVVIZ.missionProgressBar(
 						$( '#BVVIZ-onboarding_header_missionProgressBar' ),
 						playerId, // playerId
 						'564a591ab4b280a083000d97' // missionId
@@ -267,9 +267,10 @@
   						}// Options
   					);
 					
-					/**********************
+					
+					/*******************************************************
 					* Goals
-					*********/
+					***********************************************/
 					
 					// Goals Header, Stats
 					goals_header_playerStats = BVVIZ.playerStats(
@@ -286,7 +287,7 @@
 			        );
 					
 					// Goals Header, Progress Bar for Quarterly Revenue Goals ( Good, Better, Best )  goalProgress Bar
-					goals_header_quarterlyRev = BVVIZ.goalProgress2(
+					goals_header_quarterlyRev = BVVIZ.goalProgress(
 						$( '#BVVIZ-goals_header_quarterlyRev' ),
 						playerId, // playerId
 						'5654e36ba33c43783f002de2' // missionId
@@ -367,9 +368,9 @@
 					
 					// Render a leaderboard visualization
 					
-					/**********************
+					/*******************************************************
 					* Learning
-					*********/
+					***********************************************/
 					
 					// Learning Header, Stats
 					learning_header_playerStats = BVVIZ.playerStats(
@@ -450,9 +451,9 @@
 						}// Options
 					);
 					
-					/**********************
+					/*******************************************************
 					* Collaboration
-					*********/
+					***********************************************/
 					
 					// Collaboration Header, Stats
 					collaboration_header_playerStats = BVVIZ.playerStats(
