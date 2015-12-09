@@ -745,8 +745,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .highlight2.progressBar {
-	border:5px solid white;
-	border-radius:15px;
+	border: 5px solid white;
+	border-radius: 15px;
+	position: relative;
+}
+/* to cover edges*/
+.highlight2.progressBar .ui-progressbar::after {
+	content: '';
+    display: block;
+    border: 5px solid white;
+    border-radius: 15px;
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    bottom: -5px;
+    left: -5px;
+    z-index: 160;
 }
 
 #bv-page-onboarding .highlight2.progressBar,
@@ -761,24 +775,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bv-progressBar-inner-percent {
-	display: block;
 	position: absolute;
-	top: 15px;
-	bottom: 0;
-	left: 19px;
+	top: 7px;
+	left: 0;
 	right: 0;
 	text-align: center;
-	color: white;
-	font-size: 32px;
-	font-family: 'interstatebold' !important;
-	text-shadow: 0 0 20px #999;
 }
 
-.bv-progressBar-inner-percent span {
+.bv-progressBar-inner-percent .bv-progressBar-inner-value {
+	display: block;
 	color: white;
-	font-size: 32px;
+	font-size: 26px;
 	font-family: 'interstatebold' !important;
+	text-shadow: 0 0 9px #bbb;
 }
+
+.bv-progressBar-inner-percent .bv-progressBar-inner-description {
+	display: block;
+	color: white;
+	font-size: 14px;
+	font-family: 'interstatebold' !important;
+	text-shadow: 0 0 7px #aaa;
+	line-height: 18px;
+}
+
+
 
 /* Goal Progress */
 
@@ -796,19 +817,15 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;*/
 }
 
-.bvviz-goalProgress.bvviz-container.progressBar .ui-progressbar.bars-me .ui-progressbar-value {
-	background-color: #F7D199;
-}
-
 .bvviz-goalProgress.bvviz-container.progressBar .bars.ui-progressbar { position: relative; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.ui-progressbar .ui-progressbar-value { position: relative; border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.ui-progressbar .ui-progressbar-value { position: relative; }
 .bvviz-goalProgress.bvviz-container.progressBar .bars.bars-me.ui-progressbar { top: 1px; left: 1px; z-index: 150; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bars-me.ui-progressbar .ui-progressbar-value {  }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-0.ui-progressbar { background-color: transparent; top: -46px; z-index: 149; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-0.ui-progressbar .ui-progressbar-value { background-color: transparent;border-right: 5px dotted white; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-1.ui-progressbar { background-color: transparent; top: -93px; z-index: 148; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-1.ui-progressbar .ui-progressbar-value { background-color: transparent;border-right: 5px dotted white; }
-.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-2.ui-progressbar { background-color: transparent; top: -141px; z-index: 147; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bars-me.ui-progressbar .ui-progressbar-value { background-color: #F7D199; border-radius: 12px 0 0 12px }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-0.ui-progressbar { background-color: transparent; top: -46px; z-index: 151; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-0.ui-progressbar .ui-progressbar-value { background-color: transparent; border-right: 5px dotted white; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-1.ui-progressbar { background-color: transparent; top: -93px; z-index: 151; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-1.ui-progressbar .ui-progressbar-value { background-color: transparent; border-right: 5px dotted white; }
+.bvviz-goalProgress.bvviz-container.progressBar .bars.bar-2.ui-progressbar { background-color: transparent; top: -140px; }
 .bvviz-goalProgress.bvviz-container.progressBar .bars.bar-2.ui-progressbar .ui-progressbar-value { background-color: transparent; }
 
 /*.bars.bars-me.ui-progressbar .ui-progressbar-value::before  {
@@ -837,7 +854,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: 114px;
 	position: absolute;
 	top: -115px;
-	right: -71px;
+	right: -75px;
 	padding: 37px 0 0 45px;
 	color: #85858B;
 	font-size: 24px;
@@ -873,7 +890,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 12px;
 	line-height: 23px;
 	text-align: center;
-	z-index:151;
 }
 
 .bars.bar-1.ui-progressbar .ui-progressbar-value::after {
@@ -890,13 +906,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 12px;
 	line-height: 23px;
 	text-align: center;
-	z-index:160;
 }
 
-.bars.bar-1.ui-progressbar .ui-progressbar-value::after {
+.bars.bar-2.ui-progressbar .ui-progressbar-value::after {
 	content: 'Best';
 	display: block;
 	border-top-left-radius: 12px;
+	border-bottom-right-radius: 12px;
 	background-color: white;
 	width: 50px;
 	height: 20px;
@@ -907,7 +923,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 12px;
 	line-height: 23px;
 	text-align: center;
-	z-index:160;
+	z-index: 151;
 }
 
 .bars.ui-progressbar.ui-widget.ui-widget-content.ui-corner-all,
@@ -915,6 +931,64 @@ h1, h2, h3, h4, h5, h6 {
 	overflow: visible;
 }
 
+
+/* Mission Overview Berlin */
+
+.bv-missionOverview {
+	border: 0;
+	position: relative;
+	height: 50px;
+	color: #999;
+	border-radius: 15px;
+	overflow: visible;
+	z-index: 9;
+}
+
+.bv-missionOverview.ui-progressbar::after {
+	content: '';
+    display: block;
+    border: 5px solid white;
+    border-radius: 15px;
+    position: absolute;
+    top: -5px;
+    right: -4px;
+    bottom: -5px;
+    left: -5px;
+    z-index: 160;
+}
+
+.bv-missionOverview .ui-progressbar-value {
+	border: 0;
+	border-radius: 15px 5px 5px 15px;
+	position:relative;
+	z-index: 10;
+}
+
+.bv-progressBar-top-tally {
+	border-radius:15px 15px 0 0;
+	background-color: white;
+    height: 20px;
+    padding: 2px 0 2px 15px;
+	/*top: -20px;
+	left: 0;
+	right: 0;*/
+	text-align: left;
+	color: #525559;
+	font-size: 12px;
+	box-shadow: 0 0 50px 0px #EAEBEB;
+}
+
+.bv-progressBar-inner-percent {
+	
+}
+
+#bv-page-goals .bv-missionOverview {
+	background-color: #E4EFC8;	
+}
+
+#bv-page-goals .bv-missionOverview .ui-progressbar-value {
+	background-color: #CEE599;
+}
 
 /**/
 
@@ -1541,7 +1615,7 @@ p.callout-table {
 }
 
 .bvviz-container.bvviz.bvviz-missionTutorial,
-.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body.bvviz-col.bvviz-noheader,
+.bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body.bvviz-col,
 .bvviz-container.bvviz.bvviz-missionTutorial .bvviz-body-header,
 .bvviz-container.bvviz.bvviz-missionTutorial .bvviz-cards.bvviz-col,
 .bvviz-container.bvviz.bvviz-missionTutorial {
@@ -1611,6 +1685,86 @@ p.callout-table {
 	padding: 0;
 	color: #999;
 }
+
+/*--- Small Checklist (missionTutorial)  ---*/
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-body-header {
+	display: none;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial,
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-body.bvviz-col,
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-body-header,
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-cards.bvviz-col,
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial {
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-cards.bvviz-col {
+	border-top: 1px solid #D5D6D7;
+	border-bottom: 1px solid #D5D6D7;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card {
+	border-bottom: 1px solid #D5D6D7;
+	background: transparent;
+	padding: 20px 0;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-details .bvviz-image {
+	border: 0;
+	border-radius: 30px;
+	background-color: #d6d6d6;
+	margin-right: 20px;
+	float: left;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-details .bvviz-image img {
+	width: 30px;
+	height: 30px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-details .bvviz-name {
+    margin-bottom: 5px;
+	color: #525459;
+	font-size: 16px;
+	font-weight: 200 !important;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-drawer,
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-details .bvviz-desc {
+	font-size: 13px;
+	line-height: 19px;
+	display: none;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-checkmark-circle {
+	margin: 0;
+	right: 0;
+	top: 1.6em;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-checkmark-circle svg {
+	width: 30px;
+	height: 30px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-drawer {
+	border: 0;
+	border-radius: 15px;
+	background-color: #EAEBEB;
+	margin: 20px 0;
+	padding: 20px 23px;
+}
+
+.bvviz-container.bvviz.bvviz-missionTutorial.bv-smallMissionTutorial .bvviz-card .bvviz-drawer div {
+	padding: 0;
+	color: #999;
+}
+
 
 /*--- Community Stream (siteStream)  ---*/
 
@@ -2080,11 +2234,18 @@ p.callout-table {
 }
 
 #BVVIZ-onboarding_progress0_missionTutorial.bvviz-container,
-#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-body.bvviz-col.bvviz-noheader,
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-body.bvviz-col,
 #BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-cards.bvviz-col {
 	outline: 0;
 	overflow:visible;
 }
+/* has ".bvviz-body.bvviz-col.bvviz-noheader"
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container,
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-body.bvviz-col.bvviz-noheader,
+#BVVIZ-onboarding_progress0_missionTutorial.bvviz-container .bvviz-cards.bvviz-col {
+	outline: 0;
+	overflow:visible;
+}*/
 
 #BVVIZ-onboarding_community0_siteStream.bvviz-container {
 	outline: 0;
@@ -2125,17 +2286,17 @@ p.callout-table {
 	height: 80px;
 }
 
-#bvviz-missionTutorial-2.bvviz-container {
+#BVVIZ-goals_progress1_weeklyLeads.bvviz-container {
 	width: 705px;
 	height: 780px;
 }
 
-#bvviz-missionTutorial-3.bvviz-container {
+#BVVIZ-goals_progress2_weeklyOpps.bvviz-container {
 	width: 705px;
 	height: 850px;
 }
 
-#bvviz-missionTutorial-4.bvviz-container {
+#BVVIZ-goals_progress3_weeklyRev.bvviz-container {
 	width: 705px;
 	height: 290px;
 }
