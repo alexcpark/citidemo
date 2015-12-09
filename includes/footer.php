@@ -81,6 +81,7 @@
 				goals_header_playerStats, // missionRewards
 				goals_header_quarterlyRev, // missionTutorial_alex (progress bar only) (quarter)
 				goals_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
+				goals_progress0_missionOverview, // overview of all progress missions
 				goals_progress0_weeklyLeads, // missionTutorial_alex (progress bar only, repeatable)
 				goals_progress0_weeklyOpps, // missionTutorial_alex (progress bar only, repeatable)
 				goals_progress0_weeklyRev, // missionTutorial_alex (progress bar only, repeatable)
@@ -307,37 +308,61 @@
   							itemCompleteCallback: handleImgErrorFailover
   						}
   					);
-					/*
+					
+					// Goals Progress0 Overview
+					goals_progress0_missionOverview = BVVIZ.missionOverviewBerlin(
+						$( '#BVVIZ-goals_progress0_missionOverview' ),
+						'production', //environment 'production' or 'sandbox'
+						'15b9f975039d1d5b97193f62a42224d5', // publicKey
+						'goals.citi.com', // siteURL
+						playerId, // playerId
+						// array of mission ids
+						[
+							'5654e4286907ffd6fc002d7d',
+							'5654e3deb1f54315c7002e8b',
+							'5654e36ba33c43783f002de2'
+						],
+						// interval hourly, daily, weekly, monthly, quarterly, annually
+						'Weekly'
+						
+					);
+					
 					// Goals Progress0 Overview, Weekly Leads Summary
 					// Goals Progress0 Overview, Weekly Opportunities Summary
 					// Goals Progress0 Overview, Weekly Revenue Summary
 					
 					// Goals Progress1, Weekly Lead Checklist
-					goals_progress1_weeklyLeads = BVVIZ.missionTutorial_Ra(
+					goals_progress1_weeklyLeads = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress1_weeklyLeads' ),
+						'15b9f975039d1d5b97193f62a42224d5', // publicKey
+						'goals.citi.com', // siteURL
+						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
-						'564a591ab4b280a083000d97', // missionId (tutorial mission)
+						'5654e4286907ffd6fc002d7d', // missionId (tutorial mission)
 						true
 					);
 					
 					// Goals Progress2, Weekly Opportunities Checklist
-					goals_progress2_weeklyOpps = BVVIZ.missionTutorial_Ra(
+					goals_progress2_weeklyOpps = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress2_weeklyOpps' ),
+						'15b9f975039d1d5b97193f62a42224d5', // publicKey
+						'goals.citi.com', // siteURL
+						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
-						'564a591ab4b280a083000d97', // missionId (tutorial mission)
+						'5654e3deb1f54315c7002e8b', // missionId (tutorial mission)
 						true
 					);
 					
 					// Goals Progress3, Weekly Revenue Checklist
-					goals_progress3_weeklyRev = BVVIZ.missionTutorial_Ra(
+					goals_progress3_weeklyRev = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress3_weeklyRev' ),
+						'15b9f975039d1d5b97193f62a42224d5', // publicKey
+						'goals.citi.com', // siteURL
+						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
-						'564a591ab4b280a083000d97', // missionId (tutorial mission)
+						'5654e36ba33c43783f002de2', // missionId (tutorial mission)
 						true
-					);*/
-					
-					// Goals Progress4, My Activities
-					
+					);
 					
 					// Goals Community, Everyone's Activities
 					goals_community0_siteStream = BVVIZ.siteStream(
@@ -353,6 +378,7 @@
 			              itemCompleteCallback: handleImgErrorFailover
 			            }
 			          );
+					  
 					// Goals Community, Contextual Leaderboard (You vs. Everyone)
 					
 					// Goals Community, Leaders
@@ -540,229 +566,6 @@
   						}// Options
   					);
 					
-					/**********************
-					* Legacy
-					*********/
-					
-					  /*
-					  // Render a playerRow visualizations for the player provided
-			          playerRow = BVVIZ.playerRow(
-			              $( '#BVVIZ-playerRow' ),
-			              playerId, // playerId
-						  {
-					  		  maxIcons:0
-						  }
-			          );
-
-			          // Render a customContainer visualization with options for the player provided
-			          playerStats = BVVIZ.playerRewards(
-			            $( '#BVVIZ-playerStats' ),
-			            playerId, // playerId
-						// options for current visualization instance
-			            {
-	      				  // Whether the header should be rendered
-	      				  inline: true,
-						
-				          // Category can be used to filter the data, default is null which request all cards, example: 'education'
-				          category: 'stats',
-					  
-			            }
-			          );
-				  
-			          // Render a customContainer visualization with options for the player provided
-			          certificationsHeader = BVVIZ.customContainer(
-			            $( '#BVVIZ-customContainer-0' ),
-			            playerId, // playerId
-			            // options for current visualization instance
-			            {
-			              // Whether the containter frame (i.e. header, border and background) should be displayed
-			              showContainerFrame: false,
-						
-				          // Category can be used to filter the data, default is null which request all cards, example: 'education'
-				          category: 'expertise',
-
-			              // Contents and the order included in the custom container, default has all 3 types
-			              contentsTypes: ['tracks'],
-
-			              // Contents options
-			              contents: {
-
-			                badges: {
-
-			                  // miniBadge shows a smaller badge icon
-			                  miniBadge: false
-			                }
-			              }
-			            }
-			          );
-				  
-					  // Render a trackProgress visualization with options for the player provided
-					  trackProgress1 = BVVIZ.trackProgress(
-					  	$( '#BVVIZ-trackprogress-1' ),
-						playerId, // playerId
-						'5638b6af5ec7a9001b001a5c', // trackId
-						// options for current visualization instance
-					    {
-					    	// Whether the header should be rendered
-							inline: true,
-					    }
-					  );
-				  
-					  // Render a trackProgress visualization with options for the player provided
-					  trackProgress2 = BVVIZ.trackProgress(
-					  	$( '#BVVIZ-trackprogress-2' ),
-						playerId, // playerId
-						'5638b7561c19fa5f07001c0d', // trackId
-						// options for current visualization instance
-					    {
-					    	// Whether the header should be rendered
-							inline: true,
-					    }
-					  );
-				  
-					  // Render a trackProgress visualization with options for the player provided
-					  trackProgress3 = BVVIZ.trackProgress(
-					  	$( '#BVVIZ-trackprogress-3' ),
-						playerId, // playerId
-						'5638b7ae7369b2cfd1001c25', // trackId
-						// options for current visualization instance
-					    {
-					    	// Whether the header should be rendered
-							inline: true,
-					    }
-					  );
-				  
-					  // Render a trackProgress visualization with options for the player provided
-					  trackProgress4 = BVVIZ.trackProgress(
-					  	$( '#BVVIZ-trackprogress-4' ),
-						playerId, // playerId
-						'5638b7dd280aab6efc001abc', // trackId
-						// options for current visualization instance
-					    {
-					    	// Whether the header should be rendered
-							inline: true,
-					    }
-					  );
-				  
-					  // Render a levelProgress visualization for the player provided
-			          levelProgress = BVVIZ.levelProgress(
-			            $( '#BVVIZ-levelProgress' ),
-			            playerId, // playerId
-			            '55ef61106d11ef7010002ecb' // missionId (level mission)
-			          );
-
-			          // Render a missionTutorial visualization for the player provided
-			          missionTutorial = BVVIZ.missionTutorial(
-			            $( '#BVVIZ-missionTutorial' ),
-			            playerId, // playerId
-			            '5636b2d17369b28fad000db5', // missionId (tutorial mission)
-			            true
-			          );
-
-			          // Render a missionRewards visualization for the player provided.
-			          milestones = BVVIZ.missionRewards(
-			            $( '#BVVIZ-missionRewards-1' ),
-			            playerId, // playerId
-						'5637c0ce7369b2f8bf00153c', // missionId
-			            // options for current visualization instance
-			            {
-	     				  // Whether the header should be rendered
-	     				  inline: false,
-					  
-						  // Whether the containter frame (i.e. header, border and background) should be displayed
-			              showContainerFrame: false,
-
-			              // Contents options
-			              contents: {
-
-			                badges: {
-
-			                  // miniBadge shows a smaller badge icon
-			                  miniBadge: false
-			                }
-			              }
-			            }
-			          );
-
-			          // Render a missionRewards visualization for the player provided
-			          achievements = BVVIZ.missionRewards(
-			            $( '#BVVIZ-missionRewards-2' ),
-			            playerId, // playerId
-						'5637c0726907ff52b600147d', // missionId
-			            // options for current visualization instance
-			            {
-	     				  // Whether the header should be rendered
-	     				  inline: false,
-					  
-						  // Whether the containter frame (i.e. header, border and background) should be displayed
-			              showContainerFrame: false,
-
-			              // Contents options
-			              contents: {
-
-			                badges: {
-
-			                  // miniBadge shows a smaller badge icon
-			                  miniBadge: false
-			                }
-			              }
-			            }
-			          );
-				  
-					  // Render a leaderboard visualization
-					  assetLbs = BVVIZ.leaderboard(
-					  	$( '#BVVIZ-assetLBs' ),
-						[
-							'563a6b3cb1f543dcd80005ad',
-							'563a6b67d1b4cf64c00004fd',
-							'563a6b0f19f2260513000489',
-							'563a6b586fb70958a800059e'
-						], // leaderboard IDs
-						{
-							inline: true
-						}// Options
-					  );
-				  
-					  // Render a leaderboard visualization
-					  coursesLBAll = BVVIZ.leaderboard(
-					  	$( '#BVVIZ-coursesLB-All' ),
-						[
-							'563a6ba26fb709b38b00058f'
-						] // leaderboard IDs
-						// Options 
-					  );
-				  
-			          // Render a playerStream visualization
-			          siteActivities = BVVIZ.siteStream(
-			            $( '#BVVIZ-siteStream' ),
-			            '563a7f10226fcee39000059f', // Following (consumer = "activity") streamId
-			            playerId, // playerId
-			            // options for current visualization instance
-			            {
-			              // Whether the header should be rendered
-			              inline: true,
-             
-			              // Callback handler on completion of stream item
-			              itemCompleteCallback: handleImgErrorFailover
-			            }
-			          );
-				  
-			          // Render a playerStream visualization
-			          playerActivities = BVVIZ.playerStream(
-			            $( '#BVVIZ-playerStream' ),
-			            '563a7936b1f5431112002c6c', // Following (consumer = "activity") streamId
-			            playerId, // playerId
-			            // options for current visualization instance
-			            {
-			              // Whether the header should be rendered
-			              inline: true,
-             
-			              // Callback handler on completion of stream item
-			              itemCompleteCallback: handleImgErrorFailover
-			            }
-			          );
-					*/
-				  
 		        }
 
 		        // init function
@@ -780,26 +583,7 @@
 			          if ( $.type(BVVIZ.currentPlayer) !== 'object' || $.isEmptyObject(BVVIZ.currentPlayer) ) {
 			            BVVIZ.setPlayer( playerId, showProfile );
 			          }
-				  
-					  // may need to pass the page id somewhere for use elsewhere, perhaps in a global variable.
-
 		        }
-
-		        /*pub.playerRow = playerRow;
-				pub.playerStats = playerStats;
-				pub.certificationsHeader = certificationsHeader;
-		        pub.levelProgress = levelProgress;
-				pub.trackProgress1 = trackProgress1;
-				pub.trackProgress2 = trackProgress2;
-				pub.trackProgress3 = trackProgress3;
-				pub.trackProgress4 = trackProgress4;
-		        pub.missionTutorial = missionTutorial;
-		        pub.milestones = milestones;
-		        pub.achievements = achievements;
-				pub.assetLBs = assetLBs;
-				pub.coursesLBAll = coursesLBAll;
-		        pub.siteActivities = siteActivities;
-		        pub.playerActivities = playerActivities;*/
 				
 				pub.onboarding_header_playerMeta = onboarding_header_playerMeta;
 				pub.onboarding_header_missionProgressBar = onboarding_header_missionProgressBar;
@@ -814,6 +598,7 @@
 				pub.goals_progress0_weeklyLeads = goals_progress0_weeklyLeads;
 				pub.goals_progress0_weeklyOpps = goals_progress0_weeklyOpps;
 				pub.goals_progress0_weeklyRev = goals_progress0_weeklyRev;
+				pub.goals_progress0_missionOverview = goals_progress0_missionOverview;
 				pub.goals_progress1_weeklyLeads = goals_progress1_weeklyLeads;
 				pub.goals_progress2_weeklyOpps = goals_progress2_weeklyOpps;
 				pub.goals_progress3_weeklyRev = goals_progress3_weeklyRev;

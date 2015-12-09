@@ -18,7 +18,7 @@
 									  <p>Asking questions is the critical to customer success. You&#39;re lead pipeline is where that journey begins. </p>
 								  </div>
 					              <!-- BVVIZ - Goals -->
-								  <div id="bvviz-missionTutorial-4" class="bvviz-container"></div>
+								  <div id="BVVIZ-goals_progress3_weeklyRev" class="bvviz-container bv-smallMissionTutorial"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

@@ -39,16 +39,22 @@ $(function() {
 			fields: ['progress'],
 		}).ok( function(missionData) {
 			
-			console.log(missionData);
-			console.log(missionData.missions[0].progress.percent);
+			// console.log(missionData);
+			// console.log(missionData.missions[0].progress.percent);
 			
-			//quick and dirty
-			var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
-					value: missionData.missions[0].progress.percent
-			});
+			// initialize bar
+			var mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({ value: 1 });
 			
-			$('.progressBar').append('<span class="bv-progressBar-inner-percent"><span>' + missionData.missions[0].progress.percent + '</span> % ' + (($('body').attr('id') == 'bv-page-onboarding' || 'bv-page-guide' ) ? 'Onboarded' : '') + '</span>');
-		
+			// animate width
+			$( "#BVVIZ-onboarding_header_missionProgressBar .ui-progressbar-value" ).animate({ width: missionData.missions[0].progress.percent + '%' }, {duration: 700, queue: false}); 
+			
+			// append text to bar (hidden by default)
+			$('.progressBar').append('<div class="bv-progressBar-inner-percent" style="display: none;"><div class="bv-progressBar-inner-value">' + missionData.missions[0].progress.percent + ' %</div>' + '<div class="bv-progressBar-inner-description">' + (($('body').attr('id') == 'bv-page-onboarding' || 'bv-page-guide' ) ? 'onboarded' : '') + '</div></div>');
+			
+			// show text in bar
+			$('.bv-progressBar-inner-percent').toggle({ duration: 100 });
+			
+			// return bar
 			return mainBar;
 		});	
 	};
@@ -98,7 +104,7 @@ $(function() {
 				for (d = 0; d < dataLength; d++) {
 					// iterate and store percents
 					percent_goal[d] = Math.floor((number_goal[d] / number_max) * 100);
-					console.log(percent_goal[d]);
+					
 					// append each container element to the main progress bar holder
 					$('#BVVIZ-goals_header_quarterlyRev').append('<div class="bars bar-' + d + '"></div>');
 				
@@ -114,122 +120,92 @@ $(function() {
 					}
 				}
 				
-				// prepend your current results
+				// prepend your current results bar
 				$('#BVVIZ-goals_header_quarterlyRev').prepend('<div class="bars bars-me"></div>');
-				$('.bars.bars-me').progressbar({
-					value: current_percentage // stores your current points
-				});
-				$('.bars.bars-me .ui-progressbar-value').append('<div class="my-flag" title="You have $'+ current_number.toLocaleString() + '">You</div>'); // print to second to last element
+				
+				// initialize your progress bar
+				$('.bars.bars-me').progressbar({ value: 1 }); 
+				// add your flag (has to be after intiailization)
+				$('.bars.bars-me .ui-progressbar-value').append('<div class="my-flag" style="display: none" title="You have $'+ current_number.toLocaleString() + '">You</div>');
+				$('.my-flag').toggle( 900 ); // has to be higher than animation
+				// animate to your value	
+				$('.bars.bars-me .ui-progressbar-value').animate({ width: current_percentage + '%' }, {duration: 700, queue: false}); 
+				
 			});
 		});
 		
-		/*
-		// Variables and methods are defined in a private scope and then exposed publicly as needed later
-		var pub = {},
 		
-		// The functions in the "render" object control the DOM structure created for each area
-		render = {
-			bar: function(){
-				var mainBar;
-				mainBar = $( "#BVVIZ-onboarding_header_missionProgressBar" ).progressbar({
-						value: 60
-					});
-				// return the main bar for current progress
-				return mainBar;
-			},
-			marker1: function(){
-				var marker1_target;
-				//create the first target bar
-				// return the first target bar
-				return marker1_target;
-			},
-			marker2: function(){
-				var marker2_target;
-				// create the first target bar
-				// return the second target bar
-				return marker2_target;
-			},
-			goal: function(){
-				var goal_target;
-				// create the goal target bar and flag
-				// return the goal target bar and flag
-				return goal_target;
-			}
+	};
 	
-		};
+	// goalProgress2, custom, using jquery plugin
+	BVVIZ.missionOverviewBerlin = function ( target, environment, publicKey, siteURL, playerId, missionIdArray, interval ) {
 		
-		// Inject into dom, ensure proper elements in place
-		function init() {
+		// store missionObject
+		var missionIds = missionIdArray,
+		missions_url;
+		// console.log(missionIds.length);
+		
+		// process mission object
+		for (i = 0; i < missionIds.length; i++) {
 			
-			var progress_body;
+			// using closure to ensure ajax capture the right iterator value
+			(function (i) {
 			
-			progress_body = $( '<div class="bvviz-body"></div>' ).append(
-				render.bar(),
-				render.marker1(),
-				render.marker2(),
-				render.goal()
-			);
-			console.log(progress_body);
-		    // Allow for target to be provided as a string or JQuery object
-		    target = $( target );
+				// construct url
+				var missions_url = "https://" + ((environment == 'production') ? 'api.v2' : 'sandbox') + ".badgeville.com/api/widgets/" + publicKey + "/" + siteURL + "/players/" + playerId + "/missions/" + missionIds[i] + ".json";
 
-		    // Handle error conditions due to invalid inputs:
-		    // Only a single DOM element is allowed per instance
-		    if ( target.length > 1 ) {
-				return BVVIZ.helper.showError( target, '"target" argument must reference a single DOM node.' );
-		    }
-		}
-		
-		// attach additional hooks
-		function show() {
-			load();
-		}
-		
-		// load the data
-		function load() {
-			
-			// Show an indicator in the target to indicate the data is loading
-			var loading,
-			loading = BVVIZ.helper.loading( 'bvviz-tr' );
-			//target.append( loading );
-			
-		    // Request data from specific offset for the current leaderboard
-		    BVSDK( 'players/rewards', { rewards: '5654b1116907ff9f810029c4' }, {
-				offset: offset,
-				limit: limit,
-				fields: 'all'
-		    }).ok( function( data ) {
-
-				// Remove the loading from the current container
-				loading.remove();
-			  
-				// Use the into view
-				var showViz = function( objects ) {
-					var object = objects;
-					object.removeClass( 'bvviz-invisible' ).hide().fadeIn({duration: 100});
-				};
+				// grabbing the mission data using the url with updated Id
+				$.ajax({
+					asynch: false,
+					url: missions_url,
+					dataType: 'jsonp'
+				}).done(function(data) {
 				
-				showViz = ( target );
+					// store data results for processing
+					var missionData = data;
+					console.log(missionData);
+					// append containers to elements. add title and description.
+					$(target).append('<div class="overview-row' + i + ' main-section-block-break"><p class="main-section-block-title overview-item-title">' + interval + ' ' + missionData.data.name + '</p><p class="overview-item-description">' + missionData.data.tip + '</p><div class="bv-progressBar-top-tally">' + missionData.data.progress.earned + ' out of ' + missionData.data.progress.possible + '</div><div class="bv-missionOverview bv-missionProgressBar' + i + '"></div></div>');
 				
-			}).fail( function( data ) {
-				// Need failure response
-			});
+					// initialize progress bar
+					$('.bv-missionProgressBar' + i).progressbar({ value: 1 });
+				
+					// animate to current value
+					$('.bv-missionProgressBar' + i + ' .ui-progressbar-value').animate({ width: missionData.data.progress.percent + '%' });
+					
+					// add class
+					$('.bv-missionProgressBar' + i).addClass('progressBar');
+					
+					// append text to bar (hidden by default)
+					$('.bv-missionProgressBar' + i).append('<div class="bv-progressBar-inner-percent" style="display: none;"><div class="bv-progressBar-inner-value">' + missionData.data.progress.percent + ' %</div>' + '<div class="bv-progressBar-inner-description"> Complete</div></div>');
+					
+					// show inner percent
+					$('.bv-progressBar-inner-percent').show( 1500 );
+					
+				});
+				
+			})(i);
+			
 		}
 		
-		// Initialize the visualization automatically upon passing site check
-		BVVIZ.waitForSiteCheck( function( sitePass ){
-			if ( sitePass ) {
-				init();
-			} else {
-				return false;
-			}
-		});
+			
 		
-		// Expose some of the methods publicly and return the pub object
-		pub.init = init;
-		pub.show = show;
-		pub.load = load;
-		return pub; */
+		//console.log(tracks_url);
+		//console.log(missions_url);
+/*
+		$.ajax({
+			url: missions_url,
+			dataType: 'jsonp'
+		}).done(function(data) {
+			
+			// store data results for processing
+			var playerData = data,
+			missionsData = data.
+			
+			// process results
+			for
+			
+		});*/
 	};
 	/*
 	// contextualLeaderboard, based on BV leaderboard

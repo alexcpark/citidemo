@@ -153,11 +153,20 @@ under the License.
 	      <script src="/libraries/bvvisualize/missionProgress/missionProgress.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/missionProgress.css" rel="stylesheet" type="text/css" />
 		  
-	      <script src="/libraries/bvvisualize/missionTutorial_Ra/missionTutorial_Ra.js"></script>
-	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
+	      <script src="/libraries/bvvisualize/missionProgress_alexp/missionProgressBerlin.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionProgressBerlin.css" rel="stylesheet" type="text/css" />
 		  
 	      <script src="/libraries/bvvisualize/missionTutorial/missionTutorial.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/missionTutorial_Ra/missionTutorial_Ra.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionTutorial.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/missionTutorial_alexp/missionTutorialBerlin.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionTutorialBerlin.css" rel="stylesheet" type="text/css" />
+		  
+	      <script src="/libraries/bvvisualize/missionTutorial_alexp_Ra/missionTutorialBerlin_Ra.js"></script>
+	      <link href="/libraries/bvvisualize/common/css/missionTutorialBerlin.css" rel="stylesheet" type="text/css" />
 		  
 	      <script src="/libraries/bvvisualize/playerStats/playerStats.js"></script>
 	      <link href="/libraries/bvvisualize/common/css/playerStats.css" rel="stylesheet" type="text/css" />

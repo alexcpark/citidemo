@@ -23,7 +23,7 @@
 								<li>
 								<li class="subnav-page page2"><a href="/pages/onboarding/community/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">Community</a>
 									<ul class="subnav-subpages">
-										<!--<li class="subnav-subpage subpage1"><a href="/pages/onboarding/community/context/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">You in Context</a></li>-->
+										<li class="subnav-subpage subpage1"><a href="/pages/onboarding/community/context/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">You in Context</a></li>
 										<li class="subnav-subpage subpage2"><a href="/pages/onboarding/community/leaders/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">Leaders</a></li>
 									</ul>
 								</li>
@@ -40,7 +40,7 @@
 								</li>
 								<li class="subnav-page page2"><a href="/pages/onboarding/community/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">Community</a>
 									<ul class="subnav-subpages">
-										<!--<li class="subnav-subpage subpage1"><a href="/pages/onboarding/community/context/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">You in Context</a></li>-->
+										<li class="subnav-subpage subpage1"><a href="/pages/onboarding/community/context/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">You in Context</a></li>
 										<li class="subnav-subpage subpage2"><a href="/pages/onboarding/community/leaders/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">Leaders</a></li>
 									</ul>
 								</li>

@@ -1,6 +1,6 @@
 		             <!-- Program Header Visualizations, Onboarding -->
 					 <div class="header-profile-highlights">
-				  	    <div id="BVVIZ-onboarding_header_playerMeta" class="highlights highlight1 bvviz-container"></div>
+				  	    <div id="BVVIZ-onboarding_header_playerMeta" class="highlights highlight1 bvviz-container bvviz-playerMeta"></div>
 					    <div id="BVVIZ-onboarding_header_missionProgressBar" class="highlights highlight2 bvviz-container progressBar"></div>
 					 </div> <!-- /.header-profile-highlights -->
 				   </div> <!-- /.span10 -->

@@ -15,10 +15,10 @@
 					            <div class="span8">
 								  <div class="main-section-block-title">Insights &amp; Steps&colon; Opportunities</div>
 								  <div class="main-section-block-body">
-									  <p>Track weekly goals. Identifying a starting list of steps can help surface useful work patterns and best practices. Asking questions is the critical to customer success. You’re lead pipeline is where that journey begins.  </p>
+									  <p>Track weekly goals. Identifying a starting list of steps can help surface useful work patterns and best practices. Asking questions is the critical to customer success. You&#39;re lead pipeline is where that journey begins.  </p>
 								  </div>
 					              <!-- BVVIZ - Goals -->
-								  <div id="bvviz-missionTutorial-3" class="bvviz-container"></div>
+								  <div id="BVVIZ-goals_progress2_weeklyOpps" class="bvviz-container bv-smallMissionTutorial"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->

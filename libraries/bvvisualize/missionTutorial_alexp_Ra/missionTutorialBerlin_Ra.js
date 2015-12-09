@@ -1,7 +1,7 @@
 /*!
 
 Badgeville JS SDK Preconfigured Visualizations
-Version 1.3.8
+Version 1.3.5
 
 Copyright 2014 Badgeville, Inc.
 
@@ -16,7 +16,7 @@ under the License.
 
 ;(function($) {
 // Add missionTutorial method to the BVVIZ scope
-BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
+BVVIZ.missionTutorialBerlin_Ra = function( target, publicKey, siteURL, timeframe, playerId, missionId, inline ) {
   
   // Variables and methods are defined in a private scope and then exposed publicly as needed later
   var pub = {},
@@ -42,12 +42,12 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
 
     // Individual reward card
     card: function( reward, earned ) {
-	  var card =  $( '<div class="bvviz-card bvviz-invisible ' + ( earned ? 'bvviz-complete' : 'bvviz-not-started' ) + '"' +
-		// Add a data attribute to track the reward Id
+      var card =  $( '<div class="bvviz-card bvviz-invisible ' + ( earned ? 'bvviz-complete' : 'bvviz-not-started' ) + '"' +
+        // Add a data attribute to track the reward Id
         ' data-bvviz-reward_id="' + reward.id + '"></div>' ).append(
         this.checkmark(),
         $( '<div class="bvviz-details"></div>' ).append(
-	'<div class="bvviz-image"><img src="' + reward.image + '" /></div><div class="bvviz-name">' + reward.name + '</div>',
+        '<div class="bvviz-image"><img src="' + reward.image + '" /></div><div class="bvviz-name">' + reward.name + '</div>',
           $( '<div class="bvviz-desc"></div>' ).append(
             this.unknownProgress( reward, earned )
           )
@@ -190,29 +190,30 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
 
     });
 
-    // Load the mission information
-    BVSDK.all(
-      BVSDK( 'missions', { missions: missionId } ),
-      BVSDK( 'players/missions', { players: playerId, missions: missionId } )
-    ).ok( function( missionDefData, playerMissionData ) {
-      var body = $( '.bvviz-body', target );
+// 	    url: "https://api.v2.badgeville.com/api/widgets/670674115ba55d2418aa7ff776fc09e5/apark.badgeville.com/players/50c7730149f83855480044d4/tracks/558870e16d11eff03e000c7a.json",
+	// load tracks information
+	var d = new Date();
+//	d.setMinutes (d.getMinutes() + 30);
+//	d.setMinutes (0);
 
-      // If this isn't an inline display, render the main header and add it to the top of the target
-      if ( inline ) {
-        body.addClass( 'bvviz-noheader');
-      } else {
-        render.header( missionDefData.missions[0].name ).prependTo( target );
+	$.ajax({
+			url: "https://api.v2.badgeville.com/api/widgets/" + publicKey + "/" + siteURL + "/players/" + playerId + "/missions/" + missionId + ".json?time_frame=" + timeframe + "&reset_config=" + d,
+	 	    dataType: 'jsonp'
+	}).done(function(data) {
+
+      if ( !inline ) {
+        render.header(data.data.name).prependTo( target );
       }
 
       // Render the header for the mission and add it to the body
       // If the player has made progress, use that version of the mission
-      if ( playerMissionData && $.isArray( playerMissionData.missions ) ) {
-        render.bodyHeader( playerMissionData.missions[0] ).prependTo( body );
+      if ( data.data.progress.earned > 0) {
+        render.bodyHeader( data.data ).prependTo( $( '.bvviz-body', target ) );
 
         hasProgress = true;
       } else {
         // Otherwise use the definition
-        render.bodyHeader( missionDefData.missions[0] ).prependTo( body );
+        render.bodyHeader( data.data ).prependTo( $( '.bvviz-body', target ) );
       }
   
       // Remove the loading display (load() will add one for itself)
@@ -228,13 +229,7 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
       load( 0 );
 
     // Attach a "fail" listener in case the mission id is invalid
-    }).fail( function( data ) {
-      // Remove the loading display
-      loading.remove();
-      
-      // Show an error on failure
-      BVVIZ.helper.showError( target, data );
-    });
+	});      
   }
 
   function load( page ) {
@@ -245,7 +240,7 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
         loading = BVVIZ.helper.loading( 'bvviz-tr' );
 
     // Whether there are earned rewards or not, this function will draw the result
-    function drawRows( missionRewardsDefData, playerRewardsData) {
+    function drawRows( missionRewardsDefData, playerRewardsData) {    
       // This object will store which definition_id's have been earned
       var earnedRewards = {},
 
@@ -285,7 +280,6 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
         // ...request the Progresses object(s) in an async call
         BVSDK( 'players/progresses', { players: playerId }, { query: { type: 'all_rewards', definition_id: unearnedRewardIds } } )
           .ok( function( data ) {
-
             // Loop through the Progresses and add the new data into the relevant card
             $.each( data.progresses, function( i, progress ) {
 
@@ -293,7 +287,7 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
               render.progress( cards.find( '[data-bvviz-reward_id="' + progress.definition_id + '"]' ), progress );
 
             });
-          });
+		});
       }
           
       // Remove the loading display
@@ -307,34 +301,35 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
     target.append( loading );
 
     // Load the provided page of rewards in the mission
-    BVSDK( 'missions/rewards', { missions: missionId }, {
-        fields: [ 'hint', 'progress_possible' ],
-        offset: page * pageSize,
-        limit: pageSize
-      }).ok( function( missionRewardsDefData ) {
-
+	var d = new Date();
+	$.ajax({
+			url: "https://api.v2.badgeville.com/api/widgets/" + publicKey + "/" + siteURL + "/players/" + playerId + "/missions/" + missionId + ".json?time_frame=" + timeframe + "&reset_config=" + d,
+			dataType: 'jsonp'
+	}).done(function(data) {
+		var missionRewardsDefData = new Object()
+		missionRewardsDefData.rewards = data.data.reward_definitions;
+		$.each( missionRewardsDefData.rewards, function( i, reward ) {
+			missionRewardsDefData.rewards[i].image = reward.image_url;
+			missionRewardsDefData.rewards[i].type = 'Reward';
+			missionRewardsDefData.rewards[i].definition_id = missionRewardsDefData.rewards[i].id;			
+		});
+		
+		var playerRewardsData = new Object()
+		playerRewardsData.rewards = data.data.rewards;
+		$.each( playerRewardsData.rewards, function( i, reward ) {
+//			console.log(reward);
+//			console.log(i);
+			playerRewardsData.rewards[i].image = reward.definition.image_url;
+			playerRewardsData.rewards[i].type = 'Reward';
+			playerRewardsData.rewards[i].definition_id = i;
+		});
+		
+	
         // If the player has progress, load the earned rewards for the player
-        if ( hasProgress ) {
-        
-          // Load the player's earned rewards in the mission that match the definition_ids in this page
-          BVSDK( 'players/missions/rewards', { players: playerId, missions: missionId }, {
-              fields: 'hint',
-              
-              // Use $.map to extract an array of reward definition ids
-              query: { definition_id: $.map( missionRewardsDefData.rewards, function( reward ) {
-                  return reward.id;
-                })
-              }
-
-            }).ok( function( playerRewardsData ) {
-            
+        if ( data.data.progress.earned > 0 ) {
               // Draw the rows with player reward data
               drawRows( missionRewardsDefData, playerRewardsData );
-
-            });
-
         } else {
-
           // Draw the rows without player reward data
           drawRows( missionRewardsDefData );
 
@@ -344,15 +339,7 @@ BVVIZ.missionTutorial_Ra = function( target, playerId, missionId, inline ) {
         if ( missionRewardsDefData.rewards.length < pageSize ) {
           cards.unbind( 'scroll.bvviz' );
         }
-
-      }).fail( function() {
-        
-        // In the case of a failure (which can happen if offset is greater than exists), unbind infinite scroll
-        cards.unbind( 'scroll.bvviz' );
-
-        // Remove the loading display
-        loading.remove();
-      });
+	});
   }
 
   // Initialize the visualization automatically upon passing site check
