@@ -205,7 +205,7 @@ BVVIZ.playerStats = function( target, playerId, options ) {
 
     // Trigger a load of the initial page of data
     load( 0 );
-
+	/*
     // If BVVIZ.rewardProgress has been included...
     if ( $.isFunction( BVVIZ.rewardProgress ) ) {
       // ...bind to the container object and catch bleed-up events so that we can bind to fewer objects
@@ -225,7 +225,7 @@ BVVIZ.playerStats = function( target, playerId, options ) {
           return false;
         }
       });
-    }
+    }*/
 
   }
 

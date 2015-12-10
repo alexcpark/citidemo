@@ -38,10 +38,10 @@
 					    	<ul class="subnav-pages">
 								<li class="subnav-page page1"><a href="/pages/learning/progress/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Progress</a>
 									<ul class="subnav-subpages">
-										<li class="subnav-subpage subpage0"><a href="/pages/learning/progress/products/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Overview</a></li>
+										<!--<li class="subnav-subpage subpage0"><a href="/pages/learning/progress/products/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Overview</a></li>
 										<li class="subnav-subpage subpage1"><a href="/pages/learning/progress/products/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Products</a></li>
 										<li class="subnav-subpage subpage2"><a href="/pages/learning/progress/tools/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Tools</a></li>
-										<li class="subnav-subpage subpage3"><a href="/pages/learning/progress/gamification/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Gamification</a></li>
+										<li class="subnav-subpage subpage3"><a href="/pages/learning/progress/gamification/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Gamification</a></li>-->
 									</ul>
 								</li>
 								<li class="subnav-page page2"><a href="/pages/learning/community/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Community</a>

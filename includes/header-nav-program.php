@@ -60,7 +60,9 @@
 			            <li class="nav-goals"><a href="/pages/goals/progress/?program_id=2&player_id=' . $allPlayerIds[0][1][1] . '">Goals</a></li>
 			            <li class="nav-learning"><a href="/pages/learning/progress/?program_id=3&player_id=' . $allPlayerIds[0][1][2] . '">Learning</a></li>
 						<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=4&player_id=' . $allPlayerIds[0][1][3] . '">Collaboration</a></li>
-						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">Guide</a></li>';
+						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_id=' . $allPlayerIds[0][1][0] . '">Guide</a></li>
+						<li class="nav-link outgoing-link"><a href="http://badgeville.io/564a586fa33c439ee30006cc?player_email=amy%40citidemo.badgeville.com" target="_blank">Mobile</a></li>
+						<li class="nav-link outgoing-link"><a href="https://badgevilledemos.sharepoint.com"><< Citi Net</a></li>';
 					
 					// construct Chris' Nav with his proper Id
 					$chris_nav = '
@@ -68,7 +70,9 @@
 			            <li class="nav-goals"><a href="/pages/goals/progress/?program_id=2&player_id=' . $allPlayerIds[1][1][1] . '">Goals</a></li>
 			            <li class="nav-learning"><a href="/pages/learning/progress/?program_id=3&player_id=' . $allPlayerIds[1][1][2] . '">Learning</a></li>
 						<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=4&player_id=' . $allPlayerIds[1][1][3] . '">Collaboration</a></li>
-						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">Guide</a></li>';
+						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_id=' . $allPlayerIds[1][1][0] . '">Guide</a></li>
+						<li class="nav-link outgoing-link"><a href=http://badgeville.io/564a586fa33c439ee30006cc?player_email=chris%40citidemo.badgeville.com" target="_blank">Mobile</a></li>						
+						<li class="nav-link outgoing-link"><a href="https://badgevilledemos.sharepoint.com">Citi Net</a></li>';
 							
 					// Print Choice
 					switch($playerId) {

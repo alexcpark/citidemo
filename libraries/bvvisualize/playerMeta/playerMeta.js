@@ -174,13 +174,13 @@ BVVIZ.playerMeta = function( target, player, options ) {
       // Render player's unitBar
       BVVIZ.helper.unitBar( $( '.bvviz-units', target ), playerObj, unitBarSettings );
 
-      // If the playerProfile function is defined, add event handler
-      if ( $.isFunction( BVVIZ.playerProfile ) ) {
+      // If the playerProfile function is defined, add event handler. Filtered out by Ra
+      /*if ( $.isFunction( BVVIZ.playerProfile ) ) {
         header.add( subHeader ).bind( 'click', function() {
           BVVIZ.helper.showModal( BVVIZ.playerProfile, [ playerObj.id ] );
         });
-      }
-
+      }*/
+		  
       // Remove the loading indicator
       loading.remove();
     };
@@ -216,7 +216,7 @@ BVVIZ.playerMeta = function( target, player, options ) {
       return false;
     }
   });
-
+  
   // Expose some of the methods publicly and return the pub object
   pub.init = init;
   pub.show = show;

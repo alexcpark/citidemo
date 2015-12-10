@@ -10,7 +10,7 @@
 				    <div class="content">
 						<div class="main-section" style="display: block;">
 					        <div class="container">
-					          <div class="main-section-title">Overiew&colon; The Challenge</div>
+					          <div class="main-section-title">Overview&colon; The Challenge</div>
 					          <div class="row">
 					            <div class="span8">
 								  <div class="main-section-block-body main-section-block-break">

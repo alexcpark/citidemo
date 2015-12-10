@@ -94,6 +94,7 @@
 				learning_header_playerStats, // missionRewards
 				learning_header_learningUnits, // tracks (queried by category)
 				learning_progress0_playerStream, // playerStream (My Activities) (designed for simple, easier control [buttons])
+				learning_progress0_missionOverview, // overview of all progress missions
 				learning_progress0_productProgress, // missionTutorial_alex (progress bar only, repeatable)
 				learning_progress0_toolsProgress, // missionTutorial_alex (progress bar only, repeatable)
 				learning_progress0_gamificationProgress, // missionTutorial_alex (progress bar only, repeatable)
@@ -208,7 +209,6 @@
 						$( '#BVVIZ-onboarding_header_playerMeta' ),
 						playerId // playerId
 			        );
-					
 					
 					// Onboarding Global Header, goalProgress Bar
 					onboarding_header_missionProgressBar = BVVIZ.missionProgressBar(
@@ -327,10 +327,6 @@
 						
 					);
 					
-					// Goals Progress0 Overview, Weekly Leads Summary
-					// Goals Progress0 Overview, Weekly Opportunities Summary
-					// Goals Progress0 Overview, Weekly Revenue Summary
-					
 					// Goals Progress1, Weekly Lead Checklist
 					goals_progress1_weeklyLeads = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress1_weeklyLeads' ),
@@ -443,6 +439,18 @@
   							itemCompleteCallback: handleImgErrorFailover
   						}
   					);
+					
+					// Learning Progress0 Overview
+					learning_progress0_missionOverview = BVVIZ.missionOverview(
+						$( '#BVVIZ-learning_progress0_missionOverview' ),
+						playerId, // playerId
+						// array of mission ids
+						[
+							'5654e4286907ffd6fc002d7d',
+							'5654e3deb1f54315c7002e8b',
+							'5654e36ba33c43783f002de2'
+						]
+					);
 					
 					// Learning Progress0 Overview, "product" learning unit progress
 					// Learning Progress0 Overview, "tools" learning unit progress
@@ -608,6 +616,7 @@
 				pub.learning_header_playerStats = learning_header_playerStats;
 				pub.learning_header_learningUnits = learning_header_learningUnits;
 				pub.learning_progress0_playerStream = learning_progress0_playerStream;
+				pub.learning_progress0_missionOverview = learning_progress0_missionOverview;
 				pub.learning_progress0_productProgress = learning_progress0_productProgress;
 				pub.learning_progress0_toolsProgress = learning_progress0_toolsProgress;
 				pub.learning_progress0_gamificationProgress = learning_progress0_gamificationProgress;

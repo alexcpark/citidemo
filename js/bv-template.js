@@ -32,7 +32,7 @@ $(function() {
 	* Add new visualizations to BVVIZ Scope
 	******/
 	
-	// goalProgress, custom, using jquery plugin
+	// missionProgressBar, custom, using jquery plugin
 	BVVIZ.missionProgressBar = function ( target, playerId, missionId, options ) {
 		
 		BVSDK( 'players/missions', { players: playerId, missions: missionId }, { // immediately define and use variable
@@ -60,7 +60,7 @@ $(function() {
 	};
 	
 	
-	// goalProgress2, custom, using jquery plugin
+	// goalProgress, custom, using jquery plugin
 	BVVIZ.goalProgress = function ( target, playerId, missionId, options ) {
 		
 		// store the id's incase i need them later
@@ -137,7 +137,7 @@ $(function() {
 		
 	};
 	
-	// goalProgress2, custom, using jquery plugin
+	// missionOverview, custom, using jquery plugin
 	BVVIZ.missionOverviewBerlin = function ( target, environment, publicKey, siteURL, playerId, missionIdArray, interval ) {
 		
 		// store missionObject
@@ -148,7 +148,7 @@ $(function() {
 		// process mission object
 		for (i = 0; i < missionIds.length; i++) {
 			
-			// using closure to ensure ajax capture the right iterator value
+			// using closure to ensure ajax captures the right iterator value
 			(function (i) {
 			
 				// construct url
@@ -156,16 +156,17 @@ $(function() {
 
 				// grabbing the mission data using the url with updated Id
 				$.ajax({
-					asynch: false,
 					url: missions_url,
 					dataType: 'jsonp'
 				}).done(function(data) {
 				
 					// store data results for processing
 					var missionData = data;
-					console.log(missionData);
+					
+					//console.log(missionData);
+					
 					// append containers to elements. add title and description.
-					$(target).append('<div class="overview-row' + i + ' main-section-block-break"><p class="main-section-block-title overview-item-title">' + interval + ' ' + missionData.data.name + '</p><p class="overview-item-description">' + missionData.data.tip + '</p><div class="bv-progressBar-top-tally">' + missionData.data.progress.earned + ' out of ' + missionData.data.progress.possible + '</div><div class="bv-missionOverview bv-missionProgressBar' + i + '"></div></div>');
+					$(target).append('<div class="overview-row' + i + ' main-section-block-break"><div class="bv-missionOverview-desc"><p class="main-section-block-title overview-item-title">' + interval + ' ' + missionData.data.name + '</p><p class="overview-item-description">' + missionData.data.tip + '</p></div><div class="bv-MissionOverview-container"><div class="bv-progressBar-top-tally">' + missionData.data.progress.earned + ' out of ' + missionData.data.progress.possible + '</div><div class="bv-missionOverview bv-missionProgressBar' + i + '"></div></div></div>');
 				
 					// initialize progress bar
 					$('.bv-missionProgressBar' + i).progressbar({ value: 1 });
@@ -184,29 +185,55 @@ $(function() {
 					
 				});
 				
-			})(i);
-			
+			})(i);	
 		}
-		
-			
-		
-		//console.log(tracks_url);
-		//console.log(missions_url);
-/*
-		$.ajax({
-			url: missions_url,
-			dataType: 'jsonp'
-		}).done(function(data) {
-			
-			// store data results for processing
-			var playerData = data,
-			missionsData = data.
-			
-			// process results
-			for
-			
-		});*/
 	};
+	
+	// missionOverview, custom, using jquery plugin
+	BVVIZ.missionOverview = function ( target, playerId, missionIdArray ) {
+		
+		/*// store missionObject
+		var missionIds = missionIdArray;
+		// console.log(missionIds.length);
+		
+		// process mission object
+		for (i = 0; i < missionIds.length; i++) {
+			
+			// using closure to ensure ajax captures the right iterator value
+			(function (i) {
+			
+				// define core function for processing rewards
+				BVSDK( 'players/tracks', { players: player_id }, { // immediately define and use variable
+					fields: 'all'
+				}).ok( function(playerData) {
+				
+					// store data results for processing
+					var missionData = data;
+					// console.log(missionData);
+					// append containers to elements. add title and description.
+					$(target).append('<div class="overview-row' + i + ' main-section-block-break"><div class="bv-missionOverview-desc"><p class="main-section-block-title overview-item-title">' + interval + ' ' + missionData.data.name + '</p><p class="overview-item-description">' + missionData.data.tip + '</p></div><div class="bv-MissionOverview-container"><div class="bv-progressBar-top-tally">' + missionData.data.progress.earned + ' out of ' + missionData.data.progress.possible + '</div><div class="bv-missionOverview bv-missionProgressBar' + i + '"></div></div></div>');
+				
+					// initialize progress bar
+					$('.bv-missionProgressBar' + i).progressbar({ value: 1 });
+				
+					// animate to current value
+					$('.bv-missionProgressBar' + i + ' .ui-progressbar-value').animate({ width: missionData.data.progress.percent + '%' });
+					
+					// add class
+					$('.bv-missionProgressBar' + i).addClass('progressBar');
+					
+					// append text to bar (hidden by default)
+					$('.bv-missionProgressBar' + i).append('<div class="bv-progressBar-inner-percent" style="display: none;"><div class="bv-progressBar-inner-value">' + missionData.data.progress.percent + ' %</div>' + '<div class="bv-progressBar-inner-description"> Complete</div></div>');
+					
+					// show inner percent
+					$('.bv-progressBar-inner-percent').show( 1500 );
+					
+				});
+				
+			})(i);	
+		}*/
+	};
+	
 	/*
 	// contextualLeaderboard, based on BV leaderboard
 	BVVIZ.contextLeaderboard = function ( target, leaderboardIds, options ) {

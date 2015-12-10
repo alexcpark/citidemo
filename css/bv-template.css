@@ -427,6 +427,10 @@ h1, h2, h3, h4, h5, h6 {
 	height: 34px;
 }
 
+.navbar .navbar-inner .span12 .nav {
+	width: 100%;
+}
+
 .navbar,
 .navbar-inner {
 	background-color: transparent;
@@ -440,6 +444,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .nav > li {
 	line-height: initial;
+}
+
+.navbar .nav > .outgoing-link {
+	float: right;
 }
 
 .navbar .nav > li > a {
@@ -496,6 +504,9 @@ h1, h2, h3, h4, h5, h6 {
 #bv-page-guide .header-profile-image { border: 1px solid #D5D6D7; }
 #bv-page-guide .page-header::after { background-color: #D5D6D7; }
 #bv-page-guide .span2 { background-color: #D5D6D7; }
+
+.navbar .nav>.nav-link>a:hover,
+.navbar .nav>.nav-link>a:focus { color: #97999B; }
 
 /* adjust profile section */
 
@@ -680,6 +691,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bvviz-playerMeta .bvviz-header-band {
 	border: 0 !important;
+	cursor: text;
 }
 	
 .highlight1 {
@@ -934,6 +946,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Mission Overview Berlin */
 
+.bv-missionOverview-desc,
+.bv-MissionOverview-container {
+	display:inline-block;
+	vertical-align: top;
+}
+
+.bv-missionOverview-desc {
+	width: 270px;
+	margin-right: 30px;
+}
+
+.bv-MissionOverview-container {
+	width: 400px;
+	margin-top: 6px;
+}
+
 .bv-missionOverview {
 	border: 0;
 	position: relative;
@@ -1029,6 +1057,7 @@ h1, h2, h3, h4, h5, h6 {
 	bottom: initial;
 	left: initial;
 	display:inline-block;
+	cursor: text;
 }
 
 .bvviz-playerStats.bvviz-playerRewards.bvviz .bvviz-cards.bvviz-row .bvviz-card .bvviz-name,

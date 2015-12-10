@@ -16,12 +16,7 @@
 								  <div class="main-section-block-body main-section-block-break">
 									  <p>Learning tracks are a great way to solidify expertise or surface reputation. Complete these learning units to solidify your expertise in that subject area.</p>
 								  </div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-4" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-5" class="bvviz-container main-section-block-break"></div>
-					              <!-- BVVIZ - Onboarding -->
-								  <div id="bvviz-missionProgress-6" class="bvviz-container main-section-block-break"></div>
+								  <div id="BVVIZ-learning_progress0_missionOverview" class="bvviz-container main-section-block-break"></div>
 								</div>
 					          </div><!-- /.row -->
 					        </div><!-- /.container -->
