@@ -16,7 +16,7 @@ under the License.
 
 ;(function($) {
 // Add missionProgress method to the BVVIZ scope
-BVVIZ.missionProgress = function( target, publicKey, siteURL, timeframe, playerId, missionId, inline ) {
+BVVIZ.missionProgressBerlin = function( target, publicKey, siteURL, timeframe, playerId, missionId, inline ) {
   // Variables and methods are defined in a private scope and then exposed publicly as needed later
   var pub = {},
 
