@@ -25,7 +25,7 @@
 										  	<div class="list-title">Examples of Activities&colon;</div>
 										  	<ul>
 										  		<li>Close an opportunity</li>
-										  		<li>Visit Citi Net</li>
+										  		<li>Visit Bank Net</li>
 										  		<li>Pass a learning test</li>
 										  		<li>Give a Yammer praise</li>
 										  	</ul>

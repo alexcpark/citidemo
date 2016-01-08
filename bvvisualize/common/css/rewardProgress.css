@@ -1,0 +1,174 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.9
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+.bvviz-rewardProgress {
+  min-height: 200px;
+  min-width: 200px;
+}
+
+.bvviz-rewardProgress .bvviz-body {
+  height: 100%;
+}
+
+.bvviz-rewardProgress .bvviz-cards {
+  padding: .4em;
+}
+
+/* cards */
+.bvviz-rewardProgress .bvviz-cards.bvviz-col .bvviz-card {
+  float: left;
+  border: none;
+  width: 100%;
+  margin-top: 1.25em;
+  padding: 0;
+  overflow: visible;
+  cursor: auto;
+}
+
+.bvviz-rewardProgress .bvviz-cards.bvviz-col .bvviz-card:hover {
+  background-color: transparent;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-icon-container {
+  display: block;
+  padding: 4px;
+  position: relative;
+  /* for absolute children */
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-icon {
+  margin-left: auto;
+  margin-right: auto;
+  width: 8em;
+  height: 8em;
+  display: block;
+  background-color: transparent;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-count {
+  position: absolute;
+  left: 55%;
+  top: 63%;
+  font-size: 20px;
+  padding: 4px;
+  color: #fff;
+  background-color: #36a8de;
+  border: 3px solid #fff;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 26px;
+  height: 28px;
+  min-height: 28px;
+  min-width: 28px;
+  -moz-border-radius: 26px;
+  -webkit-border-radius: 26px;
+  -ms-border-radius: 26px;
+  border-radius: 26px;
+}
+
+.bvviz-rewardProgress .bvviz-card.bvviz-grey .bvviz-icon {
+  filter: url("data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'><filter%20id='grayscale'><feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/></filter></svg>#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  filter: gray;
+  /* IE6-9 */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  border: none;
+}
+
+.bvviz-rewardProgress .bvviz-cards .bvviz-card .bvviz-details {
+  display: block;
+  text-align: center;
+  margin: 1.3em 0 0 0;
+  padding: 0 10px;
+}
+
+.bvviz .bvviz-cards.bvviz-col .bvviz-details .bvviz-message, .bvviz-rewardProgress .bvviz-card .bvviz-message {
+  overflow: hidden;
+  font-size: 1.2em;
+  color: #2aacea;
+  line-height: 26px;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.bvviz .bvviz-cards.bvviz-col .bvviz-details .bvviz-hint, .bvviz-rewardProgress .bvviz-card .bvviz-hint {
+  overflow: hidden;
+  font-size: 1.2em;
+  color: #666;
+  line-height: 26px;
+  min-height: 50px;
+  margin-bottom: 10px;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-rules {
+  overflow: hidden;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-awards {
+  display: inline-block;
+  max-width: 270px;
+  overflow: hidden;
+  font-size: 1em;
+  padding: 5px 20px;
+  color: #fff;
+  background-color: #999;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+progress.bvviz-progress[value] {
+  overflow: hidden;
+  width: 15em;
+  height: 1.5em;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-ratio {
+  overflow: hidden;
+  line-height: 26px;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-timestamp {
+  color: #999;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.bvviz-rewardProgress .bvviz-card .bvviz-expand {
+  position: absolute;
+  left: 300px;
+  top: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+}
+
+.bvviz-more-timestamps {
+  display: none;
+  color: #999;
+}
+
+.bvviz-more-timestamps.bvviz-open {
+  display: block;
+}

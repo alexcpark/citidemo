@@ -5,7 +5,7 @@
 				<div class="footer-banner">
 					<div class="container">
 						<ul class="nav nav-bottom">
-							<li class="bv-logo-r"><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">&nbsp;</a></li>
+							<!--<li class="bv-logo-r"><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">&nbsp;</a></li>-->
 							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Terms of Use</a></li>
 							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Privacy Policy</a></li>
 							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Additional Terms</a></li>
@@ -21,10 +21,10 @@
 				</div> <!-- /.footer-banner -->
 				<div class="footer-legal">
 					<div class="container">
-						<div class="copyright">Copyright &copy; 2013 Citigroup Inc. All Rights Reserved.</div>
+						<div class="copyright">Copyright &copy; 2013 Bank Digital Inc. All Rights Reserved.</div>
 						<div class="eeo">
-							<p>Citi is an equal opportunity and affirmative action employer. Minority/Female/Disability/Veteran.</p>
-							<p>Citigroup Inc. and its subsidiaries (”Citi”) invites all qualified interested applicants to apply for career opportunities. If you are a person with a disability and need a reasonable accommodation to use our search tools and/or apply for a career opportunity, please contact us.</p>
+							<p>Bank Digital is an equal opportunity and affirmative action employer. Minority/Female/Disability/Veteran.</p>
+							<p>Bank Digital Inc. and its subsidiaries (”Bank Digital”) invites all qualified interested applicants to apply for career opportunities. If you are a person with a disability and need a reasonable accommodation to use our search tools and/or apply for a career opportunity, please contact us.</p>
 							<p>To view the “EEO is the Law” poster.</p>
 						</div>
 					</div>
@@ -314,7 +314,7 @@
 						$( '#BVVIZ-goals_progress0_missionOverview' ),
 						'production', //environment 'production' or 'sandbox'
 						'15b9f975039d1d5b97193f62a42224d5', // publicKey
-						'goals.citi.com', // siteURL
+						'goals.bankdigital.com', // siteURL
 						playerId, // playerId
 						// array of mission ids
 						[
@@ -331,7 +331,7 @@
 					goals_progress1_weeklyLeads = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress1_weeklyLeads' ),
 						'15b9f975039d1d5b97193f62a42224d5', // publicKey
-						'goals.citi.com', // siteURL
+						'goals.bankdigital.com', // siteURL
 						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
 						'5654e4286907ffd6fc002d7d', // missionId (tutorial mission)
@@ -342,7 +342,7 @@
 					goals_progress2_weeklyOpps = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress2_weeklyOpps' ),
 						'15b9f975039d1d5b97193f62a42224d5', // publicKey
-						'goals.citi.com', // siteURL
+						'goals.bankdigital.com', // siteURL
 						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
 						'5654e3deb1f54315c7002e8b', // missionId (tutorial mission)
@@ -353,7 +353,7 @@
 					goals_progress3_weeklyRev = BVVIZ.missionTutorialBerlin_Ra(
 						$( '#BVVIZ-goals_progress3_weeklyRev' ),
 						'15b9f975039d1d5b97193f62a42224d5', // publicKey
-						'goals.citi.com', // siteURL
+						'goals.bankdigital.com', // siteURL
 						'weekly', // hourly, weekly, monthly, quarterly
 						playerId, // playerId
 						'5654e36ba33c43783f002de2', // missionId (tutorial mission)
@@ -511,7 +511,7 @@
 						          // Whether the header should be rendered
 						          inline: true,
 
-						          category: 'collaboration',
+						          category: 'collaboration-show',
 
 						          // Whether the cards are rendered as the child content inside a custom container
 						          childContentCards: false,

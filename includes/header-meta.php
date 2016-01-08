@@ -17,7 +17,7 @@ under the License.
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 	<head>
-		<title>Badgeville: Citi Smarter Worklife Challenge</title>
+		<title>Badgeville: Bank Digital - Employee Journey of the Future</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="Description" content="">

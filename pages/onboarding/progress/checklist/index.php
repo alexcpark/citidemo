@@ -14,7 +14,7 @@
 					          <div class="row">
 					            <div class="span8">
 								  <div class="main-section-block-body">
-									  <p>A proper start is important for a successful journey. For employees, onboarding is that start. Begin this mission to help surface useful ways for you to hit the ground running @ Citi!</p>
+									  <p>A proper start is important for a successful journey. For employees, onboarding is that start. Begin this mission to help surface useful ways for you to hit the ground running @ Bank Digital!</p>
 								  </div>
 					              <!-- BVVIZ - Onboarding -->
 								  <div id="BVVIZ-onboarding_progress0_missionTutorial" class="bvviz-container"></div>

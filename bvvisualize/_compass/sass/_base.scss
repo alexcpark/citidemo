@@ -1,0 +1,334 @@
+@import "compass";
+@import "compass/css3/box-shadow";
+@import "bvmixin";
+
+// *************************** Main color/theme settings ***************************
+
+$boolean_dark_theme: false;
+$boolean_highkey_header: false;
+$boolean_desaturated_ribbon: false;
+$boolean_bleach_theme: false;
+
+// Primary Accent - Main accent color, used as the base color
+$primary_accent: #36a8de;
+
+// BVVIZ        #36a8de
+// ocean blue   #3378df
+// teal         #4e96ab 
+
+// *************************** Theme setting override ***************************
+
+// used in the automatic build process
+@import "_bvtheme";
+
+// dependant settings
+$boolean_custom_scrollbar: false;     // Custom Scrollbar is only applicable to Webkit
+  @if $boolean_dark_theme {
+    $boolean_custom_scrollbar: true;
+  }
+$boolean_mono_accent: true;           // Pending feature
+
+// *************************** Accent Color Scheme ***************************
+  // offsets for the darker primary accent 
+  $primary_accent_offset_sl__50: scale-lightness($primary_accent, -50);
+  $primary_accent_offset_sl__30: scale-lightness($primary_accent, -30);
+  $primary_accent_offset_sl__20: scale-lightness($primary_accent, -20);
+  $primary_accent_offset_sl__15: scale-lightness($primary_accent, -15);
+  // offsets for the lighter primary accent 
+  $primary_accent_offset_sl_15: scale-lightness($primary_accent, 15);
+  $primary_accent_offset_sl_30: scale-lightness($primary_accent, 30);
+  $primary_accent_offset_sl_50: scale-lightness($primary_accent, 50);
+  $primary_accent_offset_sl_80: scale-lightness($primary_accent, 80);
+  // offsets for saturation adjusted primary accent
+  $primary_accent_offset_ss__5: scale-saturation($primary_accent, -5);
+  $primary_accent_offset_as_10: adjust-saturation($primary_accent, 10%);
+  // primary accent gradient offset
+  $primary_accent_gradient_offset: adjust-hue($primary_accent_offset_sl__20, 5deg);
+
+// Secondary Accent - optional, applied when $boolean_mono_accent is false
+$secondary_accent: #FE5000;
+
+// Tertiary Accent - optional, applied when $boolean_mono_accent is false
+$tertiary_accent: #36BA2F;
+
+// **************** Grey Scale Colors used in Visualization ****************
+$darkest_shade: #000;
+$brightest_shade: #fff;
+$grey_shade_fc: #fcfcfc;
+$grey_shade_f6: #f6f6f6;
+$grey_shade_eb: #ebebeb;
+$grey_shade_e2: #e2e2e2;
+$grey_shade_d6: #d6d6d6;
+$grey_shade_c: #ccc;
+$grey_shade_c1: #c1c1c1;
+$grey_shade_b: #bbb;
+$grey_shade_b8: #b8b8b8;
+$grey_shade_a: #aaa;
+$grey_shade_a6: #a6a6a6;
+$grey_shade_9: #999;
+$grey_shade_8: #888;
+$grey_shade_7: #777;
+$grey_shade_6: #666;
+$grey_shade_60: #606060;
+$grey_shade_5: #555;
+$grey_shade_51: #515151;
+$grey_shade_4: #444;
+$grey_shade_3: #333;
+$grey_shade_2: #222;
+
+// Background - background color, default light grey
+$background: $grey_shade_eb;
+  @if $boolean_dark_theme {
+    $background: $grey_shade_6;
+  }  
+
+// Background Hover - background hover color, used in any reward card, mission card, track card
+$background_hover: $brightest_shade;
+  @if $boolean_dark_theme {
+    $background_hover: $grey_shade_8;
+  }  
+
+// Background Inactive - unfinished reward, mission, track card background color
+$background_inactive: $grey_shade_e2;
+  @if $boolean_dark_theme {
+    $background_inactive: $grey_shade_b;
+  }  
+
+// Background Font - text color show on top of background
+$background_font: $grey_shade_6;
+  @if $boolean_dark_theme {
+    $background_font: $brightest_shade;
+  }  
+
+// Accent Font - text show on accent background. i.e. header, subheader, arrow circles
+$accent_font: $brightest_shade;
+
+
+// Background Border - border show on top of client background
+$background_border: $grey_shade_b;
+  @if $boolean_dark_theme {
+    $background_border: $grey_shade_5;
+  }  
+
+// Component Border - border show inside visualization, i.e. leaderboard
+$component_border: $grey_shade_d6;
+  @if $boolean_dark_theme {
+    $component_border: $grey_shade_5;
+  }  
+
+// Separater Border - border as separater show on accent background, player card semi-circle border
+$separater_border: $grey_shade_c1;
+
+// Contrast Border - border creating a contrast separation
+$contrast_border: $brightest_shade;
+
+// Background Inactive - unfinished reward, mission, track background color (default grey out)
+$background_border_inactive: $grey_shade_c1;
+  @if $boolean_dark_theme {
+    $background_border_inactive: $grey_shade_8;
+  }  
+
+
+// **************** Breakdown Color Variables used in Visualization ****************
+
+// Common UI component
+
+$bvviz_scrollbar_color: $grey_shade_9;
+  @if $boolean_dark_theme{
+    $bvviz_scrollbar_color: $grey_shade_5;
+  }
+$bvviz_header_gradient_start_color: $primary_accent;
+$bvviz_header_gradient_end_color: $primary_accent_gradient_offset;
+  @if $boolean_highkey_header {
+    $bvviz_header_gradient_start_color: $grey_shade_a6;
+    $bvviz_header_gradient_end_color: scale-lightness($grey_shade_a6, -20);
+  }
+  @if $boolean_bleach_theme {
+    $bvviz_header_gradient_start_color: $grey_shade_f6;
+    $bvviz_header_gradient_end_color: scale-lightness($grey_shade_f6, -10);
+  }
+$bvviz_header_box_shadow_color: $grey_shade_7;
+  @if $boolean_dark_theme{
+    $bvviz_header_box_shadow_color: $grey_shade_a;
+  }
+$bvviz_header_font_color: $accent_font;
+  @if $boolean_bleach_theme {
+    $bvviz_header_font_color: $grey_shade_6;
+  }
+$bvviz_body_bg_color: $grey_shade_eb;
+  @if $boolean_dark_theme{
+    $bvviz_body_bg_color: $grey_shade_6;
+  }
+$bvviz_body_border_color: $background_border;
+$bvviz_body_header_bg_color: transparent;
+$bvviz_body_header_border_color: $component_border;
+$bvviz_nav_font_color: $grey_shade_a;
+  @if $boolean_dark_theme{
+    $bvviz_nav_font_color: $grey_shade_c;
+  }
+$bvviz_nav_active_bg_color: transparent;
+$bvviz_nav_active_font_color: $primary_accent;
+$bvviz_nav_bg_hover: $grey_shade_f6;
+  @if $boolean_dark_theme{
+    $bvviz_nav_bg_hover: $grey_shade_7;
+  }
+$bvviz_overlay_bg_color: $grey_shade_2;
+$bvviz_unitbar_font_color: $accent_font;
+$bvviz_unitbar_separator_color: $contrast_border;
+$bvviz_loading_bg_color: $grey_shade_c;
+  @if $boolean_dark_theme{
+    $bvviz_loading_bg_color: $grey_shade_8;
+  }
+$bvviz_loading_animation_start_color: $grey_shade_6;
+$bvviz_loading_animation_end_color: $brightest_shade;
+$bvviz_card_bg_color: $grey_shade_fc;
+  @if $boolean_dark_theme{
+    $bvviz_card_bg_color: $grey_shade_7;
+  }
+$bvviz_card_alternate_bg_color: $grey_shade_f6;
+  @if $boolean_dark_theme{
+    $bvviz_card_alternate_bg_color: $grey_shade_8;
+  }
+$bvviz_card_bg_hover: $grey_shade_f6;
+  @if $boolean_dark_theme{
+    $bvviz_card_bg_hover: $grey_shade_8;
+  }
+$bvviz_card_border_color: $component_border;
+$bvviz_card_greyout_font_color: $grey_shade_c;
+$bvviz_card_col_font_color: $grey_shade_9;
+  @if $boolean_dark_theme{
+    $bvviz_card_col_font_color: $grey_shade_c;
+  }
+$bvviz_card_knobs_font_color: adjust-saturation($primary_accent, -45);
+$bvviz_card_knobs_border_color: $separater_border;
+$bvviz_card_btn_separator_color: adjust-lightness(adjust-saturation($primary_accent, -15), -60);
+$bvviz_card_btn_bg_color: $grey_shade_fc;
+  @if $boolean_dark_theme{
+    $bvviz_card_btn_bg_color: $grey_shade_7;
+  }
+$bvviz_card_timestamp_font_color: $grey_shade_c;
+$bvviz_showscroll_font_color: $grey_shade_b;
+$bvviz_tooltip_pointer_color: $component_border;
+$bvviz_view_profile_bg_color: $primary_accent_offset_sl__15;
+$bvviz_view_profile_bg_hover: $primary_accent;
+$bvviz_view_profile_box_shadow_color: $grey_shade_7;
+  @if $boolean_dark_theme{
+    $bvviz_view_profile_box_shadow_color: $grey_shade_a;
+  }
+$bvviz_progress_bar_fg_color: $primary_accent;
+$bvviz_progress_bar_bg_color: $grey_shade_9;
+  @if $boolean_mono_accent == false {
+    $bvviz_progress_bar_fg_color: $secondary_accent;
+  }
+
+// Player Profile (default) progress bar foreground
+$progress_bar_fg_color: tint(adjust-saturation($primary_accent, -6), 50%);
+// Player Profile (default) progress bar background
+$progress_bar_bg_color: shade(adjust-saturation($primary_accent_gradient_offset, -6), 2%);
+  @if $boolean_mono_accent == false {
+    $progress_bar_fg_color: tint(adjust-saturation($secondary_accent, -6), 50%);
+    $progress_bar_bg_color: shade(adjust-saturation($secondary_accent, -6), 2%);
+  }
+
+// Player Profile
+$playerProfile_unitbar_bg_color: $primary_accent_offset_ss__5;
+$playerProfile_unitbar_font_color: $accent_font;
+  @if $boolean_desaturated_ribbon {
+    $playerProfile_unitbar_bg_color: scale-saturation($primary_accent_offset_sl_15, -40);
+  }
+  @if $boolean_highkey_header {
+    $playerProfile_unitbar_bg_color: $grey_shade_a6;
+  }
+  @if $boolean_bleach_theme {
+    $playerProfile_unitbar_bg_color: $grey_shade_b;
+  }
+$playerProfile_unitbar_separator_color: $bvviz_unitbar_separator_color;
+$playerProfile_unitbar_circle_bg_hover: $brightest_shade;
+$playerProfile_unitbar_circle_font_hover: $primary_accent;
+$playerProfile_card_checkmark_bg_color: $primary_accent;
+
+// Player Card
+$playerCard_header_gradient_end_color: $primary_accent_offset_sl__15;
+  @if $boolean_highkey_header {
+    $playerCard_header_gradient_end_color: scale-lightness($grey_shade_a6, -15);
+  }
+  @if $boolean_bleach_theme {
+    $playerCard_header_gradient_start_color: $grey_shade_f6;
+    $playerCard_header_gradient_end_color: scale-lightness($grey_shade_f6, -8);
+  }
+$playerCard_subheader_bg_color: $grey_shade_b8;
+  @if $boolean_dark_theme{
+    $playerCard_subheader_bg_color: $grey_shade_9;
+  }
+  @if $boolean_bleach_theme {
+    $playerCard_subheader_bg_color: $grey_shade_b;
+  }
+$playerCard_unitbar_separator_color: shade($separater_border, 50%);
+$playerCard_unitbar_circle_bg_color: $brightest_shade;
+$playerCard_unitbar_circle_font_color: $primary_accent_offset_sl_15;
+$playerCard_unitbar_circle_bg_hover: $primary_accent;
+$playerCard_unitbar_circle_font_hover: $brightest_shade;
+  @if $boolean_dark_theme {
+    $playerCard_unitbar_separator_color: tint($separater_border, 50%);
+    $playerCard_unitbar_circle_bg_color: $background_hover;
+    $playerCard_unitbar_circle_font_color: $brightest_shade;
+  }
+$playerCard_progress_bar_fg_color: adjust-saturation($primary_accent, 10);
+$playerCard_progress_bar_bg_color: $grey_shade_b8;
+$playerCard_progress_bar_label_color: $brightest_shade;
+
+
+// Player Header
+$playerHeader_bg_color: $primary_accent_offset_ss__5;
+$playerHeader_font_color: $accent_font;
+
+// Mission Progress, Track Progress
+$mission_track_progress_border_color: $primary_accent_offset_ss__5;
+$mission_track_progress_bridge_bg_color: $primary_accent_offset_sl__15;
+$mission_track_progress_bridge_border_color: $primary_accent_offset_sl_15;
+$mission_track_progress_inactive_bg_color: $background_inactive;
+$mission_track_progress_inactive_border_color: $background_border_inactive;
+
+// Reward Progress
+$rewardProgress_count_bg_color: $primary_accent;
+  @if $boolean_mono_accent == false {
+    $rewardProgress_count_bg_color: $secondary_accent;
+  }
+$rewardProgress_reward_bg_color: $grey_shade_9;
+$rewardProgress_reward_font_color: $primary_accent_offset_as_10;
+  @if $boolean_dark_theme{
+    $rewardProgress_reward_bg_color: $grey_shade_5;
+    $rewardProgress_reward_font_color: $primary_accent_offset_sl_80;
+  }
+$rewardProgress_timestamp_font_color: $grey_shade_9;
+  @if $boolean_dark_theme{
+    $rewardProgress_timestamp_font_color: $grey_shade_c;
+  }
+
+// Leaderboard
+$leaderboard_player_highlight_bg_color: $primary_accent_offset_sl_80;
+$leaderboard_player_highlight_font_color: $background_font;
+  @if $boolean_dark_theme{
+    $leaderboard_player_highlight_bg_color: $primary_accent;
+  }
+
+// Notification
+$notify_desc_font_color: $accent_font;
+  @if $boolean_bleach_theme {
+    $notify_desc_font_color: $grey_shade_6;
+  }
+$notify_view_profile_bg_color: $bvviz_view_profile_bg_color; 
+$notify_view_profile_border_color: $primary_accent_offset_sl__30;
+$notify_view_profile_box_shadow_color: $grey_shade_9;;
+$notify_close_btn_bg_color: $darkest_shade;
+$notify_close_btn_font_color: $accent_font;
+$notify_close_btn_border_color: $background_border;
+$notify_close_btn_box_shadow_color: $grey_shade_7;
+  @if $boolean_dark_theme{
+    $notify_close_btn_box_shadow_color: $grey_shade_a;
+  }
+$notify_waffle_box_shadow_color: $grey_shade_7;
+  @if $boolean_dark_theme{
+    $notify_waffle_box_shadow_color: $grey_shade_a;
+  }
+

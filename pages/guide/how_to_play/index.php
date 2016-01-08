@@ -24,10 +24,10 @@
 									  </ol>
 									  <p class="main-section-block-break2">Check out the other sections of this guide for further details on where to play and what activities you can perform.</p>
 									  <p class="main-section-block-title">Description of Program Areas &amp; Their Purpose</p>
-						              <p class="">Badgeville&apos;s gamification platform, along with its first in class Reputation Center and targeted design, tackle six of the challenges presented by Citi. Those six areas are answered by four design programs, built and configured by Badgeville&colon;</p>
+						              <p class="">Badgeville&apos;s gamification platform, along with its first in class Reputation Center and targeted design, tackle six of the challenges presented by Bank Digital. Those six areas are answered by four design programs, built and configured by Badgeville&colon;</p>
 						              <ul class="main-section-block-list">
 						              	<li><span class="bv-bold">Onboarding</span> - Defines activities and goals for successful onboarding process to start the employee journey. Content is housed and served via <span class="bv-bold">Sharepoint</span>.</li>
-						              	<li><span class="bv-bold">Goals</span> - Defines key activities and goals for day-to-day career development and success for a &quot;relationship manager&quot; in &quot;wealth management&quot; @ Citi. Answers the &quot;Career Development &amp; Feedback&quot; area. Content served via <span class="bv-bold">Salesforce</span>.</li>
+						              	<li><span class="bv-bold">Goals</span> - Defines key activities and goals for day-to-day career development and success for a &quot;relationship manager&quot; in &quot;wealth management&quot; @ Bank Digital. Answers the &quot;Career Development &amp; Feedback&quot; area. Content served via <span class="bv-bold">Salesforce</span>.</li>
 						              	<li><span class="bv-bold">Learning</span> - Captures activities and goals for employee training and learning management. Answers the &quot;Training&quot; area. Units and their articles housed and organized inside <span class="bv-bold">Sharepoint</span>.</li>
 						              	<li><span class="bv-bold">Collaboration</span> - Captures activities and goals for employee collaboration and knowledge transfering. Captures the &quot;Connecting / Social&quot; area. Powered by and occuring inside <span class="bv-bold">Yammer</span>.</li>
 						              </ul>

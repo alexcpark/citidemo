@@ -17,7 +17,7 @@
 									  <p>Surfacing group performance is a great way to establish context for your personal achievements. See the chart below for brief summary on how everyone stacks up!</p>
 								  </div>
 					              <!-- BVVIZ - Goals -->
-								  <div class="main-section-block-title">All Recent Activity in Collaboration @ Citi></div>
+								  <div class="main-section-block-title">All Recent Activity in Collaboration @ Bank Digital</div>
 								  <div id="BVVIZ-collaboration_community0_siteStream" class="bvviz-container"></div>
 								</div>
 					          </div><!-- /.row -->

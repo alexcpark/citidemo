@@ -4,7 +4,7 @@
 		        <div class="row">
 		          <div class="span12">
 		            <a class="brand" href="/">&nbsp;</a>
-		            <a class="brand2" href="/">&nbsp;</a>
+		            <!--<a class="brand2" href="/">&nbsp;</a>-->
 		          </div>
 		        </div>
 		      </div>

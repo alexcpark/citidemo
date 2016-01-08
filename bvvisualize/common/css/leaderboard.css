@@ -1,0 +1,268 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.9
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+.bvviz-leaderboard {
+  min-height: 200px;
+  min-width: 243px;
+}
+
+.bvviz-leaderboard.bvviz-horizontal {
+  min-height: 100px;
+  min-width: 400px;
+}
+
+/* header */
+.bvviz-leaderboard.bvviz-horizontal .bvviz-header {
+  box-sizing: border-box;
+  min-width: 100px;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+  -webkit-border-top-left-radius: .25em;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topleft: .25em;
+  -moz-border-radius-topright: 0;
+  border-top-left-radius: .25em;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-left-radius: .25em;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: .25em;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-left-radius: .25em;
+  border-bottom-right-radius: 0;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-header-text {
+  font-size: 1em;
+  width: auto;
+  max-width: 100px;
+  word-wrap: break-word;
+  white-space: normal;
+  height: auto;
+  line-height: inherit;
+  text-align: center;
+}
+
+/* body */
+.bvviz-leaderboard.bvviz-horizontal .bvviz-body {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid #bbb;
+  -webkit-border-top-right-radius: .25em;
+  -webkit-border-bottom-right-radius: .25em;
+  -moz-border-radius-topright: .25em;
+  -moz-border-radius-bottomright: .25em;
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
+  -webkit-border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* nav */
+.bvviz-leaderboard .bvviz-body-header {
+  border-right: 1px solid #d6d6d6;
+  padding: 0;
+  margin: 0 auto .2em;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-body-header {
+  box-sizing: border-box;
+  min-width: 70px;
+  width: auto;
+  height: 100%;
+  margin-right: .2em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.bvviz-leaderboard .bvviz-body-header .bvviz-nav {
+  width: 70px;
+  padding: 0 4px 0 4px;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-body-header .bvviz-nav {
+  min-width: 70px;
+  max-width: 120px;
+  width: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 0px;
+  border-top: 1px solid #d6d6d6;
+  float: none;
+}
+
+.bvviz-leaderboard .bvviz-body-header .bvviz-nav.bvviz-last {
+  border: none;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-body-header .bvviz-nav.bvviz-last {
+  border-top: 1px solid #d6d6d6;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.bvviz-leaderboard .bvviz-body-header .bvviz-nav:hover {
+  background-color: #f6f6f6;
+}
+
+/* cards area */
+.bvviz-leaderboard.bvviz-horizontal .bvviz-scrollable-wrapper {
+  box-sizing: border-box;
+  height: 100%;
+  border: 1px solid #d6d6d6;
+  -webkit-border-radius: .25em;
+  -moz-border-radius: .25em;
+  border-radius: .25em;
+  display: inline-block;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-cards {
+  box-sizing: border-box;
+  width: auto;
+  height: 100%;
+  display: inline-block;
+  overflow-y: hidden;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-scrollable-wrapper .bvviz-cards {
+  border-width: 0;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-cards .bvviz-card {
+  box-sizing: border-box;
+  width: 110px;
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  border-width: 0 1px 0 0;
+}
+
+.bvviz-leaderboard .bvviz-cards .bvviz-card {
+  border-style: dotted;
+  cursor: pointer;
+  color: #666;
+}
+
+.bvviz-leaderboard .bvviz-cards.bvviz-col .bvviz-card .bvviz-avatar {
+  margin: .14em 0 0 .28em;
+  border: 0.15em solid #fff;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.bvviz-leaderboard .bvviz-cards.bvviz-col .bvviz-details {
+  margin: .3em 0 .5em 3em;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-card .bvviz-details {
+  white-space: nowrap;
+}
+
+.bvviz-leaderboard .bvviz-cards.bvviz-col .bvviz-card .bvviz-name {
+  font-weight: normal;
+}
+
+.bvviz-leaderboard .bvviz-card .bvviz-rank {
+  position: absolute;
+  right: .5em;
+  top: .7em;
+  min-width: 2em;
+  height: 2em;
+  line-height: 2.1em;
+  text-align: center;
+  padding: .1em;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-card .bvviz-rank {
+  top: inherit;
+  right: .4em;
+  bottom: .4em;
+  left: inherit;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-card .bvviz-knobs {
+  top: inherit;
+  right: 3.2em;
+  bottom: .4em;
+  left: inherit;
+}
+
+.bvviz-leaderboard .bvviz-card .bvviz-bullet {
+  display: inline;
+  font-size: .7em;
+}
+
+.bvviz-leaderboard .bvviz-card .bvviz-stat {
+  font-size: .7em;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+.bvviz-leaderboard .bvviz-card .bvviz-stat .bvviz-label {
+  float: left;
+}
+
+.bvviz-leaderboard .bvviz-card .bvviz-stat .bvviz-value {
+  float: left;
+  margin-left: .2em;
+}
+
+/* Current Player Highlight */
+.bvviz-leaderboard .bvviz-cards .bvviz-card.bvviz-self {
+  background-color: #daecf5;
+  color: #666;
+}
+
+.bvviz-leaderboard .bvviz-cards .bvviz-card.bvviz-self:hover {
+  background-color: #d7eef8;
+}
+
+.bvviz-leaderboard .bvviz-card.bvviz-self .bvviz-rank {
+  background-color: #fff;
+}
+
+/* Scrollbar in bi-directional scroll */
+.bvviz-leaderboard .bvviz-show-scroll {
+  float: none;
+  min-width: 1em;
+  min-height: 3em;
+}
+
+.bvviz-leaderboard.bvviz-horizontal .bvviz-show-scroll {
+  clear: none;
+  float: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0;
+  min-width: 4em;
+  min-height: 1em;
+}

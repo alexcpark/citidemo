@@ -1,0 +1,371 @@
+@mixin border-gradient( $color ) {
+  -moz-border-image: -moz-linear-gradient(top,  rgba($color,0) 0%, rgba($color,0.5) 25%, rgba($color,0.5) 75%, rgba($color,0) 100%); /* FF3.6+ */
+  -webkit-border-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($color,0)), color-stop(25%,rgba($color,0.5)), color-stop(75%,rgba($color,0.5)), color-stop(100%,rgba($color,0))); /* Chrome,Safari4+ */
+  -webkit-border-image: -webkit-linear-gradient(top,  rgba($color,0) 0%,rgba($color,0.5) 25%,rgba($color,0.5) 75%,rgba($color,0) 100%); /* Chrome10+,Safari5.1+ */
+  border-image: -o-linear-gradient(top,  rgba($color,0) 0%,rgba($color,0.5) 25%,rgba($color,0.5) 75%,rgba($color,0) 100%); /* Opera 11.10+ */
+  border-image: -ms-linear-gradient(top,  rgba($color,0) 0%,rgba($color,0.5) 25%,rgba($color,0.5) 75%,rgba($color,0) 100%); /* IE10+ */
+  border-image: linear-gradient(to bottom,  rgba($color,0) 0%,rgba($color,0.5) 25%,rgba($color,0.5) 75%,rgba($color,0) 100%); /* W3C */
+  border-image-slice: 1;
+  border-right: 1px solid $color;
+}
+
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin level-progress($context, $fg_color, $bg_color, $border_width, $border_radius, $bar_width, $bar_height ) {
+  #{$context} .bvviz-progress-bar  {
+    color: rgba($fg_color, .8);
+    background: $bg_color;
+    border: $border_width solid $bg_color;
+    width: $bar_width;
+    height: $bar_height;
+    @include border-radius($border_radius);
+    vertical-align: middle;
+  }
+  // Firefox 
+  #{$context} .bvviz-progress-bar::-moz-progress-bar  {
+    background: rgba($fg_color, .8);
+    border: $border_width solid $bg_color;
+    height: $bar_height;
+    @include border-radius($border_radius);
+  }
+  #{$context} .bvviz-progress-bar::-moz-progress-value {
+    background: $bg_color;
+    border: 0 solid $bg_color;
+  }
+  // Chrome and Safari 
+  #{$context} .bvviz-progress-bar::-webkit-progress-bar  { 
+    background: $bg_color;
+    border: 0 solid $bg_color;
+    height: calc(#{$bar_height} - #{$border_width} - #{$border_width});
+    @include border-radius($border_radius);
+  }
+  #{$context} .bvviz-progress-bar::-webkit-progress-value {
+    background: rgba($fg_color, .8);
+    border: $border_width solid $bg_color;
+    height: calc(#{$bar_height} - #{$border_width} - #{$border_width});
+    @include border-radius($border_radius);
+  } 
+}
+
+// *************** Custom scrollbar ***************
+@mixin custom-scrollbar ( $color ){
+  ::-webkit-scrollbar {
+      width: .75em;
+      overflow: visible;
+      height: .75em;
+  }
+   
+  /* Track */
+  ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      -webkit-border-radius: .75em;
+      border-radius: .75em;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+      -webkit-border-radius: .75em;
+      border-radius: .75em;
+      background: rgba($color,0.8); 
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  }
+  ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba($color,0.4); 
+  }
+
+  scrollbar {
+  /*  clear useragent default style*/
+     -moz-appearance: none !important;
+  }
+  /* buttons at two ends */
+  scrollbarbutton {
+     -moz-appearance: none !important;
+  }
+  /* the sliding part*/
+  thumb{
+     -moz-appearance: none !important;
+  }
+  scrollcorner {
+     -moz-appearance: none !important;
+     resize:both;
+  }
+  /* vertical or horizontal */
+  scrollbar[orient="vertical"] {
+      color: $color;
+  }  
+}
+
+// *************** loading animation ***************
+@mixin loading-delay( $delay ) {
+  -moz-animation-delay: $delay;
+  -webkit-animation-delay: $delay;
+  -ms-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;  
+}
+@mixin loading-animation( $color_start, $color_end ){
+  #bvviz-loading_1 {
+    @include loading-delay( 0s );
+  }
+  #bvviz-loading_2 {
+    @include loading-delay( 0.39s );
+  }
+  #bvviz-loading_3 {
+    @include loading-delay( 0.78s );
+  }
+  @-moz-keyframes bvviz-loading {
+    0% {
+      width: 10px;
+      height: 10px;
+      background-color: $color_start;
+      -moz-transform: translateY(0);
+    }
+    100% {
+      width: 24px;
+      height: 24px;
+      background-color: $color_end;
+      -moz-transform: translateY(-21px);
+    }
+  }
+  @-webkit-keyframes bvviz-loading {
+    0% {
+      width: 10px;
+      height: 10px;
+      background-color: $color_start;
+      -webkit-transform: translateY(0);
+    }
+    100% {
+      width: 24px;
+      height: 24px;
+      background-color: $color_end;
+      -webkit-transform: translateY(-21px);
+    }
+  }
+  @-ms-keyframes bvviz-loading {
+    0% {
+      width: 10px;
+      height: 10px;
+      background-color: $color_start;
+      -ms-transform: translateY(0);
+    }
+    100% {
+      width: 24px;
+      height: 24px;
+      background-color: $color_end;
+      -ms-transform: translateY(-21px);
+    }
+  }
+  @-o-keyframes bvviz-loading {
+    0% {
+      width: 10px;
+      height: 10px;
+      background-color: $color_start;
+      -o-transform: translateY(0);
+    }
+
+    100% {
+      width: 24px;
+      height: 24px;
+      background-color: $color_end;
+      -o-transform: translateY(-21px);
+    }
+  }
+  @keyframes bvviz-loading {
+    0% {
+      width: 10px;
+      height: 10px;
+      background-color: $color_start;
+      transform: translateY(0);
+    }
+    100% {
+      width: 24px;
+      height: 24px;
+      background-color: $color_end;
+      transform: translateY(-21px);
+    }
+  }
+}
+
+// *************** radial progress wheel ***************
+@mixin stepProgressTransition($selector, $rotation, $fix_rotation, $content) {
+    #{$selector} {
+      .bvviz-circle {
+        .bvviz-mask.bvviz-full, & .bvviz-fill {
+          @include rotate(#{$rotation});
+        }
+        .bvviz-fill.bvviz-fix {
+          @include rotate(#{$fix_rotation});
+        }
+      }
+    }  
+}
+
+@mixin bvvizRadialProgress() {
+  .bvviz-radial-progress {
+    $font-size: 1em;  // basic unit for scaling the radial progress wheel
+    $circle-size: 3.5 * $font-size;
+    $circle-background: $bvviz_progress_bar_bg_color;
+    $circle-color: $primary_accent;
+    $transition-length: 1s;
+    $inset-size: .8 * $circle-size;
+    $inset-color: $bvviz_body_bg_color;
+    $percentage-color: $background_font;
+    $percentage-font-size:  .8 * $font-size;
+    $percentage-text-width: .8 * $inset-size;
+
+    font-size: $font-size;
+    width: $circle-size;
+    height: $circle-size;
+
+    background-color: $circle-background;
+    @include border-radius(50%);
+
+    .bvviz-circle {
+      .bvviz-mask, & .bvviz-fill {
+        width: $circle-size;
+        height: $circle-size;
+        position: absolute;
+
+        @include border-radius(50%);
+
+        transition: -webkit-transform $transition-length;
+        transition: -ms-transform $transition-length;
+        transition: transform $transition-length;
+        -webkit-backface-visibility: hidden;    
+      }
+      .bvviz-mask {
+        clip: rect(0px, $circle-size, $circle-size, $circle-size/2);
+        .bvviz-fill {
+          clip: rect(0px, $circle-size/2, $circle-size, 0px);
+          background-color: $circle-color;
+        }
+      }
+    }
+    .bvviz-inset {
+      width: $inset-size;
+      height: $inset-size;
+      position: absolute;
+      margin-left: ($circle-size - $inset-size) / 2;
+      margin-top: ($circle-size -$inset-size) / 2;
+      background-color: $inset-color;
+      @include border-radius(50%);
+
+      .bvviz-percentage{
+        width: $percentage-text-width;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: - $percentage-font-size / 2;
+        margin-left: - $percentage-text-width / 2;
+
+        line-height: $font-size;
+        text-align: center;
+
+        color: $percentage-color;
+        font-weight: 800;
+        font-size: $percentage-font-size
+      }
+    }
+
+    $i: 0;
+    $step: 5; // step of % for created classes
+    $loops: round(100 / $step);
+    $increment: 180 / $loops;
+    @for $i from 0 through $loops {
+      $rotation: $increment * $i + 'deg';
+      $fix_rotation: $increment * $i * 2 + 'deg';
+
+      $foo: '';
+      $delimiter: '';
+      $content: '0%';
+
+      @for $j from 0 through $step - 1 {
+        
+        @if $j < $step - 1 {
+          $delimiter: ', ';
+        }
+        @else{
+          $delimiter: '';
+        }
+
+        $foo: $foo + '&[data-progress="#{$i * $step + $j}"]#{$delimiter}';
+        $content: "#{$i * $step}%";  
+
+        @if $i == 0 { // first step
+
+          @if $j == 0 {
+            $foo: '&[data-progress="0"] ';
+            $rotation: '0deg';
+            $fix_rotation: '0deg';
+            $content: '0%';
+
+            // output special cases 0%
+            @if $foo {
+              @include stepProgressTransition(#{$foo}, #{$rotation}, #{$fix_rotation}, $content);
+            }
+            // reset selector
+            $foo: '';
+          }
+          @if $j == 1 {
+            $foo: '&[data-progress="1"] ';
+            $rotation: $increment / $step + 'deg';
+            $fix_rotation: $increment / $step * 2 + 'deg';
+            $content: "1%";
+
+            // output special cases 1%
+            @if $foo {
+              @include stepProgressTransition(#{$foo}, #{$rotation}, #{$fix_rotation}, $content);
+            }
+            // reset selector
+            $foo: '';
+          }
+          @else {
+            //$foo: '&[data-progress="1"] ';
+            $rotation: $increment / $step * 2 + 'deg';
+            $fix_rotation: $increment / $step * 4 + 'deg';
+            $content: "#{$step - 1}%";
+          }
+        }
+        @if $i == $loops - 1 { // next to the last step
+
+          @if $j == $step - 2 {
+            // output special cases 0%
+            @if foo {
+              @include stepProgressTransition(#{$foo}, #{$rotation}, #{$fix_rotation}, $content);
+            }
+            // reset selector
+            $foo: '';
+          }
+          @if $j == $step - 1 {
+            $foo: '&[data-progress="99"] ';
+            $rotation: 180 - $increment / $step + 'deg';
+            $fix_rotation: 360 - $increment / $step * 2 + 'deg';
+            $content: '99%';
+          }
+
+        }
+        @if $i == $loops { // last step
+
+          @if $i * $step + $j >= 100 {
+            $foo: '&[data-progress="100"] ';
+            $rotation: '180deg';
+            $fix_rotation: '360deg';
+            $content: '100%';
+          }
+        }
+
+      }
+
+      // output step progress transition
+      @if $foo != '' {
+        @include stepProgressTransition(#{$foo}, #{$rotation}, #{$fix_rotation}, $content);
+      }
+
+    }  
+  }
+}

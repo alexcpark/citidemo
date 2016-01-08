@@ -1,0 +1,259 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.9
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+
+@import "base";
+
+.bvviz-notify {
+  position: fixed;
+  z-index: 90;
+}
+
+/* General Units classes */
+.bvviz-notify .bvviz-units {
+  float: left;
+  overflow: hidden;
+  display: inline;
+}
+
+.bvviz-notify .bvviz-units .bvviz-unit,
+.bvviz-notify .bvviz-view-player-profile {
+  float: left;
+  font-size: inherit;
+  margin-right: .8em;
+  border: 1px solid $notify_view_profile_border_color;
+  background-color: $notify_view_profile_bg_color;
+  padding: .4em;
+  -webkit-border-radius: .25em;
+  -moz-border-radius: .25em;
+  border-radius: .25em;
+  @include box-shadow(0 0 5px null $notify_view_profile_box_shadow_color null);
+}
+
+/* Close Button */
+.bvviz-notify .bvviz-close {
+  font-family: Verdana, Geneva, sans-serif;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  border-radius: 2em;
+  width: 1.4em;
+  height: 1.4em;
+  text-align: center;
+  line-height: 1.4em;
+  border: .1em solid $notify_close_btn_border_color;
+  background-color: $notify_close_btn_bg_color;
+  color: $notify_close_btn_font_color;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include box-shadow(0 4px 4px -2px $notify_close_btn_box_shadow_color null);
+}
+.bvviz-notify .bvviz-close:hover {
+  background-color: adjust-lightness($notify_close_btn_bg_color, 40);
+}
+
+/* Small Notification */
+.bvviz-notify.bvviz-small {
+  bottom: 10px;
+  color: $accent_font;
+  padding: .5em 0 .5em 0;
+  overflow: hidden;
+  display: inline-block;
+  min-width: 150px;
+  min-height: 30px;
+  @include box-shadow(0 4px 4px -2px $notify_waffle_box_shadow_color null);
+  cursor: pointer;
+}
+
+.bvviz-notify.bvviz-small {
+  -webkit-border-top-left-radius: .8em;
+  -webkit-border-bottom-right-radius: .8em;
+  -moz-border-radius-topleft: .8em;
+  -moz-border-radius-bottomright: .8em;
+  border-top-left-radius: .8em;
+  border-bottom-right-radius: .8em;
+}
+
+.bvviz-notify.bvviz-small .bvviz-picture {
+  width: 2em; 
+  height: 2em;
+  float: left;
+  margin-left: .8em;
+}
+
+.bvviz-notify.bvviz-small .bvviz-details {
+  float: left;
+  line-height: 2em;
+  margin: 0 .8em 0 .8em;
+  color: $notify_desc_font_color;
+}
+
+/* Medium Notification */
+.bvviz-notify.bvviz-medium {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: none;
+}
+.bvviz-notify.bvviz-medium.bvviz-slideup {
+  @include box-shadow(0 4px 4px -2px $notify_waffle_box_shadow_color null);
+}
+.bvviz-notify.bvviz-medium .bvviz-container {
+  min-height: 48px;
+  min-width: 600px;
+  width: 60%;
+  margin: 0 auto;
+}
+.bvviz-notify.bvviz-medium .bvviz-body.bvviz-col {
+  padding: 0;
+  border: none;
+  color: $accent_font; 
+  -webkit-border-top-left-radius: .25em;
+  -webkit-border-top-right-radius: .25em;
+  -moz-border-radius-topleft: .25em;
+  -moz-border-radius-topright: .25em;
+  border-top-left-radius: .25em;
+  border-top-right-radius: .25em;
+
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.bvviz-notify.bvviz-medium .bvviz-body .bvviz-cards {
+  border: none;
+  overflow: hidden;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.bvviz-notify.bvviz-medium .bvviz-cards.bvviz-col .bvviz-card {
+  border: none;
+  position: inherit; /* need this for floating picture */
+  min-height: 3.2em;
+  padding: .3em;
+  cursor: auto;
+  background-color: $bvviz_header_gradient_start_color;
+}
+
+.bvviz-notify.bvviz-medium .bvviz-body .bvviz-cards .bvviz-view-profile:hover {
+  color: $background_hover;
+}
+
+.bvviz-notify.bvviz-medium .bvviz-units,
+.bvviz-notify.bvviz-medium .bvviz-view-player-profile {
+  float: right;
+  margin: 0.6em 1em 0 -.7em;
+}
+
+.bvviz-notify.bvviz-medium .bvviz-cards.bvviz-col .bvviz-card .bvviz-details {
+  border-left: 1px solid $separater_border;
+  margin-left: 200px; /* width of the rays image */
+  margin-right: 1em;
+  padding-left: .4em;
+  padding-right: 1em;
+  color: $notify_desc_font_color;
+}
+.bvviz-notify.bvviz-medium .bvviz-cards.bvviz-col .bvviz-card .bvviz-details .bvviz-name {
+  line-height: 1.2em;
+  height: 1.2em;
+  overflow: hidden;
+}
+.bvviz-notify.bvviz-medium .bvviz-cards.bvviz-col .bvviz-card .bvviz-details .bvviz-desc {
+  line-height: 1em;
+}
+.bvviz-notify.bvviz-medium .bvviz-container .bvviz-picture {
+  position: relative;
+  top: 3.5em;
+  left: -138px;
+  width: 75px;
+}
+.bvviz-notify.bvviz-medium .bvviz-container .bvviz-rays {
+  position: relative;
+  top: 3.2em;
+  background: url('../common/images/rays.png') no-repeat;
+  width: 200px;
+  height: 118px;
+}
+
+.bvviz-notify.bvviz-medium .bvviz-close {
+  position: relative;
+  top: 8em;
+  right: -.7em;
+  float: right;
+}
+
+/* Large Notification */
+.bvviz-notify.bvviz-large {
+  position: fixed;
+  width: 100%;
+}
+
+.bvviz-notify.bvviz-large .bvviz-container {
+  -webkit-border-radius: .8em;
+  -moz-border-radius: .8em;
+  border-radius: .8em;
+  width: 30em;
+  margin: 0 auto;
+  color: $accent_font;
+  padding: .5em;
+  overflow: hidden;
+  min-height: 10em;
+  background-color: $bvviz_header_gradient_start_color;
+  @include background-image( linear-gradient($bvviz_header_gradient_start_color 0%, $bvviz_header_gradient_end_color 100%) );
+  text-align: center;
+  @include box-shadow(0 4px 4px -2px $notify_waffle_box_shadow_color null);
+}
+
+.bvviz-notify.bvviz-large .bvviz-picture {
+  height: 7em;
+  margin-left: 1.4em;
+}
+
+.bvviz-notify.bvviz-large .bvviz-details {
+  line-height: 1.5em;
+  margin: 0 .8em .8em .8em;
+  color: $notify_desc_font_color;
+}
+
+.bvviz-notify.bvviz-large .bvviz-details .bvviz-name {
+  font-size: 1.2em;
+}
+
+.bvviz-notify.bvviz-large .bvviz-units {
+  float: none;
+  text-align: center;
+  margin-top: 0.4em;
+}
+.bvviz-notify.bvviz-large .bvviz-units .bvviz-unit,
+.bvviz-notify.bvviz-large .bvviz-view-player-profile {
+  float: none;
+  display: inline-block;
+  margin: 0.4em;
+  line-height: 2em;
+}
+
+.bvviz-notify.bvviz-large .bvviz-view-player-profile {
+  display: inline;
+  font-size: inherit;
+}
+
+.bvviz-notify.bvviz-large .bvviz-close {
+  float: right;
+}

@@ -396,8 +396,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-brand a.brand {
-    background-image: url('/images/named-artwork.png');
-    background-size: 223px 14px;
+    background-image: url('/images/title.png');
+    background-size: 122px 14px;
     background-position: left center;
     background-repeat: no-repeat;
     width: 223px;
@@ -406,7 +406,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .page-brand a.brand2 {
-	background-image: url('/images/citi-logo.png');
+	background-image: url('/images/unnamed.png');
     background-size: 60px 38px;
     background-position: 2px center;
     background-repeat: no-repeat;
@@ -1482,7 +1482,7 @@ p.callout-table {
 .footer .nav-bottom li a:visited { background-color: transparent; }
 
 .footer .bv-logo-r {
-	background:url('/images/citi-logo-r.png');
+	background:url('/images/unnamed.png');
 	width: 60px;
 	height: 34px;
 }
@@ -1528,6 +1528,15 @@ p.callout-table {
 
 .bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row {
 	
+}
+
+#bv-page-collaboration .bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card {
+	width: 83px !important;
+	margin-left: 20px;
+}
+
+#bv-page-collaboration .bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card:first-child {
+	margin-left: 0;
 }
 
 .bvviz-headerTracks.highlight2.bvviz.bvviz-playerMissions .bvviz-body .bvviz-cards.bvviz-row .bvviz-card .bvviz-picture {

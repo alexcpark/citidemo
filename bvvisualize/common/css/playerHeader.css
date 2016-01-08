@@ -1,0 +1,139 @@
+/*!
+
+Badgeville JS SDK Preconfigured Visualizations
+Version 1.3.9
+
+Copyright 2014 Badgeville, Inc.
+
+Licensed under Badgeville's Free Software License Agreement (the "License"); you may not use this file except
+in compliance with the License. You may obtain a copy of the License at http://source.badgeville.com/license
+Unless required by applicable law or mutually agreed to in writing, software distributed under the License is 
+distributed on an "AS-IS" BASIS, WITHOUT WARRANTIES, COMMITMENTS OR LIABILITY OF ANY KIND, either express or 
+implied. See the License for the specific language governing rights, permissions, restrictions and limitations 
+under the License.
+
+*/
+.bvviz-playerHeader {
+  min-height: 1.2em;
+  min-width: 150px;
+  cursor: pointer;
+  padding: .23em 0;
+}
+
+.bvviz-playerHeader .bvviz-body {
+  height: 1.2em;
+  line-height: 1.2em;
+  -webkit-border-radius: .25em;
+  -moz-border-radius: .25em;
+  border-radius: .25em;
+  border-top-width: 1px;
+  margin-left: 1em;
+  padding: .2em .2em .2em 1.4em;
+  background-color: #3aa6da;
+  border-color: #bbb;
+  color: #fff;
+  font-size: .9em;
+}
+
+.bvviz-playerHeader .bvviz-card .bvviz-picture {
+  -webkit-border-radius: 1.5em;
+  -moz-border-radius: 1.5em;
+  border-radius: 1.5em;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0.15em solid #fff;
+}
+
+.bvviz-playerHeader .bvviz-card .bvviz-name {
+  float: left;
+}
+
+/* Unit Bar */
+.bvviz-playerHeader .bvviz-units {
+  position: absolute;
+  right: .2em;
+  width: 100px;
+  background-color: #3aa6da;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items,
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items .bvviz-unit,
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-fade,
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-arrow {
+  top: 0;
+  height: 1.2em;
+  line-height: 1.2em;
+  border-right: 0;
+  background-color: transparent;
+}
+
+.bvviz-playerHeader .bvviz.bvviz-unitbar .bvviz-units-arrow:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items {
+  margin: 0;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items .bvviz-unit {
+  padding: 0 5px;
+  width: 90px;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-fade,
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-arrow {
+  width: 1em;
+  top: 0;
+  margin-top: 0;
+}
+
+.bvviz-playerHeader .bvviz.bvviz-unitbar .bvviz-units-left,
+.bvviz-playerHeader .bvviz.bvviz-unitbar .bvviz-units-right {
+  border-width: 0px;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items .bvviz-basic img {
+  width: 1.2em;
+  float: none;
+  display: inline;
+  margin-left: 0;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-unitbar-items .bvviz-basic .bvviz-label {
+  vertical-align: top;
+  line-height: 2em;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-leftFade {
+  left: 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhYTZkYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNhYTZkYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #3aa6da), color-stop(100%, rgba(58, 166, 218, 0)));
+  background-image: -moz-linear-gradient(left, #3aa6da, rgba(58, 166, 218, 0));
+  background-image: -webkit-linear-gradient(left, #3aa6da, rgba(58, 166, 218, 0));
+  background-image: linear-gradient(to right, #3aa6da, rgba(58, 166, 218, 0));
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-units-rightFade {
+  right: 0;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzNhYTZkYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzYWE2ZGEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(58, 166, 218, 0)), color-stop(100%, #3aa6da));
+  background-image: -moz-linear-gradient(left, rgba(58, 166, 218, 0), #3aa6da);
+  background-image: -webkit-linear-gradient(left, rgba(58, 166, 218, 0), #3aa6da);
+  background-image: linear-gradient(to right, rgba(58, 166, 218, 0), #3aa6da);
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-value,
+.bvviz-playerHeader .bvviz-unitbar .bvviz-label {
+  display: inline;
+  zoom: inherit;
+}
+
+.bvviz-playerHeader .bvviz-unitbar .bvviz-label {
+  margin-left: .3em;
+}
