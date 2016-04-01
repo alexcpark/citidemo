@@ -163,12 +163,13 @@
 		                  $( '.header-profile-team' ).append( playerCustom.department ? playerCustom.department: 'Department' );
 						  $( '.header-profile-location-city' ).append( playerCustom.location_city ? playerCustom.location_city + separator : 'City, ' );
 						  $( '.header-profile-location-country' ).append( playerCustom.location_country ? playerCustom.location_country : 'Country' );
+						  $( '.header-profile-image' ).attr( 'src', data.players[0].image);
 		                }
 		              });
 
 		            $( '.header-profile-name' ).text( profileName );
-		            //$( '.header-profile-image' ).attr( 'src', profileImage );
-		            $( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
+		            $( '.header-profile-image' ).attr( 'src', profileImage );
+		            //$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
 
 		            // If the playerProfile function is defined, add event handler
 		            if ( $.isFunction( BVVIZ.playerProfile ) ) {
