@@ -170,9 +170,9 @@
 		            $( '.header-profile-name' ).text( profileName );
 		            $( '.header-profile-image' ).attr( 'src', profileImage );
 		            
-		            if(playerEmail == 'chris@citidemo.badgeville.com') {
+		            if(playerName == 'Chris Johnson') {
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/sites/internal/arc/citibank/images/profile-chrisjohnson-cropped.jpg' );
-		        	} else if(playerEmail == 'amy@citidemo.badgeville.com'){
+		        	} else if(playerName == 'Amy Smith'){
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
 		            };
 
