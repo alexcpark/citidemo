@@ -99,7 +99,7 @@
 						<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=4&player_email=<?php echo $playerEmail; ?>">Collaboration</a></li>
 						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_email=<?php echo $playerEmail; ?>">Guide</a></li>
 						<li class="nav-link outgoing-link"><a href="http://badgeville.io/564a586fa33c439ee30006cc?player_email=<?php echo $playerEmail; ?>" target="_blank">Mobile</a></li>
-						<li class="nav-link outgoing-link"><a href="https://badgevilledemos.sharepoint.com"><< Bank Net</a></li>';
+						<li class="nav-link outgoing-link"><a href="https://badgevilledemos.sharepoint.com"><< Bank Net</a></li>
 				
 		          </ul>
 		        </div><!-- /.navbar-inner -->
