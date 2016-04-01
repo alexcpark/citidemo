@@ -170,9 +170,9 @@
 		            $( '.header-profile-name' ).text( profileName );
 		            $( '.header-profile-image' ).attr( 'src', profileImage );
 		            
-		            if(playerName == 'Chris Johnson') {
+		            if(profileName == 'Chris Johnson') {
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/sites/internal/arc/citibank/images/profile-chrisjohnson-cropped.jpg' );
-		        	} else if(playerName == 'Amy Smith'){
+		        	} else if(profileName == 'Amy Smith'){
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
 		            };
 
