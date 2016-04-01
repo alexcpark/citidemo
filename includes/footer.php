@@ -6,10 +6,10 @@
 					<div class="container">
 						<ul class="nav nav-bottom">
 							<!--<li class="bv-logo-r"><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">&nbsp;</a></li>-->
-							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Terms of Use</a></li>
-							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Privacy Policy</a></li>
-							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Additional Terms</a></li>
-							<li><a href="/?program_id=1&player_id=5643c424a33c43d250002cb5">Accessibility</a></li>
+							<li><a href="/?program_id=1&player_email=<?php echo $playerEmail; ?>">Terms of Use</a></li>
+							<li><a href="/?program_id=1&player_email=<?php echo $playerEmail; ?>">Privacy Policy</a></li>
+							<li><a href="/?program_id=1&player_email=<?php echo $playerEmail; ?>">Additional Terms</a></li>
+							<li><a href="/?program_id=1&player_email=<?php echo $playerEmail; ?>">Accessibility</a></li>
 							<li class="social">Follow us:<ul>
 									<li class="rss"></li>
 									<li class="facebook"></li>
@@ -579,9 +579,10 @@
 		        // init function
 		        function init() {
 			          var paramObj = parseURLParam( window.location.search ),
-						playerId = ( 'player_id' in paramObj ) ? paramObj['player_id'] : null;
+						playerEmail = ( 'player_email' in paramObj ) ? paramObj['player_email'] : null;
+				      var playerId = '';
 
-			          if ( $.type( playerId ) !== 'string' ) {
+			          if ( $.type( playerEmail ) !== 'string' ) {
 			            // Player ID not passed appropriately
 			            renderNotFound();
 			            return false;
@@ -589,7 +590,10 @@
 
 			          // Call setPlayer using the player id
 			          if ( $.type(BVVIZ.currentPlayer) !== 'object' || $.isEmptyObject(BVVIZ.currentPlayer) ) {
-			            BVVIZ.setPlayer( playerId, showProfile );
+			          	BVSDK( 'players', { players: playerEmail } ).ok( function( data ) {
+			          		playerId = data.players[0].id;
+				            BVVIZ.setPlayer( playerId, showProfile );
+				        }
 			          }
 		        }
 				

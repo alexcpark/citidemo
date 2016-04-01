@@ -5,11 +5,11 @@
 		          <ul class="nav">
 		            <?php
 					/***********
-					* Construct Navigation Link/URLs with the proper playerId
+					* Construct Navigation Link/URLs with the proper playerEmail
 					************/
 					
-					// Define function for retrieving playerId
-					function getPlayerId() {
+					// Define function for retrieving playerEmail
+					function getPlayerEmail() {
 						// Grab URL
 						$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 						// Parse the URL
@@ -18,14 +18,14 @@
 						parse_str($parts['query'], $query);
 						//var_dump($query);
 						// Store for return
-						$result = $query['player_id'];
+						$result = $query['player_email'];
 						// Return
 						return $result;
 					}
 					
 					// store playerId
-					$playerId = getPlayerId();
-					
+					$playerEmail = getPlayerEmail();
+/*					
 					// define playerId source collection
 					$allPlayerIds = [
 						['Amy Smith',
@@ -91,8 +91,16 @@
 						default:
 							echo $amy_nav;
 					}
-		            
+*/			            
 					?>
+						<li class="nav-onboarding"><a href="/?program_id=1&player_email=<?php echo $playerEmail; ?>">Onboarding</a></li>
+			            <li class="nav-goals"><a href="/pages/goals/progress/?program_id=2&player_email=<?php echo $playerEmail; ?>">Goals</a></li>
+			            <li class="nav-learning"><a href="/pages/learning/progress/?program_id=3&player_email=<?php echo $playerEmail; ?>">Learning</a></li>
+						<li class="nav-collaboration"><a href="/pages/collaboration/progress/?program_id=4&player_email=<?php echo $playerEmail; ?>">Collaboration</a></li>
+						<li class="nav-guide"><a href="/pages/guide/?program_id=1&player_email=<?php echo $playerEmail; ?>">Guide</a></li>
+						<li class="nav-link outgoing-link"><a href="http://badgeville.io/564a586fa33c439ee30006cc?player_email=<?php echo $playerEmail; ?>" target="_blank">Mobile</a></li>
+						<li class="nav-link outgoing-link"><a href="https://badgevilledemos.sharepoint.com"><< Bank Net</a></li>';
+				
 		          </ul>
 		        </div><!-- /.navbar-inner -->
 		      </div><!-- /.container -->

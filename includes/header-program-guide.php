@@ -12,7 +12,18 @@
 				<div class="container">
 					
 					<!-- START PROGRAM SUB NAV -->
+					<div class="subnav">
+						<ul class="subnav-pages">
+							<li class="subnav-page page1"><a href="/pages/guide/?program_id=1&player_email=<?php echo $playerEmail; ?>">Overview</a></li>
+							<li class="subnav-page page3"><a href="/pages/guide/how_to_play/?program_id=1&player_email=<?php echo $playerEmail; ?>">How to Play</a></li>
+							<li class="subnav-page page4"><a href="/pages/guide/where_to_play/?program_id=1&player_email=<?php echo $playerEmail; ?>">Where to Play</a></li>
+							<li class="subnav-page page5"><a href="/pages/guide/key_activities/?program_id=1&player_email=<?php echo $playerEmail; ?>">Key Activities</a></li>
+							<li class="subnav-page page2"><a href="/pages/guide/types_of_success/?program_id=1&player_email=<?php echo $playerEmail; ?>">Examples of Success</a></li>
+						</ul>
+					</div>
+					
 					<?php
+					/*
 					// construct Amy's navigation with her proper Id
 					$amy_nav = '
 					    <div class="subnav">
@@ -53,6 +64,6 @@
 						default:
 							echo $amy_nav;
 					}
-					
+					*/
 					?>
 					<!-- END PROGRAM SUB NAV -->
