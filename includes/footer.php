@@ -170,11 +170,11 @@
 		            $( '.header-profile-name' ).text( profileName );
 		            $( '.header-profile-image' ).attr( 'src', profileImage );
 		            
-		            if(playerEmail == 'chris@citidemo.badgeville.com'){
+		            if(playerEmail == 'chris@citidemo.badgeville.com') {
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/sites/internal/arc/citibank/images/profile-chrisjohnson-cropped.jpg' );
-		        	else if (playerEmail == 'amy@citidemo.badgeville.com'){
+		        	else if(playerEmail == 'amy@citidemo.badgeville.com'){
 		            	$( '.header-profile-image' ).attr( 'src', 'http://rwdserver.com/sandbox/badgeville/clients/arc/skillport/images/profile-amysmith.jpg' );
-		            };
+		            }
 
 		            // If the playerProfile function is defined, add event handler
 		            if ( $.isFunction( BVVIZ.playerProfile ) ) {
