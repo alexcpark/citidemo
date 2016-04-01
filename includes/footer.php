@@ -589,11 +589,12 @@
 			          }
 
 			          // Call setPlayer using the player id
+			          playerEmail = BVVIZ.encryptEmail(playerEmail);
 			          if ( $.type(BVVIZ.currentPlayer) !== 'object' || $.isEmptyObject(BVVIZ.currentPlayer) ) {
 			          	BVSDK( 'players', { players: playerEmail } ).ok( function( data ) {
 			          		playerId = data.players[0].id;
 				            BVVIZ.setPlayer( playerId, showProfile );
-				        }
+				        });
 			          }
 		        }
 				
