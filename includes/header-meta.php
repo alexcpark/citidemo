@@ -46,6 +46,12 @@ under the License.
 	      <!-- Include a working version of JQuery UI for the current browser -->
 	      <script src="/js/jquery-ui.min.js"></script>
 	      <link href="/css/jquery-ui.css" rel="stylesheet" type="text/css">
+
+          <script src="/libraries/bvvisualize/commonLibrary/js/md5.js"></script>
+          <script src="/libraries/bvvisualize/commonLibrary/js/sha1.js"></script>
+          <script src="/libraries/bvvisualize/commonLibrary/js/DateFormat.js"></script>      
+	      <script src="/libraries/bvvisualize/commonLibrary/js/progress-polyfill.js"></script>              
+
 		
 	    <!-- Bootstrap Frontend Library -->
 	      <link href="/css/bootstrap.min.nr.css" rel="stylesheet">
